@@ -208,7 +208,7 @@ export const PPC = () => {
       </section>
 
       {/* Platforms Overview */}
-      <section className="py-24 section-dark border-y border-white/5">
+      <section className="py-24 section-dark border-y border-white/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <FadeIn>
@@ -359,7 +359,7 @@ export const PPC = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact-form" className="py-32 section-dark border-t border-white/5">
+      <section id="contact-form" className="py-32 section-dark border-t border-white/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>

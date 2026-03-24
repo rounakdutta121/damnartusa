@@ -183,7 +183,7 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* Why Audit Section */}
-      <section className="py-24 section-dark border-y border-white/5">
+      <section className="py-24 section-dark border-y border-white/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -253,7 +253,7 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-24 section-dark border-y border-white/5">
+      <section className="py-24 section-dark border-y border-white/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <FadeIn>
@@ -378,7 +378,7 @@ export const DigitalMarketingAudit = () => {
       ))}
 
       {/* Complete Audit Package */}
-      <section className="py-32 section-dark border-y border-white/5 relative overflow-hidden">
+      <section className="py-32 section-dark border-y border-white/30 relative overflow-hidden">
         <div className="blue-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-[3rem] p-12 md:p-16 text-center">
@@ -462,7 +462,7 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 section-dark border-t border-white/5">
+      <section className="py-32 section-dark border-t border-white/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-tight uppercase italic">
@@ -484,7 +484,7 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact-form" className="py-32 section-dark border-t border-white/5">
+      <section id="contact-form" className="py-32 section-dark border-t border-white/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
@@ -571,7 +571,7 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* Disclaimer */}
-      <section className="py-12 section-dark border-t border-white/5">
+      <section className="py-12 section-dark border-t border-white/30">
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-slate-500 text-sm text-center leading-relaxed">
             <span className="font-bold text-slate-400">Disclaimer:</span> The Digital Marketing Audit Services offered by Damnart is intended to evaluate various aspects of your digital marketing efforts as per your request. The insights provided in the audit report will be based on current performance data and best practices. While we strive to offer actionable recommendations, results may vary based on your specific marketing goals and business context. For further consultations or more comprehensive services, please contact our team directly.
