@@ -23,6 +23,18 @@ export const Header = () => {
     { name: 'Blogs', path: '/#blogs' },
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <>
       <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled ? 'glass-nav py-4' : 'bg-transparent py-6'}`}>
@@ -52,7 +64,7 @@ export const Header = () => {
                 </Link>
               )
             ))}
-            <button className="btn-primary">Work With Us!</button>
+            <button onClick={scrollToContact} className="btn-primary">Work With Us!</button>
           </div>
 
           <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -91,7 +103,7 @@ export const Header = () => {
                   </Link>
                 )
               ))}
-              <button className="btn-primary justify-center w-full py-4 text-lg">Work With Us!</button>
+              <button onClick={scrollToContact} className="btn-primary justify-center w-full py-4 text-lg">Work With Us!</button>
             </div>
           </motion.div>
         )}
