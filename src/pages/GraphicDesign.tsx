@@ -22,7 +22,8 @@ export const GraphicDesign = () => {
         "Brand Consistency: Ensure your logo aligns with your overall brand strategy and aesthetics.",
         "Multiple Concepts: Provide various design concepts and iterations until you find the perfect logo.",
         "Scalable Designs: Create logos that look great on all platforms and sizes, from business cards to billboards."
-      ]
+      ],
+      color: { bg: "bg-purple-500/10", text: "text-purple-500", hover: "group-hover:bg-purple-500 group-hover:text-white", gradient: "from-purple-600/20 to-transparent", glow: "#9333ea" }
     },
     {
       id: "marketing-materials",
@@ -36,7 +37,8 @@ export const GraphicDesign = () => {
         "Posters and Banners: Design impactful posters and banners for events, promotions, and advertising campaigns.",
         "Sales Presentations: Develop professional sales presentations that captivate and persuade your audience.",
         "Print Ads: Design attention-grabbing print ads for magazines, newspapers, and other publications."
-      ]
+      ],
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#2563eb" }
     },
     {
       id: "digital-graphics",
@@ -50,7 +52,8 @@ export const GraphicDesign = () => {
         "Email Campaign Graphics: Design visually appealing graphics for email marketing campaigns.",
         "Website Graphics: Develop graphics for your website, including banners, sliders, icons, and infographics.",
         "Digital Advertisements: Create compelling digital ads for various online platforms, including Google Ads, Facebook Ads, and more."
-      ]
+      ],
+      color: { bg: "bg-pink-500/10", text: "text-pink-500", hover: "group-hover:bg-pink-500 group-hover:text-white", gradient: "from-pink-600/20 to-transparent", glow: "#ec4899" }
     },
     {
       id: "infographic-design",
@@ -64,7 +67,8 @@ export const GraphicDesign = () => {
         "Custom Illustrations: Develop unique illustrations and icons to enhance your infographics.",
         "Storytelling: Create infographics that tell a compelling story and effectively convey your message.",
         "Multi-Platform Designs: Design infographics optimized for sharing across various platforms, including websites, social media, and print."
-      ]
+      ],
+      color: { bg: "bg-green-500/10", text: "text-green-500", hover: "group-hover:bg-green-500 group-hover:text-white", gradient: "from-green-600/20 to-transparent", glow: "#22c55e" }
     },
     {
       id: "presentation-design",
@@ -78,7 +82,8 @@ export const GraphicDesign = () => {
         "Slide Design: Create visually appealing and informative slides to support your presentations.",
         "Data Visualization: Use charts, graphs, and infographics to present data clearly and effectively.",
         "Consistent Branding: Ensure your presentations are consistent with your brand identity and messaging."
-      ]
+      ],
+      color: { bg: "bg-orange-500/10", text: "text-orange-500", hover: "group-hover:bg-orange-500 group-hover:text-white", gradient: "from-orange-600/20 to-transparent", glow: "#f97316" }
     }
   ];
 
@@ -181,7 +186,10 @@ export const GraphicDesign = () => {
                 transition={{ delay: i * 0.1 }}
                 className="service-card group h-full flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                <div 
+                  className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-500"
+                  style={{ backgroundColor: `${service.color.glow}1a`, color: service.color.glow }}
+                >
                   <service.icon size={24} />
                 </div>
                 <h3 className="text-lg font-black text-white mb-4 uppercase tracking-wider">{service.name}</h3>
@@ -190,7 +198,8 @@ export const GraphicDesign = () => {
                 </p>
                 <motion.a 
                   href={`#${service.id}`}
-                  className="text-blue-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  className="font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  style={{ color: service.color.glow }}
                 >
                   LEARN MORE <ArrowRight size={14} />
                 </motion.a>
@@ -208,7 +217,7 @@ export const GraphicDesign = () => {
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
                 <div className="space-y-8">
                   <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase italic">
-                    {service.name.split(' ')[0]} <span className="text-gradient-blue">{service.name.split(' ').slice(1).join(' ')}</span>
+                    {service.name.split(' ')[0]} <span style={{ color: service.color.glow }}>{service.name.split(' ').slice(1).join(' ')}</span>
                   </h2>
                   <p className="text-lg text-slate-400 leading-relaxed">
                     {service.details}
@@ -216,7 +225,7 @@ export const GraphicDesign = () => {
                   <ul className="space-y-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex gap-4 text-slate-300">
-                        <CheckCircle2 className="text-blue-500 flex-shrink-0" size={20} />
+                        <CheckCircle2 className="flex-shrink-0" size={20} style={{ color: service.color.glow }} />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -225,7 +234,8 @@ export const GraphicDesign = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={scrollToContact}
-                    className="btn-primary px-10 py-4 text-lg"
+                    className="px-10 py-4 text-lg font-bold text-white rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: service.color.glow, boxShadow: `0 10px 40px ${service.color.glow}40` }}
                   >
                     Get a Quote
                   </motion.button>
@@ -234,7 +244,10 @@ export const GraphicDesign = () => {
               
               <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full" />
+                  <div 
+                    className="absolute -inset-4 blur-3xl rounded-full" 
+                    style={{ backgroundColor: `${service.color.glow}33` }}
+                  />
                   <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-slate-900 flex items-center justify-center">
                     <img 
                       src={service.image} 
@@ -242,10 +255,10 @@ export const GraphicDesign = () => {
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{service.name}</div>
-                      <div className="text-blue-500 font-bold uppercase tracking-widest text-xs">Design Solutions</div>
+                      <div className="font-bold uppercase tracking-widest text-xs" style={{ color: service.color.glow }}>Design Solutions</div>
                     </div>
                   </div>
                 </div>

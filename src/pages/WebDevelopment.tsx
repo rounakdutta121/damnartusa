@@ -21,7 +21,8 @@ export const WebDevelopment = () => {
         "Bespoke Design: Create a unique and visually appealing design that aligns with your brand identity.",
         "Scalable Solutions: Develop websites that can grow with your business, accommodating future expansion and functionality.",
         "Responsive Design: Ensure your website is fully responsive, providing an optimal viewing experience across all devices."
-      ]
+      ],
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#2563eb" }
     },
     {
       id: "ecommerce",
@@ -36,7 +37,8 @@ export const WebDevelopment = () => {
         "Payment Gateway Integration: Integrate secure payment gateways to facilitate smooth transactions.",
         "Product Management: Implement robust product management systems to easily manage your inventory.",
         "Order Tracking: Enable order tracking functionality to keep customers informed about their purchases."
-      ]
+      ],
+      color: { bg: "bg-green-500/10", text: "text-green-500", hover: "group-hover:bg-green-500 group-hover:text-white", gradient: "from-green-600/20 to-transparent", glow: "#22c55e" }
     },
     {
       id: "cms",
@@ -50,7 +52,8 @@ export const WebDevelopment = () => {
         "Custom Templates: Create custom templates and themes that match your brand's aesthetic.",
         "User-Friendly Interface: Design an intuitive backend interface for easy content management.",
         "Plugin Integration: Integrate essential plugins and extensions to enhance functionality."
-      ]
+      ],
+      color: { bg: "bg-purple-500/10", text: "text-purple-500", hover: "group-hover:bg-purple-500 group-hover:text-white", gradient: "from-purple-600/20 to-transparent", glow: "#9333ea" }
     },
     {
       id: "web-apps",
@@ -64,7 +67,8 @@ export const WebDevelopment = () => {
         "SaaS Solutions: Create Software as a Service (SaaS) applications accessible over the internet.",
         "API Development: Develop and integrate APIs to ensure seamless interaction between different software systems.",
         "Cloud Integration: Utilize cloud services to enhance scalability and accessibility."
-      ]
+      ],
+      color: { bg: "bg-orange-500/10", text: "text-orange-500", hover: "group-hover:bg-orange-500 group-hover:text-white", gradient: "from-orange-600/20 to-transparent", glow: "#f97316" }
     },
     {
       id: "maintenance",
@@ -79,7 +83,8 @@ export const WebDevelopment = () => {
         "Performance Optimization: Optimize your website's performance to ensure fast load times.",
         "Content Updates: Assist with regular content updates to keep your website fresh and relevant.",
         "Backup and Recovery: Perform regular backups and establish recovery protocols to safeguard your data."
-      ]
+      ],
+      color: { bg: "bg-red-500/10", text: "text-red-500", hover: "group-hover:bg-red-500 group-hover:text-white", gradient: "from-red-600/20 to-transparent", glow: "#ef4444" }
     },
     {
       id: "seo-friendly",
@@ -94,7 +99,8 @@ export const WebDevelopment = () => {
         "URL Structure: Create SEO-friendly URLs that are easy to read and include relevant keywords.",
         "Mobile Optimization: Ensure your website is mobile-friendly, as search engines prioritize mobile-first indexing.",
         "Schema Markup: Implement structured data to provide search engines with detailed information about your content."
-      ]
+      ],
+      color: { bg: "bg-cyan-500/10", text: "text-cyan-500", hover: "group-hover:bg-cyan-500 group-hover:text-white", gradient: "from-cyan-600/20 to-transparent", glow: "#06b6d4" }
     }
   ];
 
@@ -191,7 +197,10 @@ export const WebDevelopment = () => {
             {webServices.map((service, i) => (
               <FadeIn key={service.id} delay={i * 0.1}>
                 <div className="service-card group h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                  <div 
+                    className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-500"
+                    style={{ backgroundColor: `${service.color.glow}1a`, color: service.color.glow }}
+                  >
                     <service.icon size={24} />
                   </div>
                   <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">{service.name}</h3>
@@ -200,7 +209,8 @@ export const WebDevelopment = () => {
                   </p>
                   <motion.a 
                     href={`#${service.id}`}
-                    className="text-blue-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                    className="font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                    style={{ color: service.color.glow }}
                   >
                     LEARN MORE <ArrowRight size={14} />
                   </motion.a>
@@ -219,7 +229,7 @@ export const WebDevelopment = () => {
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
                 <div className="space-y-8">
                   <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase italic">
-                    {service.name.split(' ')[0]} <span className="text-gradient-blue">{service.name.split(' ').slice(1).join(' ')}</span>
+                    {service.name.split(' ')[0]} <span style={{ color: service.color.glow }}>{service.name.split(' ').slice(1).join(' ')}</span>
                   </h2>
                   <p className="text-lg text-slate-400 leading-relaxed">
                     {service.details}
@@ -227,7 +237,7 @@ export const WebDevelopment = () => {
                   <ul className="space-y-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex gap-4 text-slate-300">
-                        <CheckCircle2 className="text-blue-500 flex-shrink-0" size={20} />
+                        <CheckCircle2 className="flex-shrink-0" size={20} style={{ color: service.color.glow }} />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -236,7 +246,8 @@ export const WebDevelopment = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={scrollToContact}
-                    className="btn-primary px-10 py-4 text-lg"
+                    className="px-10 py-4 text-lg font-bold text-white rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: service.color.glow, boxShadow: `0 10px 40px ${service.color.glow}40` }}
                   >
                     Get a Quote
                   </motion.button>
@@ -245,7 +256,10 @@ export const WebDevelopment = () => {
               
               <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full" />
+                  <div 
+                    className="absolute -inset-4 blur-3xl rounded-full" 
+                    style={{ backgroundColor: `${service.color.glow}33` }}
+                  />
                   <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-slate-900 flex items-center justify-center">
                     <img 
                       src={service.image} 
@@ -253,10 +267,10 @@ export const WebDevelopment = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{service.name}</div>
-                      <div className="text-blue-500 font-bold uppercase tracking-widest text-xs">Web Solutions</div>
+                      <div className="font-bold uppercase tracking-widest text-xs" style={{ color: service.color.glow }}>Web Solutions</div>
                     </div>
                   </div>
                 </div>

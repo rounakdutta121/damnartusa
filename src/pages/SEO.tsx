@@ -21,7 +21,8 @@ export const SEO = () => {
         "Competitive Analysis: Analyze your competitors to identify high-performing keywords.",
         "Keyword Selection: Choose the most relevant and high-traffic keywords for your business.",
         "Long-Tail Keywords: Target specific phrases that attract highly qualified traffic."
-      ]
+      ],
+      color: { bg: "bg-green-500/10", text: "text-green-500", hover: "group-hover:bg-green-500 group-hover:text-white", gradient: "from-green-600/20 to-transparent", glow: "#22c55e" }
     },
     {
       id: "on-page-optimization",
@@ -37,7 +38,8 @@ export const SEO = () => {
         "URL Structure: Create SEO-friendly URLs that are easy to read, include keywords, and help search engines understand the content.",
         "Image Optimization: Optimize images by using descriptive file names, alt text, and ensuring fast load times.",
         "User Experience (UX) Enhancements: Improve site usability, navigation, and overall user experience."
-      ]
+      ],
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#2563eb" }
     },
     {
       id: "technical-seo",
@@ -53,7 +55,8 @@ export const SEO = () => {
         "Schema Markup: Implement structured data to enhance rich snippets in search results.",
         "HTTPS Implementation: Ensure your website is secure to improve rankings and user trust.",
         "Crawl Error Resolution: Identify and fix crawl errors to ensure all pages are accessible."
-      ]
+      ],
+      color: { bg: "bg-purple-500/10", text: "text-purple-500", hover: "group-hover:bg-purple-500 group-hover:text-white", gradient: "from-purple-600/20 to-transparent", glow: "#9333ea" }
     },
     {
       id: "off-page-optimization",
@@ -67,7 +70,8 @@ export const SEO = () => {
         "Social Media Integration: Promote your content on social media platforms to drive traffic and build brand awareness.",
         "Guest Posting: Publish articles on high-authority sites to build backlinks and increase brand exposure.",
         "Online Reputation Management: Monitor and manage your online reputation by encouraging positive reviews."
-      ]
+      ],
+      color: { bg: "bg-orange-500/10", text: "text-orange-500", hover: "group-hover:bg-orange-500 group-hover:text-white", gradient: "from-orange-600/20 to-transparent", glow: "#f97316" }
     },
     {
       id: "local-seo",
@@ -82,7 +86,8 @@ export const SEO = () => {
         "Review Management: Encourage and manage customer reviews on platforms like Google, Yelp, and Facebook.",
         "Local Keyword Optimization: Target keywords relevant to your local audience, including location-specific terms.",
         "Local Content Creation: Develop content tailored to local interests and events to engage your community."
-      ]
+      ],
+      color: { bg: "bg-red-500/10", text: "text-red-500", hover: "group-hover:bg-red-500 group-hover:text-white", gradient: "from-red-600/20 to-transparent", glow: "#ef4444" }
     },
     {
       id: "seo-analytics",
@@ -96,7 +101,8 @@ export const SEO = () => {
         "Monthly Reports: Provide detailed reports on SEO performance, highlighting key metrics and progress.",
         "Data-Driven Insights: Analyze data to identify opportunities, trends, and challenges for strategic adjustments.",
         "Goal Setting: Set and track SEO goals to ensure continuous growth and alignment with business objectives."
-      ]
+      ],
+      color: { bg: "bg-cyan-500/10", text: "text-cyan-500", hover: "group-hover:bg-cyan-500 group-hover:text-white", gradient: "from-cyan-600/20 to-transparent", glow: "#06b6d4" }
     }
   ];
 
@@ -199,7 +205,10 @@ export const SEO = () => {
                 transition={{ delay: i * 0.1 }}
                 className="service-card group h-full flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                <div 
+                  className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-500"
+                  style={{ backgroundColor: `${service.color.glow}1a`, color: service.color.glow }}
+                >
                   <service.icon size={24} />
                 </div>
                 <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">{service.name}</h3>
@@ -208,7 +217,8 @@ export const SEO = () => {
                 </p>
                 <motion.a 
                   href={`#${service.id}`}
-                  className="text-blue-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  className="font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  style={{ color: service.color.glow }}
                 >
                   LEARN MORE <ArrowRight size={14} />
                 </motion.a>
@@ -226,7 +236,7 @@ export const SEO = () => {
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
                 <div className="space-y-8">
                   <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase italic">
-                    {service.name.split(' ')[0]} <span className="text-gradient-blue">{service.name.split(' ').slice(1).join(' ')}</span>
+                    {service.name.split(' ')[0]} <span style={{ color: service.color.glow }}>{service.name.split(' ').slice(1).join(' ')}</span>
                   </h2>
                   <p className="text-lg text-slate-400 leading-relaxed">
                     {service.details}
@@ -234,7 +244,7 @@ export const SEO = () => {
                   <ul className="space-y-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex gap-4 text-slate-300">
-                        <CheckCircle2 className="text-blue-500 flex-shrink-0" size={20} />
+                        <CheckCircle2 className="flex-shrink-0" size={20} style={{ color: service.color.glow }} />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -243,7 +253,8 @@ export const SEO = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={scrollToContact}
-                    className="btn-primary px-10 py-4 text-lg"
+                    className="px-10 py-4 text-lg font-bold text-white rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: service.color.glow, boxShadow: `0 10px 40px ${service.color.glow}40` }}
                   >
                     Get a Quote
                   </motion.button>
@@ -252,7 +263,10 @@ export const SEO = () => {
               
               <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full" />
+                  <div 
+                    className="absolute -inset-4 blur-3xl rounded-full" 
+                    style={{ backgroundColor: `${service.color.glow}33` }}
+                  />
                   <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-slate-900 flex items-center justify-center">
                     <img 
                       src={service.image} 
@@ -260,10 +274,10 @@ export const SEO = () => {
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{service.name}</div>
-                      <div className="text-blue-500 font-bold uppercase tracking-widest text-xs">SEO Solutions</div>
+                      <div className="font-bold uppercase tracking-widest text-xs" style={{ color: service.color.glow }}>SEO Solutions</div>
                     </div>
                   </div>
                 </div>

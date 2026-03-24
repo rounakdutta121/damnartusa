@@ -21,7 +21,8 @@ export const PPC = () => {
         "Various Ad Formats: Reach potential customers by bidding on keywords relevant to your business.",
         "Advanced Targeting Options: Target users based on location, demographics, interests, and more.",
         "Performance Tracking: Measure the success of your campaigns with detailed analytics."
-      ]
+      ],
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#2563eb" }
     },
     {
       id: "meta",
@@ -34,7 +35,8 @@ export const PPC = () => {
         "Diverse Ad Formats: Create image, video, carousel, and story ads that captivate users.",
         "Comprehensive Analytics: Monitor the performance of your campaigns with insights and reporting tools.",
         "Retargeting Capabilities: Re-engage users who have previously interacted with your brand."
-      ]
+      ],
+      color: { bg: "bg-purple-500/10", text: "text-purple-500", hover: "group-hover:bg-purple-500 group-hover:text-white", gradient: "from-purple-600/20 to-transparent", glow: "#9333ea" }
     },
     {
       id: "linkedin",
@@ -47,7 +49,8 @@ export const PPC = () => {
         "Content-Based Advertising: Promote your content with sponsored content, message ads, and dynamic ads.",
         "Lead Generation: Utilize LinkedIn's lead generation forms to capture valuable leads directly from your ads.",
         "Insightful Analytics: Gain insights into campaign performance and audience engagement."
-      ]
+      ],
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#0A66C2" }
     },
     {
       id: "taboola",
@@ -60,7 +63,8 @@ export const PPC = () => {
         "Content Discovery: Promote your content to users who are interested in related topics.",
         "Audience Targeting: Reach users based on their reading habits and interests.",
         "Engagement Metrics: Track how users interact with your ads and optimize for better performance."
-      ]
+      ],
+      color: { bg: "bg-orange-500/10", text: "text-orange-500", hover: "group-hover:bg-orange-500 group-hover:text-white", gradient: "from-orange-600/20 to-transparent", glow: "#f97316" }
     },
     {
       id: "microsoft",
@@ -73,7 +77,8 @@ export const PPC = () => {
         "Ad Extensions: Enhance your ads with additional information like call buttons, location, and site links.",
         "Demographic Targeting: Target users based on age, gender, and device type.",
         "Cost-Effective Advertising: Often lower cost-per-click compared to other PPC platforms."
-      ]
+      ],
+      color: { bg: "bg-cyan-500/10", text: "text-cyan-500", hover: "group-hover:bg-cyan-500 group-hover:text-white", gradient: "from-cyan-600/20 to-transparent", glow: "#06b6d4" }
     }
   ];
 
@@ -217,13 +222,20 @@ export const PPC = () => {
             {platforms.map((platform, i) => (
               <FadeIn key={platform.id} delay={i * 0.1}>
                 <div className="service-card group h-full flex flex-col">
+                  <div 
+                    className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-500"
+                    style={{ backgroundColor: `${platform.color.glow}1a`, color: platform.color.glow }}
+                  >
+                    <Zap size={24} />
+                  </div>
                   <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">{platform.name}</h3>
                   <p className="text-slate-400 text-sm mb-6 flex-grow">
                     {platform.desc}
                   </p>
                   <motion.a 
                     href={`#${platform.id}`}
-                    className="text-blue-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                    className="font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                    style={{ color: platform.color.glow }}
                   >
                     LEARN MORE <ArrowRight size={14} />
                   </motion.a>
@@ -242,7 +254,7 @@ export const PPC = () => {
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
                 <div className="space-y-8">
                   <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase italic">
-                    {platform.name.split(' ')[0]} <span className="text-gradient-blue">{platform.name.split(' ').slice(1).join(' ')}</span>
+                    {platform.name.split(' ')[0]} <span style={{ color: platform.color.glow }}>{platform.name.split(' ').slice(1).join(' ')}</span>
                   </h2>
                   <p className="text-lg text-slate-400 leading-relaxed">
                     {platform.details}
@@ -250,7 +262,7 @@ export const PPC = () => {
                   <ul className="space-y-4">
                     {platform.features.map((feature, idx) => (
                       <li key={idx} className="flex gap-4 text-slate-300">
-                        <CheckCircle2 className="text-blue-500 flex-shrink-0" size={20} />
+                        <CheckCircle2 className="flex-shrink-0" size={20} style={{ color: platform.color.glow }} />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -259,7 +271,8 @@ export const PPC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={scrollToContact}
-                    className="btn-primary px-10 py-4 text-lg"
+                    className="px-10 py-4 text-lg font-bold text-white rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: platform.color.glow, boxShadow: `0 10px 40px ${platform.color.glow}40` }}
                   >
                     Get a Quote
                   </motion.button>
@@ -268,7 +281,10 @@ export const PPC = () => {
               
               <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full" />
+                  <div 
+                    className="absolute -inset-4 blur-3xl rounded-full" 
+                    style={{ backgroundColor: `${platform.color.glow}33` }}
+                  />
                   <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-slate-900 flex items-center justify-center">
                     {platform.image ? (
                       <img 
@@ -278,12 +294,12 @@ export const PPC = () => {
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <Zap className="text-blue-500/20 w-32 h-32" />
+                      <Zap className="w-32 h-32" style={{ color: `${platform.color.glow}33` }} />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${platform.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{platform.name}</div>
-                      <div className="text-blue-500 font-bold uppercase tracking-widest text-xs">Performance Marketing</div>
+                      <div className="font-bold uppercase tracking-widest text-xs" style={{ color: platform.color.glow }}>Performance Marketing</div>
                     </div>
                   </div>
                 </div>

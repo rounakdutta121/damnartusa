@@ -14,6 +14,7 @@ export const ContentWriting = () => {
       id: "blog-writing",
       name: "Blog Writing",
       icon: Edit3,
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#2563eb" },
       image: ASSETS.contentWritingPlatforms.blog,
       desc: "Blogs are a powerful tool for driving traffic to your website and establishing your expertise.",
       details: "Our blog writing services include topic research, SEO optimization, and engaging content creation to keep your audience coming back.",
@@ -28,6 +29,7 @@ export const ContentWriting = () => {
       id: "website-content",
       name: "Website Content",
       icon: Layout,
+      color: { bg: "bg-purple-500/10", text: "text-purple-500", hover: "group-hover:bg-purple-500 group-hover:text-white", gradient: "from-purple-600/20 to-transparent", glow: "#9333ea" },
       image: ASSETS.contentWritingPlatforms.website,
       desc: "Your website content is crucial for making a strong first impression and communicating your value.",
       details: "We craft compelling content for your home page, about us page, and service descriptions that clearly communicate your brand's mission.",
@@ -42,6 +44,7 @@ export const ContentWriting = () => {
       id: "social-media",
       name: "Social Media Content",
       icon: Share2,
+      color: { bg: "bg-pink-500/10", text: "text-pink-500", hover: "group-hover:bg-pink-500 group-hover:text-white", gradient: "from-pink-600/20 to-transparent", glow: "#ec4899" },
       image: ASSETS.contentWritingPlatforms.social,
       desc: "Effective social media content can boost your online presence and engagement across all platforms.",
       details: "We develop tailored content for Facebook, Instagram, LinkedIn, and Twitter, including visual integration and community engagement.",
@@ -56,6 +59,7 @@ export const ContentWriting = () => {
       id: "seo-content",
       name: "SEO Content",
       icon: Search,
+      color: { bg: "bg-green-500/10", text: "text-green-500", hover: "group-hover:bg-green-500 group-hover:text-white", gradient: "from-green-600/20 to-transparent", glow: "#22c55e" },
       image: ASSETS.contentWritingPlatforms.seo,
       desc: "SEO content is designed to improve your search engine rankings and drive organic traffic.",
       details: "We perform keyword research and optimize on-page SEO to ensure your content provides value and attracts backlinks.",
@@ -70,6 +74,7 @@ export const ContentWriting = () => {
       id: "product-descriptions",
       name: "Product Descriptions",
       icon: ShoppingBag,
+      color: { bg: "bg-orange-500/10", text: "text-orange-500", hover: "group-hover:bg-orange-500 group-hover:text-white", gradient: "from-orange-600/20 to-transparent", glow: "#f97316" },
       image: ASSETS.contentWritingPlatforms.product,
       desc: "Compelling product descriptions can significantly impact your sales and customer trust.",
       details: "We emphasize key features and benefits with persuasive copy and SEO integration to improve product visibility.",
@@ -84,6 +89,7 @@ export const ContentWriting = () => {
       id: "newsletters",
       name: "Email Newsletters",
       icon: Mail,
+      color: { bg: "bg-cyan-500/10", text: "text-cyan-500", hover: "group-hover:bg-cyan-500 group-hover:text-white", gradient: "from-cyan-600/20 to-transparent", glow: "#06b6d4" },
       image: ASSETS.contentWritingPlatforms.newsletter,
       desc: "Email newsletters are a great way to keep your audience informed and engaged with your brand.",
       details: "We develop content strategies, craft engaging subject lines, and include clear call-to-actions to drive conversions.",
@@ -195,7 +201,10 @@ export const ContentWriting = () => {
                 transition={{ delay: i * 0.1 }}
                 className="service-card group h-full flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                <div 
+                  className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-500"
+                  style={{ backgroundColor: `${service.color.glow}1a`, color: service.color.glow }}
+                >
                   <service.icon size={24} />
                 </div>
                 <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">{service.name}</h3>
@@ -204,7 +213,8 @@ export const ContentWriting = () => {
                 </p>
                 <motion.a 
                   href={`#${service.id}`}
-                  className="text-blue-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  className="font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  style={{ color: service.color.glow }}
                 >
                   LEARN MORE <ArrowRight size={14} />
                 </motion.a>
@@ -222,7 +232,7 @@ export const ContentWriting = () => {
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
                 <div className="space-y-8">
                   <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase italic">
-                    {service.name.split(' ')[0]} <span className="text-gradient-blue">{service.name.split(' ').slice(1).join(' ')}</span>
+                    {service.name.split(' ')[0]} <span style={{ color: service.color.glow }}>{service.name.split(' ').slice(1).join(' ')}</span>
                   </h2>
                   <p className="text-lg text-slate-400 leading-relaxed">
                     {service.details}
@@ -230,7 +240,7 @@ export const ContentWriting = () => {
                   <ul className="space-y-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex gap-4 text-slate-300">
-                        <CheckCircle2 className="text-blue-500 flex-shrink-0" size={20} />
+                        <CheckCircle2 className="flex-shrink-0" size={20} style={{ color: service.color.glow }} />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -239,7 +249,8 @@ export const ContentWriting = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={scrollToContact}
-                    className="btn-primary px-10 py-4 text-lg"
+                    className="px-10 py-4 text-lg font-bold text-white rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: service.color.glow, boxShadow: `0 10px 40px ${service.color.glow}40` }}
                   >
                     Get a Quote
                   </motion.button>
@@ -248,7 +259,10 @@ export const ContentWriting = () => {
               
               <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full" />
+                  <div 
+                    className="absolute -inset-4 blur-3xl rounded-full" 
+                    style={{ backgroundColor: `${service.color.glow}33` }}
+                  />
                   <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-slate-900 flex items-center justify-center">
                     <img 
                       src={service.image} 
@@ -256,10 +270,10 @@ export const ContentWriting = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{service.name}</div>
-                      <div className="text-blue-500 font-bold uppercase tracking-widest text-xs">Content Solutions</div>
+                      <div className="font-bold uppercase tracking-widest text-xs" style={{ color: service.color.glow }}>Content Writing</div>
                     </div>
                   </div>
                 </div>

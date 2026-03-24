@@ -22,7 +22,8 @@ export const SMM = () => {
         "Community Management: Engage with your audience through comments, messages, and community posts.",
         "Ad Campaign Management: Create and manage targeted ad campaigns to reach your specific audience.",
         "Analytics and Reporting: Monitor and analyze your page's performance to inform future strategies."
-      ]
+      ],
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#1877f2" }
     },
     {
       id: "instagram",
@@ -36,7 +37,8 @@ export const SMM = () => {
         "Engagement: Foster community engagement through likes, comments, and direct messages.",
         "Influencer Collaboration: Partner with relevant influencers to amplify your brand reach.",
         "Performance Tracking: Analyze key metrics to measure success and refine your strategy."
-      ]
+      ],
+      color: { bg: "bg-pink-500/10", text: "text-pink-500", hover: "group-hover:bg-pink-500 group-hover:text-white", gradient: "from-pink-600/20 to-transparent", glow: "#e1306c" }
     },
     {
       id: "linkedin",
@@ -50,7 +52,8 @@ export const SMM = () => {
         "Network Building: Grow your professional network by connecting with potential clients, partners, and influencers.",
         "LinkedIn Ads: Develop and manage targeted ad campaigns to reach decision-makers in your industry.",
         "Analytics and Insights: Monitor your LinkedIn activity to gain insights and improve your strategy."
-      ]
+      ],
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#0A66C2" }
     }
   ];
 
@@ -198,13 +201,20 @@ export const SMM = () => {
             {platforms.map((platform, i) => (
               <FadeIn key={platform.id} delay={i * 0.1}>
                 <div className="service-card group h-full flex flex-col">
+                  <div 
+                    className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-500"
+                    style={{ backgroundColor: `${platform.color.glow}1a`, color: platform.color.glow }}
+                  >
+                    <Users size={24} />
+                  </div>
                   <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">{platform.name}</h3>
                   <p className="text-slate-400 text-sm mb-6 flex-grow">
                     {platform.desc}
                   </p>
                   <motion.a 
                     href={`#${platform.id}`}
-                    className="text-blue-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                    className="font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                    style={{ color: platform.color.glow }}
                   >
                     LEARN MORE <ArrowRight size={14} />
                   </motion.a>
@@ -223,7 +233,7 @@ export const SMM = () => {
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
                 <div className="space-y-8">
                   <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase italic">
-                    {platform.name.split(' ')[0]} <span className="text-gradient-blue">{platform.name.split(' ').slice(1).join(' ')}</span>
+                    {platform.name.split(' ')[0]} <span style={{ color: platform.color.glow }}>{platform.name.split(' ').slice(1).join(' ')}</span>
                   </h2>
                   <p className="text-lg text-slate-400 leading-relaxed">
                     {platform.details}
@@ -231,7 +241,7 @@ export const SMM = () => {
                   <ul className="space-y-4">
                     {platform.features.map((feature, idx) => (
                       <li key={idx} className="flex gap-4 text-slate-300">
-                        <CheckCircle2 className="text-blue-500 flex-shrink-0" size={20} />
+                        <CheckCircle2 className="flex-shrink-0" size={20} style={{ color: platform.color.glow }} />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -240,7 +250,8 @@ export const SMM = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={scrollToContact}
-                    className="btn-primary px-10 py-4 text-lg"
+                    className="px-10 py-4 text-lg font-bold text-white rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: platform.color.glow, boxShadow: `0 10px 40px ${platform.color.glow}40` }}
                   >
                     Get a Quote
                   </motion.button>
@@ -249,7 +260,10 @@ export const SMM = () => {
               
               <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full" />
+                  <div 
+                    className="absolute -inset-4 blur-3xl rounded-full" 
+                    style={{ backgroundColor: `${platform.color.glow}33` }}
+                  />
                   <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-slate-900 flex items-center justify-center">
                     {platform.image ? (
                       <img 
@@ -259,12 +273,12 @@ export const SMM = () => {
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <Users className="text-blue-500/20 w-32 h-32" />
+                      <Users className="w-32 h-32" style={{ color: `${platform.color.glow}33` }} />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${platform.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{platform.name}</div>
-                      <div className="text-blue-500 font-bold uppercase tracking-widest text-xs">Social Management</div>
+                      <div className="font-bold uppercase tracking-widest text-xs" style={{ color: platform.color.glow }}>Social Management</div>
                     </div>
                   </div>
                 </div>

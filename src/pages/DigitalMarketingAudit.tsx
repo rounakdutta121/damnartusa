@@ -24,7 +24,8 @@ export const DigitalMarketingAudit = () => {
       deliverables: [
         "A detailed audit of your Google Ads campaigns",
         "Actionable suggestions to optimize your campaigns for better performance and ROI"
-      ]
+      ],
+      color: { bg: "bg-orange-500/10", text: "text-orange-500", hover: "group-hover:bg-orange-500 group-hover:text-white", gradient: "from-orange-600/20 to-transparent", glow: "#f97316" }
     },
     {
       id: "social-media-audit",
@@ -40,7 +41,8 @@ export const DigitalMarketingAudit = () => {
       deliverables: [
         "A thorough analysis of your social media efforts",
         "Suggestions for improving engagement, reach, and overall social media strategy"
-      ]
+      ],
+      color: { bg: "bg-pink-500/10", text: "text-pink-500", hover: "group-hover:bg-pink-500 group-hover:text-white", gradient: "from-pink-600/20 to-transparent", glow: "#ec4899" }
     },
     {
       id: "website-audit",
@@ -56,7 +58,8 @@ export const DigitalMarketingAudit = () => {
       deliverables: [
         "A comprehensive audit of your website's performance",
         "Actionable recommendations to improve speed, SEO, and user experience"
-      ]
+      ],
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#2563eb" }
     },
     {
       id: "content-audit",
@@ -72,7 +75,8 @@ export const DigitalMarketingAudit = () => {
       deliverables: [
         "A thorough review of your existing content",
         "Suggestions for optimizing content for SEO and audience engagement"
-      ]
+      ],
+      color: { bg: "bg-green-500/10", text: "text-green-500", hover: "group-hover:bg-green-500 group-hover:text-white", gradient: "from-green-600/20 to-transparent", glow: "#22c55e" }
     }
   ];
 
@@ -272,7 +276,10 @@ export const DigitalMarketingAudit = () => {
                 transition={{ delay: i * 0.1 }}
                 className="service-card group h-full flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                <div 
+                  className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-500"
+                  style={{ backgroundColor: `${service.color.glow}1a`, color: service.color.glow }}
+                >
                   <service.icon size={24} />
                 </div>
                 <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">{service.name}</h3>
@@ -281,7 +288,8 @@ export const DigitalMarketingAudit = () => {
                 </p>
                 <motion.a 
                   href={`#${service.id}`}
-                  className="text-blue-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  className="font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  style={{ color: service.color.glow }}
                 >
                   LEARN MORE <ArrowRight size={14} />
                 </motion.a>
@@ -299,7 +307,7 @@ export const DigitalMarketingAudit = () => {
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
                 <div className="space-y-8">
                   <h2 className="text-4xl md:text-5xl font-black text-white leading-tight uppercase italic">
-                    {service.name.split(' ').slice(0, 2).join(' ')} <span className="text-gradient-blue">{service.name.split(' ').slice(2).join(' ')}</span>
+                    {service.name.split(' ').slice(0, 2).join(' ')} <span style={{ color: service.color.glow }}>{service.name.split(' ').slice(2).join(' ')}</span>
                   </h2>
                   <p className="text-lg text-slate-400 leading-relaxed">
                     {service.desc}
@@ -311,7 +319,7 @@ export const DigitalMarketingAudit = () => {
                       <ul className="space-y-3">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex gap-4 text-slate-300">
-                            <CheckCircle2 className="text-blue-500 flex-shrink-0" size={20} />
+                            <CheckCircle2 className="flex-shrink-0" size={20} style={{ color: service.color.glow }} />
                             <span>{feature}</span>
                           </li>
                         ))}
@@ -335,7 +343,8 @@ export const DigitalMarketingAudit = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={scrollToContact}
-                    className="btn-primary px-10 py-4 text-lg"
+                    className="px-10 py-4 text-lg font-bold text-white rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: service.color.glow, boxShadow: `0 10px 40px ${service.color.glow}40` }}
                   >
                     I Need Audit <ArrowRight size={20} />
                   </motion.button>
@@ -344,7 +353,10 @@ export const DigitalMarketingAudit = () => {
               
               <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full" />
+                  <div 
+                    className="absolute -inset-4 blur-3xl rounded-full" 
+                    style={{ backgroundColor: `${service.color.glow}33` }}
+                  />
                   <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-slate-900 flex items-center justify-center">
                     <img 
                       src={service.image} 
@@ -352,10 +364,10 @@ export const DigitalMarketingAudit = () => {
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{service.name.split(' ')[0]}</div>
-                      <div className="text-blue-500 font-bold uppercase tracking-widest text-xs">Audit Service</div>
+                      <div className="font-bold uppercase tracking-widest text-xs" style={{ color: service.color.glow }}>Audit Service</div>
                     </div>
                   </div>
                 </div>

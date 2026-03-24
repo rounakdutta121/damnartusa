@@ -22,7 +22,8 @@ export const DataMining = () => {
         "Competitor Analysis: Gather and analyze competitor data to identify market opportunities.",
         "Customer Segmentation: Use data-driven segmentation to tailor marketing strategies for different audience groups.",
         "Trend Prediction: Leverage predictive analytics to anticipate future market movements."
-      ]
+      ],
+      color: { bg: "bg-cyan-500/10", text: "text-cyan-500", hover: "group-hover:bg-cyan-500 group-hover:text-white", gradient: "from-cyan-600/20 to-transparent", glow: "#06b6d4" }
     },
     {
       id: "financial-data",
@@ -36,7 +37,8 @@ export const DataMining = () => {
         "Risk Analysis: Assess financial risks and make data-driven investment decisions.",
         "Stock Market Prediction: Use historical data to analyze stock trends and forecast market changes.",
         "Expense Optimization: Identify cost-saving opportunities based on spending patterns."
-      ]
+      ],
+      color: { bg: "bg-green-500/10", text: "text-green-500", hover: "group-hover:bg-green-500 group-hover:text-white", gradient: "from-green-600/20 to-transparent", glow: "#22c55e" }
     },
     {
       id: "healthcare-data",
@@ -50,7 +52,8 @@ export const DataMining = () => {
         "Medical Research Support: Extract relevant medical data for research and development.",
         "Predictive Analytics: Forecast disease outbreaks and healthcare demands.",
         "Healthcare Fraud Detection: Identify billing errors and fraudulent claims."
-      ]
+      ],
+      color: { bg: "bg-red-500/10", text: "text-red-500", hover: "group-hover:bg-red-500 group-hover:text-white", gradient: "from-red-600/20 to-transparent", glow: "#ef4444" }
     },
     {
       id: "retail-data",
@@ -64,7 +67,8 @@ export const DataMining = () => {
         "Inventory Optimization: Predict demand and streamline inventory management.",
         "Pricing Strategy Optimization: Adjust pricing based on market trends and competitor analysis.",
         "Customer Retention Analysis: Identify patterns to improve customer loyalty and repeat purchases."
-      ]
+      ],
+      color: { bg: "bg-orange-500/10", text: "text-orange-500", hover: "group-hover:bg-orange-500 group-hover:text-white", gradient: "from-orange-600/20 to-transparent", glow: "#f97316" }
     },
     {
       id: "linkedin-email-data",
@@ -78,7 +82,8 @@ export const DataMining = () => {
         "Email Data Mining: Segmentation of potential customers based on engagement and high-value prospects.",
         "Competitor Analysis: Analyze competitor networks and industry connections on LinkedIn.",
         "Lead Generation: Automated data extraction for streamlined B2B lead generation."
-      ]
+      ],
+      color: { bg: "bg-blue-500/10", text: "text-blue-500", hover: "group-hover:bg-blue-500 group-hover:text-white", gradient: "from-blue-600/20 to-transparent", glow: "#2563eb" }
     }
   ];
 
@@ -188,7 +193,10 @@ export const DataMining = () => {
                 transition={{ delay: i * 0.1 }}
                 className="service-card group h-full flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                <div 
+                  className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-500"
+                  style={{ backgroundColor: `${service.color.glow}1a`, color: service.color.glow }}
+                >
                   <service.icon size={24} />
                 </div>
                 <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">{service.name}</h3>
@@ -197,7 +205,8 @@ export const DataMining = () => {
                 </p>
                 <motion.a 
                   href={`#${service.id}`}
-                  className="text-blue-500 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  className="font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  style={{ color: service.color.glow }}
                 >
                   LEARN MORE <ArrowRight size={14} />
                 </motion.a>
@@ -215,7 +224,7 @@ export const DataMining = () => {
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
                 <div className="space-y-8">
                   <h2 className="text-4xl md:text-5xl font-black text-white leading-tight uppercase italic">
-                    {service.name.split(' ').slice(0, 2).join(' ')} <span className="text-gradient-blue">{service.name.split(' ').slice(2).join(' ')}</span>
+                    {service.name.split(' ').slice(0, 2).join(' ')} <span style={{ color: service.color.glow }}>{service.name.split(' ').slice(2).join(' ')}</span>
                   </h2>
                   <p className="text-lg text-slate-400 leading-relaxed">
                     {service.details}
@@ -223,7 +232,7 @@ export const DataMining = () => {
                   <ul className="space-y-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex gap-4 text-slate-300">
-                        <CheckCircle2 className="text-blue-500 flex-shrink-0" size={20} />
+                        <CheckCircle2 className="flex-shrink-0" size={20} style={{ color: service.color.glow }} />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -232,7 +241,8 @@ export const DataMining = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={scrollToContact}
-                    className="btn-primary px-10 py-4 text-lg"
+                    className="px-10 py-4 text-lg font-bold text-white rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: service.color.glow, boxShadow: `0 10px 40px ${service.color.glow}40` }}
                   >
                     Get a Quote
                   </motion.button>
@@ -241,7 +251,10 @@ export const DataMining = () => {
               
               <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full" />
+                  <div 
+                    className="absolute -inset-4 blur-3xl rounded-full" 
+                    style={{ backgroundColor: `${service.color.glow}33` }}
+                  />
                   <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-slate-900 flex items-center justify-center">
                     <img 
                       src={service.image} 
@@ -249,10 +262,10 @@ export const DataMining = () => {
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{service.name.split(' ')[0]}</div>
-                      <div className="text-blue-500 font-bold uppercase tracking-widest text-xs">Data Solutions</div>
+                      <div className="font-bold uppercase tracking-widest text-xs" style={{ color: service.color.glow }}>Data Solutions</div>
                     </div>
                   </div>
                 </div>
