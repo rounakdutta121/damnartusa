@@ -65,17 +65,20 @@ export const Home = () => {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn-primary px-12 py-5 text-xl justify-center"
                 >
                   Work With Us! <ArrowRight size={24} />
                 </motion.button>
-                <motion.button 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-secondary px-12 py-5 text-xl justify-center"
-                >
-                  View Services
-                </motion.button>
+                <Link to="/services">
+                  <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="btn-secondary px-12 py-5 text-xl justify-center w-full"
+                  >
+                    View Services
+                  </motion.button>
+                </Link>
               </div>
             </FadeIn>
           </div>
