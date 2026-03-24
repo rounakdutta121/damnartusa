@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="space-y-8">
             <div className="flex items-center gap-3">
-              <img src={ASSETS.logo} alt="DamnArt Logo" className="h-10 w-auto brightness-0 invert" referrerPolicy="no-referrer" />
+              <img src={ASSETS.logo} alt="DamnArt Logo" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
               <span className="text-2xl font-black text-white tracking-tighter italic uppercase">DamnArt</span>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-xs">
