@@ -1,0 +1,7 @@
+{
+  "name": "DamnArt Digital Agency",
+  "description": "A modern digital marketing agency specializing in PPC, SMM, and AI-driven growth strategies.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
