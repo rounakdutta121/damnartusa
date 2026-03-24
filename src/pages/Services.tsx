@@ -78,6 +78,7 @@ export const Services = () => {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn-primary px-12 py-5 text-xl justify-center"
                 >
                   Get Started <ArrowRight size={24} />
@@ -85,6 +86,7 @@ export const Services = () => {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => document.getElementById('services-list')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn-secondary px-12 py-5 text-xl justify-center"
                 >
                   View All Services
@@ -96,7 +98,7 @@ export const Services = () => {
       </section>
 
       {/* What We're Great At */}
-      <section className="py-32 section-dark border-y border-white/5">
+      <section id="services-list" className="py-32 section-dark border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <FadeIn>
