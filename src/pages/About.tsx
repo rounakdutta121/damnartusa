@@ -62,6 +62,7 @@ export const About = () => {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn-primary px-12 py-5 text-xl justify-center"
                 >
                   Work With Us! <ArrowRight size={24} />
@@ -69,6 +70,7 @@ export const About = () => {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => document.getElementById('vision')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn-secondary px-12 py-5 text-xl justify-center"
                 >
                   View Our Story
@@ -133,7 +135,7 @@ export const About = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-32 section-dark relative overflow-hidden">
+      <section id="vision" className="py-32 section-dark relative overflow-hidden">
         <div className="blue-glow bottom-0 right-0 w-[600px] h-[600px] opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -233,7 +235,7 @@ export const About = () => {
       </section>
 
       {/* Contact Info (Specific to About Page) */}
-      <section className="py-32 section-dark border-t border-white/5 bg-slate-900/50">
+      <section id="contact" className="py-32 section-dark border-t border-white/5 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <FadeIn delay={0.1}>
