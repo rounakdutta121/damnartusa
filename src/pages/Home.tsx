@@ -92,15 +92,18 @@ export const Home = () => {
           </FadeIn>
         </div>
         <FadeIn delay={0.2} distance={0}>
-          <div className="flex animate-scroll w-max min-h-[160px] py-4">
+          <div className="flex animate-scroll w-max py-8">
             {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex items-center gap-12 px-6">
+              <div key={i} className="flex items-center gap-8 px-4">
                 {[...ASSETS.platforms, ...ASSETS.clients].map((item, idx) => (
-                  <div key={`${item.name}-${idx}`} className="flex-shrink-0 px-12 py-8 bg-white/5 rounded-2xl border border-white/5 transition-all hover:border-blue-500/30 hover:bg-white/10 group flex items-center justify-center">
+                  <div 
+                    key={`${item.name}-${idx}`} 
+                    className="flex-shrink-0 px-8 py-6 bg-white rounded-2xl flex items-center justify-center min-w-[180px] h-20"
+                  >
                     <img 
                       src={item.url} 
                       alt={item.name} 
-                      className="h-10 md:h-12 w-auto object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 hover:scale-110" 
+                      className="h-14 w-auto object-contain" 
                       referrerPolicy="no-referrer" 
                     />
                   </div>

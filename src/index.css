@@ -59,3 +59,12 @@
 .text-gradient-blue {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600;
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
