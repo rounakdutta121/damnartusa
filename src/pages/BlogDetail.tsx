@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Clock, BookOpen, Volume2, VolumeX } from 'lucide-react';
 import { FadeIn } from '../components/Animations';
+import { ASSETS } from '../data';
 
 const blogPosts: { [key: string]: any } = {
   'innovations-in-energy-infrastructure': {
@@ -90,6 +91,97 @@ People connecting in a community setting
 In the heart of every community lies a profound need for connection, especially when navigating the complexities of our mental health. I'm always so inspired by initiatives that bring people together, and just a little while ago, I was hearing about the wonderful impact of new community support programmes. These weren't just about clinical advice; they were about shared understanding, a safe space to talk, and the simple act of listening.
 
 I remember hearing about a young woman, Sarah, who found immense comfort in a local support group. She spoke of feeling less alone, finding strength in others' stories, and gradually rediscovering her own voice. It truly highlighted that sometimes, the most potent medicine comes from human connection, from knowing that someone cares and understands. It reminds us that sometimes, true innovation lies in bringing essential care closer to home, right where we need it most. These initiatives are quietly weaving a stronger fabric of support throughout our neighbourhoods.`
+  },
+  'funnel-stages': {
+    id: 3,
+    title: "If Your Funnel Still Has Stages, You're Already Behind",
+    category: "Marketing",
+    author: "DamnArt",
+    date: "11 April 2025",
+    readTime: "3 Min",
+    image: ASSETS.servicesVideo,
+    excerpt: "The Traditional Funnel Is Dead. Here's What Replaced It.",
+    content: `Remember the good old marketing funnel? Awareness at the top. Consideration in the middle. Conversion at the bottom. Neat. Linear. Predictable.
+
+Now? That funnel's cracked—and if you're still building your marketing strategy around it, you're bleeding leads, relevance, and revenue.
+
+In 2025, the customer journey isn't a funnel. It's a fluid, real-time ecosystem. And brands stuck on stages are losing to those building adaptive, stage-less systems.
+
+Let's break it down.
+
+What's Wrong with the Traditional Funnel?
+
+Funnel thinking assumes linear behavior. But users today zigzag across platforms, binge content, ghost your emails, and buy based on emotion, experience, and urgency.
+
+Ask yourself: Are you optimizing for the stage… or for the moment?
+
+From Funnels to Flywheels: The New Marketing Mindset
+
+Traditional funnels were built for control. Today's growth systems are built for speed, feedback, and emotional velocity.
+
+Instead of pushing people down a predefined path, brands now attract, engage, and serve dynamically.
+
+Here's the difference: Funnel vs. Flywheel
+
+Reimagining the Customer Journey
+
+This new mind map shows that everything is interconnected. A click on a Reel can lead to a webinar sign-up or an impulse buy. A great customer experience can trigger social sharing, feeding your acquisition. No stage. Just flow.
+
+Adaptive Customer Journey (2025 Edition)
+
+Notice something? No stages. Just intelligent responsiveness at every moment.
+
+The Engine of Stage-less Growth: Real-Time Data + Behavior Mapping
+
+If your CRM only sends nurture emails on day 3, day 5, and day 7—you're already too late.
+
+You need:
+
+Behavioral Triggers: Personalize content based on micro-actions (scrolls, hovers, abandoned tabs).
+
+360-Degree Profiles: Use AI to map every touchpoint across devices and channels.
+
+Emotional Targeting: Craft content not for demographics—but for decisions made in emotional micro-moments.
+
+Case Study Snapshot: Brands That Dropped the Funnel
+
+Glossier: Doesn't follow stages. Instead, creates viral moments across TikTok, email, and pop-ups simultaneously.
+
+Duolingo: Uses gamified retention and push alerts based on your mood and behavior—not your "stage."
+
+Tesla: Converts without traditional advertising. Relies on community, curiosity, and direct response.
+
+Are You Still Using Stages? Ask Yourself:
+
+Is your automation based on time or behavior?
+
+Are your ads optimized for the platform or the person?
+
+Do you build email sequences or real-time conversations?
+
+If you answered "time," "platform," or "sequences"—you might be funnel-stuck.
+
+Tools That Enable Stage-less Growth
+
+Brought to You by DamnArt – Where Digital Is Done Right
+
+At DamnArt, we don't believe in the old-school funnel.
+
+We build stage-less, behavior-first systems that convert curious clicks into loyal customers. Our digital marketing strategies are designed for 2025—rooted in emotion, motion, and precision.
+
+From viral content creation to AI-fueled engagement flows, we don't just get you leads—we get you obsessed fans.
+
+Want your brand to grow beyond stages? DM us or visit www.www.damnart.com – Let's design something unforgettable.
+
+Final Thoughts
+
+The future of marketing belongs to brands that listen before they speak, adapt before they push, and act in moments—not stages.
+
+The funnel isn't just outdated.
+
+It's slowing you down.
+
+Ready to drop the stages and step into velocity?`
   },
 };
 
@@ -301,16 +393,16 @@ export const BlogDetail = () => {
           <FadeIn delay={0.2}>
             <div className="mt-16 p-8 bg-white/5 border border-white/10 rounded-3xl">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-black text-green-500">CW</span>
+                <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-black text-blue-500">{blog.author.split(' ').map((n: string) => n[0]).join('')}</span>
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-white">{blog.author}</h4>
-                  <p className="text-slate-400">Digital Healthcare Correspondent</p>
+                  <p className="text-slate-400">{blog.category} Expert</p>
                 </div>
               </div>
               <p className="text-slate-400">
-                Dr. Clara Wren is a digital healthcare correspondent dedicated to bringing you the latest insights on healthy living, wellness tips, and proactive healthcare advice for all ages.
+                This article is part of our {blog.category} insights series, bringing you the latest trends and expert perspectives.
               </p>
             </div>
           </FadeIn>

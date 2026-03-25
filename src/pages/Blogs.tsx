@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Clock, BookOpen, FileText, PenTool, Search, ChevronDown, X } from 'lucide-react';
 import { FadeIn } from '../components/Animations';
 import { ASSETS } from '../data';
@@ -7,13 +8,14 @@ import { ASSETS } from '../data';
 const blogPosts = [
   {
     id: 28,
+    slug: "funnel-stages",
     title: "If Your Funnel Still Has Stages, You're Already Behind",
     category: "Marketing",
-    author: "Marketing Team",
+    author: "DamnArt",
     date: "11 April 2025",
     readTime: "3 Min",
     image: ASSETS.servicesVideo,
-    excerpt: "Remember the good old marketing funnel? Awareness at the top. Consideration in the middle. Conversion at the bottom."
+    excerpt: "The Traditional Funnel Is Dead. Here's What Replaced It."
   },
   {
     id: 29,
@@ -641,6 +643,7 @@ export const Blogs = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('date-desc');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const navigate = useNavigate();
 
   const categories = ['All', ...Array.from(new Set(blogPosts.map(post => post.category)))];
 
@@ -755,6 +758,7 @@ export const Blogs = () => {
               <FadeIn key={post.id} delay={idx * 0.1}>
                 <motion.div 
                   whileHover={{ y: -10 }}
+                  onClick={() => post.slug && navigate(`/blog/${post.slug}`)}
                   className="group relative bg-white/5 rounded-3xl overflow-hidden border border-white/10 hover:border-blue-500/30 transition-all duration-500 cursor-pointer"
                 >
                   <div className="relative aspect-video overflow-hidden">
@@ -892,6 +896,7 @@ export const Blogs = () => {
                 <FadeIn key={post.id} delay={idx * 0.03}>
                   <motion.div 
                     whileHover={{ y: -10 }}
+                    onClick={() => post.slug && navigate(`/blog/${post.slug}`)}
                     className="group bg-white/5 rounded-3xl overflow-hidden border border-white/10 hover:border-blue-500/30 transition-all duration-500 cursor-pointer h-full flex flex-col"
                   >
                     <div className="relative aspect-video overflow-hidden">
