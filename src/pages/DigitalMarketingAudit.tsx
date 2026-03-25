@@ -365,7 +365,7 @@ export const DigitalMarketingAudit = () => {
                       referrerPolicy="no-referrer"
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />
-                    <div className="absolute bottom-8 left-8">
+                    <div className="absolute bottom-8 left-8 hidden md:block">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{service.name.split(' ')[0]}</div>
                       <div className="font-bold uppercase tracking-widest text-xs" style={{ color: service.color.glow }}>Audit Service</div>
                     </div>

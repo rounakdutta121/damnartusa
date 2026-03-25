@@ -297,7 +297,7 @@ export const PPC = () => {
                       <Zap className="w-32 h-32" style={{ color: `${platform.color.glow}33` }} />
                     )}
                     <div className={`absolute inset-0 bg-gradient-to-t ${platform.color.gradient} opacity-60`} />
-                    <div className="absolute bottom-8 left-8">
+                    <div className="absolute bottom-8 left-8 hidden md:block">
                       <div className="text-2xl font-black text-white uppercase tracking-widest">{platform.name}</div>
                       <div className="font-bold uppercase tracking-widest text-xs" style={{ color: platform.color.glow }}>Performance Marketing</div>
                     </div>
