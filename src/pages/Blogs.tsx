@@ -19,13 +19,14 @@ const blogPosts = [
   },
   {
     id: 29,
+    slug: "whisper-marketing",
     title: "How Brands Are Secretly 'Whispering' to You on Social Media",
     category: "Marketing",
-    author: "Social Team",
+    author: "DamnArt",
     date: "9 April 2025",
-    readTime: "2 Min",
+    readTime: "3 Min",
     image: ASSETS.servicesVideo,
-    excerpt: "Ever scrolled through your Instagram feed and felt like a post was speaking directly to you? You're not imagining it."
+    excerpt: "Ever scrolled through your Instagram feed and felt like a post was speaking directly to you?"
   },
   {
     id: 30,
