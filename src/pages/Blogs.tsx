@@ -30,11 +30,12 @@ const blogPosts = [
   },
   {
     id: 30,
+    slug: "design-brain-triggers",
     title: "Design Isn't What It Looks Like. It's What It Triggers in the Brain",
     category: "Design",
-    author: "Design Team",
+    author: "DamnArt",
     date: "8 April 2025",
-    readTime: "2 Min",
+    readTime: "3 Min",
     image: ASSETS.webDevVideo,
     excerpt: "When we hear the word 'design', most of us think about what we see—fonts, colors, images, and layout."
   },
