@@ -100,6 +100,14 @@ export const Services = () => {
       {/* What We're Great At */}
       <section id="services-list" className="pt-24 pb-0 -mb-16 section-dark relative overflow-hidden">
         <div className="orange-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10" />
+        <div className="bubble bubble-orange b1" />
+        <div className="bubble bubble-orange b3" />
+        <div className="bubble bubble-orange b5" />
+        <div className="bubble bubble-orange b7" />
+        <div className="bubble bubble-orange b9" />
+        <div className="bubble bubble-orange b11" />
+        <div className="bubble bubble-orange b13" />
+        <div className="bubble bubble-orange b15" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <FadeIn>
@@ -167,6 +175,14 @@ export const Services = () => {
       {/* Discover Section */}
       <section className="-mt-96 py-4 md:py-6 section-dark relative overflow-hidden">
         <div className="orange-glow bottom-0 right-0 w-[600px] h-[600px] opacity-10" />
+        <div className="bubble bubble-orange b2" />
+        <div className="bubble bubble-orange b4" />
+        <div className="bubble bubble-orange b6" />
+        <div className="bubble bubble-orange b8" />
+        <div className="bubble bubble-orange b10" />
+        <div className="bubble bubble-orange b12" />
+        <div className="bubble bubble-orange b14" />
+        <div className="bubble bubble-orange b16" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="bg-gradient-to-r from-orange-600 to-amber-600 rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 md:p-16 text-center">
             <FadeIn>
@@ -192,6 +208,14 @@ export const Services = () => {
       {/* Contact Section */}
       <section id="contact" className="py-32 section-dark relative overflow-hidden">
         <div className="cyan-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" />
+        <div className="bubble bubble-cyan b1" />
+        <div className="bubble bubble-cyan b3" />
+        <div className="bubble bubble-cyan b5" />
+        <div className="bubble bubble-cyan b7" />
+        <div className="bubble bubble-cyan b9" />
+        <div className="bubble bubble-cyan b11" />
+        <div className="bubble bubble-cyan b13" />
+        <div className="bubble bubble-cyan b15" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div>

@@ -30,6 +30,24 @@ export const Home = () => {
           <div className="absolute inset-0 hero-gradient" />
         </div>
 
+        {/* Floating Bubbles */}
+        <div className="bubble bubble-blue b1" />
+        <div className="bubble bubble-blue b2" />
+        <div className="bubble bubble-blue b3" />
+        <div className="bubble bubble-blue b4" />
+        <div className="bubble bubble-blue b5" />
+        <div className="bubble bubble-blue b6" />
+        <div className="bubble bubble-blue b7" />
+        <div className="bubble bubble-blue b8" />
+        <div className="bubble bubble-blue b9" />
+        <div className="bubble bubble-blue b10" />
+        <div className="bubble bubble-blue b11" />
+        <div className="bubble bubble-blue b12" />
+        <div className="bubble bubble-blue b13" />
+        <div className="bubble bubble-blue b14" />
+        <div className="bubble bubble-blue b15" />
+        <div className="bubble bubble-blue b16" />
+
         <div className="blue-glow -top-20 -left-20 w-[600px] h-[600px] opacity-20" />
         <div className="blue-glow -bottom-20 -right-20 w-[600px] h-[600px] opacity-20" />
 
@@ -118,10 +136,18 @@ export const Home = () => {
         </FadeIn>
       </section>
 
-      {/* Services Section */ }
+      {/* Services Section */}
       <section id="services" className="py-32 section-dark">
         <div className="blue-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10" />
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="bubble bubble-blue b1" />
+        <div className="bubble bubble-blue b3" />
+        <div className="bubble bubble-blue b5" />
+        <div className="bubble bubble-blue b7" />
+        <div className="bubble bubble-blue b9" />
+        <div className="bubble bubble-blue b11" />
+        <div className="bubble bubble-blue b13" />
+        <div className="bubble bubble-blue b15" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <FadeIn>
               <p className="text-blue-500 font-bold tracking-widest text-sm uppercase mb-4">Our Expertise</p>
@@ -238,6 +264,14 @@ export const Home = () => {
       {/* Testimonials */}
       <section className="py-24 section-dark border-y border-white/5 relative overflow-hidden">
         <div className="purple-glow top-0 right-0" />
+        <div className="bubble bubble-purple b2" />
+        <div className="bubble bubble-purple b4" />
+        <div className="bubble bubble-purple b6" />
+        <div className="bubble bubble-purple b8" />
+        <div className="bubble bubble-purple b10" />
+        <div className="bubble bubble-purple b12" />
+        <div className="bubble bubble-purple b14" />
+        <div className="bubble bubble-purple b16" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8 text-center md:text-left">
             <div>
@@ -332,6 +366,14 @@ export const Home = () => {
       {/* FAQ Section */}
       <section className="py-32 section-dark relative overflow-hidden">
         <div className="rose-glow bottom-0 right-1/4" />
+        <div className="bubble bubble-rose b1" />
+        <div className="bubble bubble-rose b3" />
+        <div className="bubble bubble-rose b5" />
+        <div className="bubble bubble-rose b7" />
+        <div className="bubble bubble-rose b9" />
+        <div className="bubble bubble-rose b11" />
+        <div className="bubble bubble-rose b13" />
+        <div className="bubble bubble-rose b15" />
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <FadeIn>
@@ -379,6 +421,14 @@ export const Home = () => {
       {/* Contact Section */}
       <section id="contact" className="py-32 section-dark relative overflow-hidden">
         <div className="green-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" />
+        <div className="bubble bubble-green b2" />
+        <div className="bubble bubble-green b4" />
+        <div className="bubble bubble-green b6" />
+        <div className="bubble bubble-green b8" />
+        <div className="bubble bubble-green b10" />
+        <div className="bubble bubble-green b12" />
+        <div className="bubble bubble-green b14" />
+        <div className="bubble bubble-green b16" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div>

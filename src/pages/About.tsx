@@ -84,6 +84,14 @@ export const About = () => {
       {/* Core Values / Who We Are Detailed */}
       <section className="pt-32 pb-0 -mb-[30rem] section-dark border-y border-white/5 relative overflow-hidden">
         <div className="purple-glow top-0 right-0" />
+        <div className="bubble bubble-purple b1" />
+        <div className="bubble bubble-purple b3" />
+        <div className="bubble bubble-purple b5" />
+        <div className="bubble bubble-purple b7" />
+        <div className="bubble bubble-purple b9" />
+        <div className="bubble bubble-purple b11" />
+        <div className="bubble bubble-purple b13" />
+        <div className="bubble bubble-purple b15" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <FadeIn direction="right">
@@ -138,6 +146,14 @@ export const About = () => {
       {/* Vision & Mission */}
       <section id="vision" className="-mt-[30rem] pb-8 section-dark relative overflow-hidden">
         <div className="purple-glow bottom-0 right-0 w-[600px] h-[600px] opacity-10" />
+        <div className="bubble bubble-purple b2" />
+        <div className="bubble bubble-purple b4" />
+        <div className="bubble bubble-purple b6" />
+        <div className="bubble bubble-purple b8" />
+        <div className="bubble bubble-purple b10" />
+        <div className="bubble bubble-purple b12" />
+        <div className="bubble bubble-purple b14" />
+        <div className="bubble bubble-purple b16" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Vision */}
@@ -198,6 +214,14 @@ export const About = () => {
       {/* Why Choose Us */}
       <section className="pt-16 pb-16 section-dark border-t border-white/5 relative overflow-hidden">
         <div className="purple-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5" />
+        <div className="bubble bubble-purple b1" />
+        <div className="bubble bubble-purple b3" />
+        <div className="bubble bubble-purple b5" />
+        <div className="bubble bubble-purple b7" />
+        <div className="bubble bubble-purple b9" />
+        <div className="bubble bubble-purple b11" />
+        <div className="bubble bubble-purple b13" />
+        <div className="bubble bubble-purple b15" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <FadeIn>
@@ -239,6 +263,14 @@ export const About = () => {
       {/* Contact Info (Specific to About Page) */}
       <section id="contact" className="py-32 section-dark border-t border-white/5 relative overflow-hidden">
         <div className="purple-glow bottom-0 left-1/2 -translate-x-1/2" />
+        <div className="bubble bubble-purple b2" />
+        <div className="bubble bubble-purple b4" />
+        <div className="bubble bubble-purple b6" />
+        <div className="bubble bubble-purple b8" />
+        <div className="bubble bubble-purple b10" />
+        <div className="bubble bubble-purple b12" />
+        <div className="bubble bubble-purple b14" />
+        <div className="bubble bubble-purple b16" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <FadeIn delay={0.1}>

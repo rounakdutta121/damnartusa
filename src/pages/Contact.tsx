@@ -75,6 +75,14 @@ export const Contact = () => {
       {/* Booking Section */}
       <section id="booking" className="py-24 section-dark relative overflow-hidden">
         <div className="green-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10" />
+        <div className="bubble bubble-green b1" />
+        <div className="bubble bubble-green b3" />
+        <div className="bubble bubble-green b5" />
+        <div className="bubble bubble-green b7" />
+        <div className="bubble bubble-green b9" />
+        <div className="bubble bubble-green b11" />
+        <div className="bubble bubble-green b13" />
+        <div className="bubble bubble-green b15" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <FadeIn>
@@ -108,6 +116,14 @@ export const Contact = () => {
       {/* Ready to Talk Section */}
       <section id="contact" className="pt-24 pb-0 section-dark border-y border-white/5 relative overflow-hidden">
         <div className="green-glow top-0 left-0" />
+        <div className="bubble bubble-green b2" />
+        <div className="bubble bubble-green b4" />
+        <div className="bubble bubble-green b6" />
+        <div className="bubble bubble-green b8" />
+        <div className="bubble bubble-green b10" />
+        <div className="bubble bubble-green b12" />
+        <div className="bubble bubble-green b14" />
+        <div className="bubble bubble-green b16" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right">
@@ -202,6 +218,14 @@ export const Contact = () => {
       {/* Locations Section */}
       <section className="-mt-88 pt-0 pb-24 section-dark  relative overflow-hidden">
         <div className="green-glow bottom-0 right-0 w-[600px] h-[600px] opacity-5" />
+        <div className="bubble bubble-green b1" />
+        <div className="bubble bubble-green b3" />
+        <div className="bubble bubble-green b5" />
+        <div className="bubble bubble-green b7" />
+        <div className="bubble bubble-green b9" />
+        <div className="bubble bubble-green b11" />
+        <div className="bubble bubble-green b13" />
+        <div className="bubble bubble-green b15" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <FadeIn>
