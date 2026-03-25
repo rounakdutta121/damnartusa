@@ -20,6 +20,7 @@ import { LeadGeneration } from './pages/LeadGeneration';
 import { PayPerValidLead } from './pages/PayPerValidLead';
 import { InfluencerMarketing } from './pages/InfluencerMarketing';
 import { Blogs } from './pages/Blogs';
+import { BlogDetail } from './pages/BlogDetail';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -84,6 +85,7 @@ export default function App() {
             <Route path="/pay-per-valid-lead" element={<PayPerValidLead />} />
             <Route path="/influencer-marketing" element={<InfluencerMarketing />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
           </Routes>
         </main>
         <Footer />

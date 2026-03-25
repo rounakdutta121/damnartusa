@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Clock, BookOpen, FileText, PenTool, Search, ChevronDown, X } from 'lucide-react';
 import { FadeIn } from '../components/Animations';
 import { ASSETS } from '../data';
@@ -8,6 +8,7 @@ import { ASSETS } from '../data';
 const blogPosts = [
   {
     id: 1,
+    slug: "innovations-in-energy-infrastructure",
     title: "Innovations in Energy Infrastructure",
     category: "Design Testing",
     author: "Dr.Volt",
@@ -912,6 +913,7 @@ export const Blogs = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('date-desc');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const navigate = useNavigate();
 
   const categories = ['All', ...Array.from(new Set(blogPosts.map(post => post.category)))];
 
@@ -1026,6 +1028,7 @@ export const Blogs = () => {
               <FadeIn key={post.id} delay={idx * 0.1}>
                 <motion.div 
                   whileHover={{ y: -10 }}
+                  onClick={() => navigate(`/blog/${post.slug}`)}
                   className="group relative bg-white/5 rounded-3xl overflow-hidden border border-white/10 hover:border-blue-500/30 transition-all duration-500 cursor-pointer"
                 >
                   <div className="relative aspect-video overflow-hidden">
@@ -1163,6 +1166,7 @@ export const Blogs = () => {
                 <FadeIn key={post.id} delay={idx * 0.03}>
                   <motion.div 
                     whileHover={{ y: -10 }}
+                    onClick={() => navigate(`/blog/${post.slug}`)}
                     className="group bg-white/5 rounded-3xl overflow-hidden border border-white/10 hover:border-blue-500/30 transition-all duration-500 cursor-pointer h-full flex flex-col"
                   >
                     <div className="relative aspect-video overflow-hidden">
