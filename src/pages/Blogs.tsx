@@ -25,7 +25,7 @@ const blogPosts = [
     author: "Editorial Team",
     date: "19 November 2025",
     readTime: "4 Min",
-    image: "https://cdni.iconscout.com/illustration/premium/thumb/group-architects-create-and-engineering-project-of-city-illustration-svg-download-png-1850571.png",
+    image: "https://img.freepik.com/free-vector/pharmacy-store-interior-with-buyer-pharmacist_107791-30927.jpg?semt=ais_hybrid&w=740&q=80",
     excerpt: "Nurturing Our Golden Years: Proactive Steps for Healthy Aging and Flu Protection"
   },
   {
