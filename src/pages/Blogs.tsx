@@ -1,283 +1,10 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Clock, BookOpen, FileText, PenTool, Search, ChevronDown, X } from 'lucide-react';
 import { FadeIn } from '../components/Animations';
 import { ASSETS } from '../data';
 
 const blogPosts = [
-  {
-    id: 1,
-    slug: "innovations-in-energy-infrastructure",
-    title: "Innovations in Energy Infrastructure",
-    category: "Design Testing",
-    author: "Dr.Volt",
-    date: "19 November 2025",
-    readTime: "5 Min",
-    image: "https://cdni.iconscout.com/illustration/premium/thumb/group-architects-create-and-engineering-project-of-city-illustration-svg-download-png-1850571.png",
-    excerpt: "The Urgency of Automating Our Substations: A Leap Towards a Resilient Future"
-  },
-  {
-    id: 2,
-    slug: "healthy-living-nurturing-our-golden-years",
-    title: "Healthy Living: Proactive Steps for Healthy Aging",
-    category: "Healthy Living",
-    author: "Dr. Clara Wren",
-    date: "19 November 2025",
-    readTime: "4 Min",
-    image: "https://img.freepik.com/free-vector/pharmacy-store-interior-with-buyer-pharmacist_107791-30927.jpg?semt=ais_hybrid&w=740&q=80",
-    excerpt: "Nurturing Our Golden Years: Proactive Steps for Healthy Aging and Flu Protection"
-  },
-  {
-    id: 3,
-    title: "Green Consulting Insights",
-    category: "Green Consulting",
-    author: "Environmental Team",
-    date: "19 November 2025",
-    readTime: "6 Min",
-    image: ASSETS.aboutVideo,
-    excerpt: "Exploring the Harmony between Technology and Nature"
-  },
-  {
-    id: 4,
-    title: "Finance Forward: Your Strategic Update",
-    category: "Finance",
-    author: "The Chartered Chronicle",
-    date: "19 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "India's GST Council Streamlines Compliance for MSMEs and Taxpayers"
-  },
-  {
-    id: 5,
-    title: "Innovations in Power Grids: Design, Automation, and Security",
-    category: "Design Testing",
-    author: "Dr.Volt",
-    date: "19 November 2025",
-    readTime: "7 Min",
-    image: ASSETS.webDevVideo,
-    excerpt: "Design, Automation, and Security in Modern Power Infrastructure"
-  },
-  {
-    id: 6,
-    title: "Your Bi-Monthly Health Update",
-    category: "Healthy Living",
-    author: "Health Bulletin",
-    date: "19 November 2025",
-    readTime: "4 Min",
-    image: ASSETS.contactVideo,
-    excerpt: "Winter Wellness: A Community's Shield Against Seasonal Illnesses"
-  },
-  {
-    id: 7,
-    title: "Green Consulting: Navigating Environmental Challenges",
-    category: "Green Consulting",
-    author: "Environmental Team",
-    date: "19 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.aboutVideo,
-    excerpt: "Melanoma Rates Surge in Agricultural Regions - Navigating Environmental Challenges and Innovations"
-  },
-  {
-    id: 8,
-    title: "Dubai's Horizon: Real Estate & Innovation",
-    category: "Dubai Estates",
-    author: "Dr. Caelum Raye",
-    date: "19 November 2025",
-    readTime: "6 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "Rayeshrukhz by Danube: A New Icon Rises on Sheikh Zayed Road"
-  },
-  {
-    id: 9,
-    title: "Strategic Insights: The Chartered Chronicle",
-    category: "Finance",
-    author: "The Chartered Chronicle",
-    date: "19 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "The quiet hum of computers in a small office, processing invoices... every byte carries the weight of a livelihood"
-  },
-  {
-    id: 10,
-    title: "Design Testing Innovations",
-    category: "Design Testing",
-    author: "Dr.Volt",
-    date: "17 November 2025",
-    readTime: "6 Min",
-    image: ASSETS.webDevVideo,
-    excerpt: "Latest Industry Innovations & Challenges: The automation of our vital substations"
-  },
-  {
-    id: 11,
-    title: "Your Healthy Living Update",
-    category: "Healthy Living",
-    author: "Health Bulletin",
-    date: "17 November 2025",
-    readTime: "4 Min",
-    image: ASSETS.heroVideo,
-    excerpt: "UK Health Officials Urge Flu and COVID-19 Vaccinations Amidst Winter Season Preparations"
-  },
-  {
-    id: 12,
-    title: "Green Initiatives: Floods, Oceans, and Crops",
-    category: "Green Consulting",
-    author: "Environmental Team",
-    date: "17 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.aboutVideo,
-    excerpt: "Extreme floods are slashing global rice yields faster than expected"
-  },
-  {
-    id: 13,
-    title: "Dubai Real Estate Insights",
-    category: "Dubai Estates",
-    author: "Dr. Caelum Raye",
-    date: "17 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "RTA and Joby Complete First Crewed eVTOL Aerial Taxi Flight"
-  },
-  {
-    id: 14,
-    title: "Dubai Estates: Gateway to Gulf",
-    category: "Dubai Estates",
-    author: "Dr. Caelum Raye",
-    date: "17 November 2025",
-    readTime: "6 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "RTA and Joby Complete First Crewed eVTOL Aerial Taxi Flight Between Margham and Al Maktoum"
-  },
-  {
-    id: 15,
-    title: "Finance & Business Intelligence",
-    category: "Finance",
-    author: "The Chartered Chronicle",
-    date: "17 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "Streamlining Compliance: The Evolving Landscape of India's GST E-Invoicing"
-  },
-  {
-    id: 16,
-    title: "Design Testing – Future Insights for Manufacturing & Services",
-    category: "Design Testing",
-    author: "Dr.Volt",
-    date: "17 November 2025",
-    readTime: "7 Min",
-    image: ASSETS.webDevVideo,
-    excerpt: "The Imperative of Automation: Modernizing India's Substations"
-  },
-  {
-    id: 17,
-    title: "Healthy Living Bulletin",
-    category: "Healthy Living",
-    author: "Health Bulletin",
-    date: "17 November 2025",
-    readTime: "4 Min",
-    image: ASSETS.heroVideo,
-    excerpt: "As the crisp autumn air settles and the winter months draw near"
-  },
-  {
-    id: 18,
-    title: "Dubai Estates: News Update",
-    category: "Dubai Estates",
-    author: "Dr. Caelum Raye",
-    date: "17 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "DAMAC Properties launches Master Community DAMAC Islands 2, inspired by the world's most scenic island destinations"
-  },
-  {
-    id: 19,
-    title: "Strategic Financial Intelligence: The Chartered Chronicle",
-    category: "Finance",
-    author: "The Chartered Chronicle",
-    date: "17 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "GST Compliance Eases for MSMEs: A Breath for Small Businesses"
-  },
-  {
-    id: 20,
-    title: "Strategic Insights for Finance Professionals",
-    category: "Finance",
-    author: "The Chartered Chronicle",
-    date: "15 November 2025",
-    readTime: "6 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "Navigating Economic Currents: RBI's Steady Hand Amidst Global Headwinds"
-  },
-  {
-    id: 21,
-    title: "Tech Innovations Unveiled",
-    category: "Design Testing",
-    author: "Dr.Volt",
-    date: "14 November 2025",
-    readTime: "6 Min",
-    image: ASSETS.webDevVideo,
-    excerpt: "India's Smart Substations: Powering Tomorrow's Grids"
-  },
-  {
-    id: 22,
-    title: "Healthy Living Bulletin",
-    category: "Healthy Living",
-    author: "Health Bulletin",
-    date: "14 November 2025",
-    readTime: "4 Min",
-    image: ASSETS.heroVideo,
-    excerpt: "Boosting Your Immunity: Essential Tips for a Healthy Winter Season"
-  },
-  {
-    id: 23,
-    title: "EcoPulse: Your Daily Dose of Green Innovation",
-    category: "Green Consulting",
-    author: "Environmental Team",
-    date: "14 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.aboutVideo,
-    excerpt: "Turning CO2 into Clean Fuel: A New Catalyst for a Brighter Tomorrow"
-  },
-  {
-    id: 24,
-    title: "Dubai Estates Update",
-    category: "Dubai Estates",
-    author: "Dr. Caelum Raye",
-    date: "14 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "The Mohammed Bin Rashid Endowment District: A New Horizon for Holistic Living"
-  },
-  {
-    id: 25,
-    title: "Strategic Finance Insights",
-    category: "Finance",
-    author: "The Chartered Chronicle",
-    date: "14 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "India's Growth Trajectory: A Magnet for Global Capital"
-  },
-  {
-    id: 26,
-    title: "Dubai's Real Estate Insights",
-    category: "Dubai Estates",
-    author: "Dr. Caelum Raye",
-    date: "13 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "RTA Completes 10% of Dubai Metro Blue Line Project"
-  },
-  {
-    id: 27,
-    title: "Dubai Estates News",
-    category: "Dubai Estates",
-    author: "Dr. Caelum Raye",
-    date: "12 November 2025",
-    readTime: "5 Min",
-    image: ASSETS.servicesVideo,
-    excerpt: "RTA Completes 10% of Construction Works of Dubai Metro Blue Line Project"
-  },
   {
     id: 28,
     title: "If Your Funnel Still Has Stages, You're Already Behind",
@@ -914,7 +641,6 @@ export const Blogs = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('date-desc');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const navigate = useNavigate();
 
   const categories = ['All', ...Array.from(new Set(blogPosts.map(post => post.category)))];
 
@@ -1029,7 +755,6 @@ export const Blogs = () => {
               <FadeIn key={post.id} delay={idx * 0.1}>
                 <motion.div 
                   whileHover={{ y: -10 }}
-                  onClick={() => navigate(`/blog/${post.slug}`)}
                   className="group relative bg-white/5 rounded-3xl overflow-hidden border border-white/10 hover:border-blue-500/30 transition-all duration-500 cursor-pointer"
                 >
                   <div className="relative aspect-video overflow-hidden">
@@ -1167,7 +892,6 @@ export const Blogs = () => {
                 <FadeIn key={post.id} delay={idx * 0.03}>
                   <motion.div 
                     whileHover={{ y: -10 }}
-                    onClick={() => navigate(`/blog/${post.slug}`)}
                     className="group bg-white/5 rounded-3xl overflow-hidden border border-white/10 hover:border-blue-500/30 transition-all duration-500 cursor-pointer h-full flex flex-col"
                   >
                     <div className="relative aspect-video overflow-hidden">
