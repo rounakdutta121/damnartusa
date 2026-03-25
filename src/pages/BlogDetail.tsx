@@ -319,7 +319,7 @@ In a digital world full of noise, quiet influence wins. The brands that whisper 
     author: "DamnArt",
     date: "8 April 2025",
     readTime: "3 Min",
-    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774416200/Idhar-Udhar-ke-use-2025-04-08T101140.386_c7w8sr.jpg",
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774415549/Idhar-Udhar-ke-use-2025-04-08T101140.386_ud2lwi.jpg",
     excerpt: "When we hear the word 'design', most of us think about what we see—fonts, colors, images, and layout. But let's dig a little deeper.",
     content: `Introduction
 
