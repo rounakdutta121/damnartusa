@@ -36,7 +36,7 @@ const blogPosts = [
     author: "DamnArt",
     date: "8 April 2025",
     readTime: "3 Min",
-    image: ASSETS.webDevVideo,
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774416200/Idhar-Udhar-ke-use-2025-04-08T101140.386_c7w8sr.jpg",
     excerpt: "When we hear the word 'design', most of us think about what we see—fonts, colors, images, and layout."
   },
   {
