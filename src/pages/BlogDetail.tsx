@@ -190,7 +190,7 @@ Ready to drop the stages and step into velocity?`
     author: "DamnArt",
     date: "9 April 2025",
     readTime: "3 Min",
-    image: ASSETS.servicesVideo,
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774415128/unnamed-2025-04-09T143637.417-768x768_slsvrm.jpg",
     excerpt: "Ever scrolled through your Instagram feed and felt like a post was speaking directly to you?",
     content: `Introduction
 
