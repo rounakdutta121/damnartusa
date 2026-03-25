@@ -14,7 +14,7 @@ const blogPosts = [
     author: "DamnArt",
     date: "11 April 2025",
     readTime: "3 Min",
-    image: ASSETS.servicesVideo,
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774414178/Idhar-Udhar-ke-use-2025-04-11T101138.735-768x432_f7c6im.jpg",
     excerpt: "The Traditional Funnel Is Dead. Here's What Replaced It."
   },
   {
