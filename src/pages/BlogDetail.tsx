@@ -228,12 +228,12 @@ export const BlogDetail = () => {
         
         <div className="blue-glow -top-20 -left-20 w-[600px] h-[600px] opacity-30" />
         
-        <div className="relative max-w-5xl mx-auto px-6 pt-12 pb-8">
+        <div className="relative max-w-5xl mx-auto px-6 pt-28 pb-8 z-20">
           <motion.button
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             onClick={() => navigate('/blogs')}
-            className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-8 font-medium"
+            className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-8 font-medium bg-slate-950/50 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10"
           >
             <ArrowLeft size={20} />
             <span>Back to Blogs</span>
