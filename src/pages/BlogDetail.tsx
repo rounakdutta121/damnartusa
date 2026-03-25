@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, Clock, BookOpen, Volume2, VolumeX } from 'lucide-react';
+import { ArrowLeft, Clock, BookOpen, Volume2, VolumeX, Target, Zap, TrendingUp, Users, MessageCircle, Lightbulb, CheckCircle, ArrowRight } from 'lucide-react';
 import { FadeIn } from '../components/Animations';
-import { ASSETS } from '../data';
 
 const blogPosts: { [key: string]: any } = {
   'innovations-in-energy-infrastructure': {
@@ -11,527 +10,151 @@ const blogPosts: { [key: string]: any } = {
     title: "Innovations in Energy Infrastructure",
     category: "Design Testing",
     author: "Dr.Volt",
+    authorInitials: "DV",
+    authorColor: "from-blue-500 to-cyan-500",
     date: "19 November 2025",
     readTime: "5 Min",
     image: "https://cdni.iconscout.com/illustration/premium/thumb/group-architects-create-and-engineering-project-of-city-illustration-svg-download-png-1850571.png",
+    accentColor: "blue",
     excerpt: "The Urgency of Automating Our Substations: A Leap Towards a Resilient Future",
-    content: `Welcome to an exploration of innovation and resilience in the world of industrial design and manufacturing. Join Dr. Volt as we delve into critical advancements shaping the future of testing services and robust energy infrastructure.
-
-The Urgency of Automating Our Substations: A Leap Towards a Resilient Future
-
-"Friends, fellow enthusiasts of progress! Have you ever stopped to consider the silent guardians of our energy? Today, I want to talk about how we're making them smarter, faster, and more reliable."
-
-Automated Substation
-
-It's remarkable, isn't it, how quickly technology evolves? What felt cutting-edge just a decade ago can now seem almost… quaint. This rapid pace is especially true in the realm of power system control and protection. I often find myself pondering the necessity of upgrading our existing infrastructure, particularly our substations. These aren't just static points on a map; they are the beating hearts of our power grids, and their efficiency dictates the stability of our entire energy ecosystem.
-
-The truth is, while some might feel a pang of nostalgia for older systems, the sheer speed of technological advancement means that waiting even a few years can leave us critically behind. Automating these substations isn't merely about adopting new gadgets; it's about embedding intelligence and resilience directly into the very fabric of our national power supply.
-
-It means faster fault detection, quicker recovery, and a significantly more stable grid for every home and industry. Imagine the confidence that comes from knowing our power infrastructure is not just reacting, but proactively adapting. This isn't just an engineering upgrade; it's a commitment to a future where energy is as reliable as the sunrise, and that's why I believe innovation here isn't just a headline — it's our heartbeat.
-
-Embracing Tomorrow: The Essential Tech Reshaping Modern Substations
-
-"Now, let's talk about the very tools that are turning our energy dreams into reality. The future of our power grid is being built right now, with incredible technologies."
-
-Modern Substations
-
-Walking through a modern substation today feels like stepping into the future. The design philosophy has shifted dramatically, moving beyond mere functionality to embrace concepts of high availability, unwavering reliability, and unparalleled operational flexibility. This isn't just a luxury for new constructions; it's a vision we're striving to implement even in substations that have stood strong for forty years.
-
-What excites me most is the ingenious integration of cutting-edge technologies. We're talking about smart sensors that monitor conditions with incredible precision, advanced communication protocols ensuring seamless data flow, and intelligent automation systems that can predict and prevent issues before they even arise.
-
-Engineers, our role is evolving, and it's a beautiful thing to witness. Understanding these integrated systems, from intelligent electronic devices to advanced SCADA interfaces, is no longer optional; it's fundamental to shaping India's energy independence. It's about building a grid that doesn't just power our present, but also empowers our future with resilience and innovation. This journey into intelligent infrastructure is proof that our ingenuity knows no bounds.
-
-Shielding Our Lifelines: Confronting Electromagnetic Threats to Power Systems
-
-"Finally, let's address a critical, often overlooked aspect of our energy future: its safety. How do we protect the very infrastructure that powers our lives from unseen dangers?"
-
-Electromagnetic Threats
-
-In our increasingly interconnected world, the security of our critical infrastructure, especially our power systems, has taken on a profound new meaning. I've often reflected on the evolving landscape of threats we face, and it's become clear that we cannot afford to ignore the silent, yet potentially devastating, danger of intentional destructive electromagnetic attacks.
-
-This isn't the stuff of science fiction; it's a tangible vulnerability that demands our immediate attention and strategic foresight. The consequences of such attacks could be catastrophic, plunging communities into darkness, disrupting essential services, and crippling economic activity.
-
-Yet, I wonder, are we truly prepared? Are we investing enough in hardening our systems, in developing advanced shielding, and in implementing robust detection and response mechanisms? Protecting our power grid isn't just an engineering challenge; it's a national imperative, a cornerstone of our security and prosperity.
-
-It requires collaboration between scientists, engineers, policymakers, and a vigilant public. This isn't a battle we can afford to lose, and our collective will to safeguard these vital lifelines defines our resilience as a nation. Let's awaken to this challenge, together.`
+    sections: [
+      { title: "Welcome", content: "Welcome to an exploration of innovation and resilience in the world of industrial design and manufacturing. Join Dr. Volt as we delve into critical advancements shaping the future of testing services and robust energy infrastructure.", icon: "zap" },
+      { title: "The Challenge", content: "It's remarkable, isn't it, how quickly technology evolves? What felt cutting-edge just a decade ago can now seem almost… quaint. The truth is, while some might feel a pang of nostalgia for older systems, the sheer speed of technological advancement means that waiting even a few years can leave us critically behind.", icon: "target" },
+      { title: "The Solution", content: "Automating these substations isn't merely about adopting new gadgets; it's about embedding intelligence and resilience directly into the very fabric of our national power supply. It means faster fault detection, quicker recovery, and a significantly more stable grid for every home and industry.", icon: "trending" },
+      { title: "Modern Technologies", content: "What excites me most is the ingenious integration of cutting-edge technologies. We're talking about smart sensors that monitor conditions with incredible precision, advanced communication protocols ensuring seamless data flow, and intelligent automation systems that can predict and prevent issues before they even arise.", icon: "users" },
+      { title: "Security Concerns", content: "In our increasingly interconnected world, the security of our critical infrastructure, especially our power systems, has taken on a profound new meaning. We cannot afford to ignore the silent, yet potentially devastating, danger of intentional destructive electromagnetic attacks.", icon: "shield" }
+    ],
+    keyPoints: ["Faster Fault Detection", "Intelligent Automation", "Enhanced Grid Stability", "Proactive Security"],
+    conclusion: "It requires collaboration between scientists, engineers, policymakers, and a vigilant public. This isn't a battle we can afford to lose, and our collective will to safeguard these vital lifelines defines our resilience as a nation.",
+    relatedSlugs: ["healthy-living-nurturing-our-golden-years"]
   },
   'healthy-living-nurturing-our-golden-years': {
     id: 2,
-    title: "Healthy Living: Proactive Steps for Healthy Aging and Flu Protection",
+    title: "Healthy Living: Proactive Steps for Healthy Aging",
     category: "Healthy Living",
     author: "Dr. Clara Wren",
+    authorInitials: "CW",
+    authorColor: "from-green-500 to-emerald-500",
     date: "19 November 2025",
     readTime: "4 Min",
     image: "https://img.freepik.com/free-vector/pharmacy-store-interior-with-buyer-pharmacist_107791-30927.jpg?semt=ais_hybrid&w=740&q=80",
+    accentColor: "green",
     excerpt: "Nurturing Our Golden Years: Proactive Steps for Healthy Aging and Flu Protection",
-    content: `Good morning, dear readers! As the seasons shift, our thoughts often turn to staying well. Let's explore how we can proactively nurture our health and protect our loved ones.
-
-Nurturing Our Golden Years: Proactive Steps for Healthy Aging and Flu Protection
-
-Seniors enjoying healthy living
-
-I often reflect on the wisdom our older generations hold and the vibrant lives many continue to lead. It's a beautiful testament to resilience, and yet, we know that as we age, our bodies need a little extra care and attention. I was particularly moved by a recent focus on healthy aging and flu prevention. It's not just about avoiding illness; it's about embracing life with vitality.
-
-I recall speaking with Mrs. Evelyn, a sprightly 87-year-old, who shared how her annual flu jab allows her to continue her weekly dance class without worry. These updated guidelines truly echo her sentiment: that regular physical activity, a balanced diet, and simply staying connected with loved ones are as crucial as our annual vaccinations. It's about building a robust shield, not just for ourselves, but for the entire community. Every step we take to safeguard our health contributes to a stronger, happier society.
-
-Have you ever found yourself needing quick, reliable health advice for those everyday concerns? It's wonderful to see our local pharmacies stepping up to fill that vital role.
-
-Your Local Pharmacy: A Welcoming Hub for Everyday Health and Expert Care
-
-Pharmacy interior with pharmacist and customer
-
-It's truly heartening to witness the evolution of our local pharmacies. They've always been a cornerstone of our communities, but now, they're becoming even more indispensable. I recently heard from Mr. Davies, a gentleman who was struggling with muffled hearing, which was beginning to affect his confidence in social settings. He shared how he used to dread the lengthy wait for a GP appointment for something he suspected was just ear wax. Imagine his relief when he discovered he could simply walk into his local pharmacy and receive professional, quick, and safe ear wax removal. It's stories like these that highlight the profound impact of accessible care. Pharmacists, with their extensive training, are stepping up to offer a range of services, alleviating pressure on our busy doctors and, most importantly, providing immediate, trusted support to those who need it.
-
-In our busy lives, it's easy to feel isolated, but I've always believed in the power of connection for our mental wellbeing. Let's talk about finding that support.
-
-Bridging Gaps: New Community Initiatives Foster Mental Wellbeing Through Connection
-
-People connecting in a community setting
-
-In the heart of every community lies a profound need for connection, especially when navigating the complexities of our mental health. I'm always so inspired by initiatives that bring people together, and just a little while ago, I was hearing about the wonderful impact of new community support programmes. These weren't just about clinical advice; they were about shared understanding, a safe space to talk, and the simple act of listening.
-
-I remember hearing about a young woman, Sarah, who found immense comfort in a local support group. She spoke of feeling less alone, finding strength in others' stories, and gradually rediscovering her own voice. It truly highlighted that sometimes, the most potent medicine comes from human connection, from knowing that someone cares and understands. It reminds us that sometimes, true innovation lies in bringing essential care closer to home, right where we need it most. These initiatives are quietly weaving a stronger fabric of support throughout our neighbourhoods.`
+    sections: [
+      { title: "Good Morning!", content: "As the seasons shift, our thoughts often turn to staying well. Let's explore how we can proactively nurture our health and protect our loved ones.", icon: "sun" },
+      { title: "Healthy Aging", content: "I often reflect on the wisdom our older generations hold and the vibrant lives many continue to lead. It's a beautiful testament to resilience, and yet, we know that as we age, our bodies need a little extra care and attention.", icon: "heart" },
+      { title: "The Power of Prevention", content: "Regular physical activity, a balanced diet, and simply staying connected with loved ones are as crucial as our annual vaccinations. It's about building a robust shield, not just for ourselves, but for the entire community.", icon: "shield" },
+      { title: "Your Local Pharmacy", content: "Our local pharmacies have always been a cornerstone of our communities, but now, they're becoming even more indispensable. Pharmacists are stepping up to offer a range of services, alleviating pressure on our busy doctors and providing immediate, trusted support.", icon: "users" },
+      { title: "Mental Wellbeing", content: "In the heart of every community lies a profound need for connection, especially when navigating the complexities of our mental health. Sometimes, the most potent medicine comes from human connection, from knowing that someone cares and understands.", icon: "heart" }
+    ],
+    keyPoints: ["Annual Vaccinations", "Regular Exercise", "Balanced Diet", "Community Connection"],
+    conclusion: "These initiatives are quietly weaving a stronger fabric of support throughout our neighbourhoods, bringing essential care closer to home, right where we need it most.",
+    relatedSlugs: ["innovations-in-energy-infrastructure"]
   },
   'funnel-stages': {
     id: 3,
     title: "If Your Funnel Still Has Stages, You're Already Behind",
     category: "Marketing",
     author: "DamnArt",
+    authorInitials: "DA",
+    authorColor: "from-purple-500 to-pink-500",
     date: "11 April 2025",
     readTime: "3 Min",
     image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774414178/Idhar-Udhar-ke-use-2025-04-11T101138.735-768x432_f7c6im.jpg",
+    accentColor: "purple",
     excerpt: "The Traditional Funnel Is Dead. Here's What Replaced It.",
-    content: `Remember the good old marketing funnel? Awareness at the top. Consideration in the middle. Conversion at the bottom. Neat. Linear. Predictable.
-
-Now? That funnel's cracked—and if you're still building your marketing strategy around it, you're bleeding leads, relevance, and revenue.
-
-In 2025, the customer journey isn't a funnel. It's a fluid, real-time ecosystem. And brands stuck on stages are losing to those building adaptive, stage-less systems.
-
-Let's break it down.
-
-What's Wrong with the Traditional Funnel?
-
-Funnel thinking assumes linear behavior. But users today zigzag across platforms, binge content, ghost your emails, and buy based on emotion, experience, and urgency.
-
-Ask yourself: Are you optimizing for the stage… or for the moment?
-
-From Funnels to Flywheels: The New Marketing Mindset
-
-Traditional funnels were built for control. Today's growth systems are built for speed, feedback, and emotional velocity.
-
-Instead of pushing people down a predefined path, brands now attract, engage, and serve dynamically.
-
-Here's the difference: Funnel vs. Flywheel
-
-Reimagining the Customer Journey
-
-This new mind map shows that everything is interconnected. A click on a Reel can lead to a webinar sign-up or an impulse buy. A great customer experience can trigger social sharing, feeding your acquisition. No stage. Just flow.
-
-Adaptive Customer Journey (2025 Edition)
-
-Notice something? No stages. Just intelligent responsiveness at every moment.
-
-The Engine of Stage-less Growth: Real-Time Data + Behavior Mapping
-
-If your CRM only sends nurture emails on day 3, day 5, and day 7—you're already too late.
-
-You need:
-
-Behavioral Triggers: Personalize content based on micro-actions (scrolls, hovers, abandoned tabs).
-
-360-Degree Profiles: Use AI to map every touchpoint across devices and channels.
-
-Emotional Targeting: Craft content not for demographics—but for decisions made in emotional micro-moments.
-
-Case Study Snapshot: Brands That Dropped the Funnel
-
-Glossier: Doesn't follow stages. Instead, creates viral moments across TikTok, email, and pop-ups simultaneously.
-
-Duolingo: Uses gamified retention and push alerts based on your mood and behavior—not your "stage."
-
-Tesla: Converts without traditional advertising. Relies on community, curiosity, and direct response.
-
-Are You Still Using Stages? Ask Yourself:
-
-Is your automation based on time or behavior?
-
-Are your ads optimized for the platform or the person?
-
-Do you build email sequences or real-time conversations?
-
-If you answered "time," "platform," or "sequences"—you might be funnel-stuck.
-
-Tools That Enable Stage-less Growth
-
-Brought to You by DamnArt – Where Digital Is Done Right
-
-At DamnArt, we don't believe in the old-school funnel.
-
-We build stage-less, behavior-first systems that convert curious clicks into loyal customers. Our digital marketing strategies are designed for 2025—rooted in emotion, motion, and precision.
-
-From viral content creation to AI-fueled engagement flows, we don't just get you leads—we get you obsessed fans.
-
-Want your brand to grow beyond stages? DM us or visit www.www.damnart.com – Let's design something unforgettable.
-
-Final Thoughts
-
-The future of marketing belongs to brands that listen before they speak, adapt before they push, and act in moments—not stages.
-
-The funnel isn't just outdated.
-
-It's slowing you down.
-
-Ready to drop the stages and step into velocity?`
+    sections: [
+      { title: "The Old Way", content: "Remember the good old marketing funnel? Awareness at the top. Consideration in the middle. Conversion at the bottom. Neat. Linear. Predictable. Now? That funnel's cracked—and if you're still building your marketing strategy around it, you're bleeding leads, relevance, and revenue.", icon: "funnel" },
+      { title: "The New Reality", content: "In 2025, the customer journey isn't a funnel. It's a fluid, real-time ecosystem. And brands stuck on stages are losing to those building adaptive, stage-less systems.", icon: "zap" },
+      { title: "What's Wrong with Stages?", content: "Funnel thinking assumes linear behavior. But users today zigzag across platforms, binge content, ghost your emails, and buy based on emotion, experience, and urgency. Ask yourself: Are you optimizing for the stage… or for the moment?", icon: "question" },
+      { title: "Flywheel vs Funnel", content: "Traditional funnels were built for control. Today's growth systems are built for speed, feedback, and emotional velocity. Instead of pushing people down a predefined path, brands now attract, engage, and serve dynamically.", icon: "trending" },
+      { title: "The Technology", content: "You need Behavioral Triggers for personalization, 360-Degree Profiles across devices, and Emotional Targeting for micro-moments. If your CRM only sends nurture emails on day 3, day 5, and day 7—you're already too late.", icon: "target" }
+    ],
+    keyPoints: ["Real-Time Behavior Tracking", "360° Customer Profiles", "Emotional Targeting", "Dynamic Engagement"],
+    conclusion: "The future of marketing belongs to brands that listen before they speak, adapt before they push, and act in moments—not stages. The funnel isn't just outdated. It's slowing you down.",
+    relatedSlugs: ["whisper-marketing", "psychology-almost-buying"]
   },
   'whisper-marketing': {
     id: 4,
-    title: "How Brands Are Secretly 'Whispering' to You on Social Media",
+    title: "How Brands Are Secretly 'Whispering' to You",
     category: "Marketing",
     author: "DamnArt",
+    authorInitials: "DA",
+    authorColor: "from-orange-500 to-red-500",
     date: "9 April 2025",
     readTime: "3 Min",
     image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774415128/unnamed-2025-04-09T143637.417-768x768_slsvrm.jpg",
+    accentColor: "orange",
     excerpt: "Ever scrolled through your Instagram feed and felt like a post was speaking directly to you?",
-    content: `Introduction
-
-Ever scrolled through your Instagram feed and felt like a post was speaking directly to you? You're not imagining it. Brands today aren't shouting anymore—they're whispering. This subtle, emotional, highly-targeted communication is what makes you stop mid-scroll, nod in agreement, and sometimes even click "buy."
-
-Welcome to the world of stealthy storytelling, micro-messaging, and algorithmic influence.
-
-What Is Whisper Marketing?
-
-Whisper marketing is the art of subtle persuasion. Instead of loud, direct ads, brands now slide into your feed like a friend—offering value, empathy, and familiarity. It's not about "Buy now!" anymore—it's about, "We get you."
-
-Popular Keywords Used in This Strategy:
-
-Emotional marketing, Social listening, Influencer microcontent, User-generated content (UGC), Behavioral targeting, Brand storytelling, Instagram marketing, TikTok trends, Personalized engagement, Native advertising
-
-Why Is This Strategy So Effective?
-
-Because you don't see it coming. Whisper marketing feels like content—not an ad. And that's what makes it so powerful.
-
-Old-School Ads vs Modern Whisper Tactics:
-
-Old-school ads use loud CTAs like "Buy Now!" while modern whisper tactics use subtle hooks like "Ever felt this way?" Old-school focuses on direct selling while whisper tactics focus on emotional connection. Instead of product-focused, it's lifestyle-focused. Rather than one-size-fits-all, it's personalized and data-driven.
-
-How Whisper Marketing Works
-
-The process flows from social listening and trend mining, through micro-influencers and authentic voices, to native ads and emotional hooks. Each step builds on the last, creating a seamless experience that feels organic rather than promotional.
-
-The Psychology Behind Whisper Marketing
-
-Here are the core psychological elements that brands tap into when they "whisper" on social media:
-
-Emotion: Brands leverage relatability, empathy-driven messaging, and feel-good storytelling to create genuine connections.
-
-Timing: They capitalize on trending topics, cultural moments and events, and post when users are most active.
-
-Trust: By using micro-influencers for authenticity, sharing real stories and user experiences, and avoiding over-branding, they build credibility.
-
-Subtlety: They minimize direct promotion, blend in with native content, and let visuals and tone do the talking.
-
-Each of these elements connects to one another, forming a web of emotional influence, where the audience feels understood rather than sold to.
-
-Real Examples: Are These Ads or Just "Good Vibes"?
-
-Dove posts body-positive quotes that look like inspiration, not promotion.
-
-Apple uses user-shot content to "show" rather than tell you to buy the iPhone.
-
-Nike drops reels that focus on mindset, struggle, and motivation, not shoes.
-
-Netflix uses memes and reactions to promote shows with zero hard sell.
-
-You double-tap, share, or laugh—without realizing you're becoming part of a campaign.
-
-How Brands Whisper: Core Techniques
-
-1. Social Listening & Trend Mining
-
-Brands use tools like Brandwatch, Sprout Social, and Hootsuite to listen to what people are feeling—not just what they're saying. Ever noticed how a brand launches a relatable post just after a trending meme goes viral? That's no coincidence.
-
-2. Micro-Influencers & Authentic Voices
-
-Instead of celebrities, brands now use influencers with 5K–50K followers. Why? Because their content feels genuine and relatable.
-
-3. Native Ads
-
-These are ads that don't "look" like ads. Sponsored posts, reels, or TikToks that blend in with your content feed—seamless and persuasive.
-
-4. Emotional Hooks
-
-Instead of selling features, they sell feelings.
-
-Example:
-
-Old Ad: "Get 5GB data with this plan."
-
-New Whisper: "Stay connected to what matters most."
-
-5. Minimal Branding
-
-Sometimes the product or brand name is barely mentioned, letting emotion do the heavy lifting.
-
-Platforms & Whisper Techniques
-
-Instagram uses relatable reels and quote carousels with mental health and lifestyle content.
-
-TikTok leverages trending sounds and relatable skits with brand humor and challenges.
-
-LinkedIn focuses on thought leadership posts and storytelling with behind-the-scenes branding.
-
-Facebook uses community posts and soft-sell testimonials with story-based product promotion.
-
-YouTube Shorts features user-focused storytelling with subtle product use in travel vlogs.
-
-Ask Yourself:
-
-Have you ever shared a "relatable" post that subtly included a brand?
-
-Do you recognize when a meme is actually marketing?
-
-Are you following brands that make you feel "seen" more than sold to?
-
-Chances are, you've already been whispered to. More than once.
-
-So... Should You Whisper Too?
-
-If you're a brand, yes. In fact, it might be the only way to cut through the noise in 2024 and beyond.
-
-DamnArt's Take
-
-At DamnArt, we specialize in building human-first digital marketing strategies that connect—quietly but effectively. From micro-influencer campaigns to emotion-driven social storytelling, we help brands like yours whisper the right message to the right audience at the right time.
-
-Need social media content that converts?
-
-Want subtle, powerful campaigns that build real loyalty?
-
-Let's talk. Visit www.www.damnart.com and let's talk!
-
-Final Thoughts
-
-In a digital world full of noise, quiet influence wins. The brands that whisper are the ones that stick—because they don't feel like strangers. They feel like friends.`
+    sections: [
+      { title: "The Whisper Revolution", content: "Ever scrolled through your Instagram feed and felt like a post was speaking directly to you? You're not imagining it. Brands today aren't shouting anymore—they're whispering. This subtle, emotional, highly-targeted communication is what makes you stop mid-scroll, nod in agreement, and sometimes even click 'buy.'", icon: "message" },
+      { title: "What Is Whisper Marketing?", content: "Whisper marketing is the art of subtle persuasion. Instead of loud, direct ads, brands now slide into your feed like a friend—offering value, empathy, and familiarity. It's not about 'Buy now!' anymore—it's about, 'We get you.'", icon: "lightbulb" },
+      { title: "Why It Works", content: "Because you don't see it coming. Whisper marketing feels like content—not an ad. And that's what makes it so powerful. Old-school ads use loud CTAs like 'Buy Now!' while whisper tactics use subtle hooks like 'Ever felt this way?'", icon: "target" },
+      { title: "The Psychology", content: "Emotion drives relatability and empathy-driven messaging. Timing leverages trending topics and cultural moments. Trust comes from micro-influencers and authentic voices. Subtlety means minimal branding that lets emotion do the heavy lifting.", icon: "brain" },
+      { title: "Real Examples", content: "Dove posts body-positive quotes that look like inspiration. Apple uses user-shot content to 'show' rather than tell. Nike drops reels that focus on mindset, not shoes. Netflix uses memes to promote shows with zero hard sell. You double-tap without realizing you're part of a campaign.", icon: "users" }
+    ],
+    keyPoints: ["Emotional Connection", "Social Listening", "Micro-Influencers", "Native Content"],
+    conclusion: "In a digital world full of noise, quiet influence wins. The brands that whisper are the ones that stick—because they don't feel like strangers. They feel like friends.",
+    relatedSlugs: ["funnel-stages", "design-brain-triggers"]
   },
   'design-brain-triggers': {
     id: 5,
-    title: "Design Isn't What It Looks Like. It's What It Triggers in the Brain",
+    title: "Design Isn't What It Looks Like. It's What It Triggers",
     category: "Design",
     author: "DamnArt",
+    authorInitials: "DA",
+    authorColor: "from-cyan-500 to-blue-500",
     date: "8 April 2025",
     readTime: "3 Min",
     image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774415549/Idhar-Udhar-ke-use-2025-04-08T101140.386_ud2lwi.jpg",
-    excerpt: "When we hear the word 'design', most of us think about what we see—fonts, colors, images, and layout. But let's dig a little deeper.",
-    content: `Introduction
-
-When we hear the word "design", most of us think about what we see—fonts, colors, images, and layout. But let's dig a little deeper: What if great design is less about what we see and more about what we feel, think, and do?
-
-Design, at its core, is neuroscience in action. It's about how users interpret what they see and how it triggers reactions in their brain. Whether you're designing a website, logo, product, or experience, it's not about how pretty it looks—it's about what it sparks in the mind.
-
-What Makes Design Powerful?
-
-Design is powerful because it communicates non-verbally and instantly. Our brains are hardwired to respond to visual stimuli faster than words.
-
-Design Element and Brain Response:
-
-Color triggers emotion and memory association.
-
-Font creates tone and personality perception.
-
-Layout affects cognitive ease or overload.
-
-Images build empathy and relatability.
-
-White space brings calmness and focus.
-
-Question for you: When was the last time you clicked away from a website because it felt "too messy" or "cold"? That's your brain reacting to poor design—without you even realizing it.
-
-How Design Triggers the Brain
-
-The human brain processes visuals 60,000 times faster than text. In fact, 90% of the information transmitted to the brain is visual.
-
-The Journey of Design Stimulus in the Brain:
-
-Visual Design is captured by the eye as a signal.
-
-The Thalamus directs the signal to processing centers.
-
-The Visual Cortex processes the shape, color, layout.
-
-The Limbic System assigns emotion, memory, and relevance.
-
-This is why a good logo doesn't just look nice—it feels right.
-
-Real-World Example: Apple
-
-Apple's product design is famously minimalistic. But it's not "simple" just for aesthetics. It's designed to reduce cognitive load, instill calmness, and trigger feelings of elegance, clarity, and control.
-
-That's neurodesign at play: Designing for what the brain feels, not just what the eye sees.
-
-Psychological Effects of Common Design Colors:
-
-Red triggers urgency, passion, and excitement. Used in sales and food apps.
-
-Blue creates trust, calmness, and intelligence. Used in finance and health.
-
-Yellow brings happiness and optimism. Used for children and promotions.
-
-Black represents luxury, elegance, and sophistication. Used in fashion and tech.
-
-Green evokes nature, growth, and balance. Used for sustainability and wellness.
-
-Ask Yourself: What emotion are you trying to spark in your audience?
-
-Cognitive Load and Design Simplicity
-
-A visually overloaded design sends the brain into panic mode. It triggers confusion and anxiety.
-
-A clean, well-structured design does the opposite:
-
-Increases time spent on page.
-
-Improves conversion rates.
-
-Encourages trust.
-
-Tip: Try using progressive disclosure—show only the necessary elements at each stage.
-
-Interactive Design: Triggering Dopamine
-
-Every time a user successfully interacts with your design—clicks a satisfying button, completes a task, or sees an engaging animation—dopamine is released. This feel-good chemical encourages repeat interaction.
-
-Want more user retention? Make your design rewarding.
-
-DamnArt: Where Brain Meets Beauty in Design
-
-At DamnArt, we don't just create nice-looking designs—we craft psychologically optimized digital experiences. From web design and branding to UX/UI strategy, our approach is rooted in neuroscience, creativity, and data.
-
-Let's design something that doesn't just look amazing—but feels unforgettable.
-
-Need a design that speaks to the brain and the heart? Visit www.www.damnart.com and let's talk!
-
-Neurodesign: Merging Science with Creativity
-
-Neurodesign is the emerging field where design meets neuroscience. It involves:
-
-Studying how humans respond to visual stimuli.
-
-Applying cognitive psychology in UX.
-
-Creating emotionally intelligent designs.
-
-It's not enough to be pretty. Design must provoke action, emotion, and memory.
-
-UX Design Elements That Trigger Positive Brain Responses:
-
-Micro-interactions create engagement and satisfaction.
-
-Animated transitions provide smooth cognitive flow.
-
-Consistent layout builds familiarity and trust.
-
-White space offers breathing room and clarity.
-
-Personalized content drives connection and relevance.
-
-Ask Yourself Before You Design:
-
-What emotion am I trying to trigger?
-
-Is this design helping or confusing the brain?
-
-Would I enjoy this interaction if I were the user?
-
-Are my visuals reinforcing my message or distracting from it?
-
-Final Thoughts
-
-Design is no longer just a visual discipline. It's a psychological one. The best designers are not only artists—they are also behavioral scientists, emotion architects, and neural storytellers.
-
-So, the next time you work on a visual element, don't just ask, "Does this look good?" Ask: What will this trigger in the brain?
-
-Because that's where the real magic happens.`
+    accentColor: "cyan",
+    excerpt: "When we hear the word 'design', most of us think about what we see—fonts, colors, images, and layout.",
+    sections: [
+      { title: "Beyond the Surface", content: "When we hear the word 'design', most of us think about what we see—fonts, colors, images, and layout. But let's dig a little deeper: What if great design is less about what we see and more about what we feel, think, and do?", icon: "brain" },
+      { title: "Design is Neuroscience", content: "Design, at its core, is neuroscience in action. It's about how users interpret what they see and how it triggers reactions in their brain. The human brain processes visuals 60,000 times faster than text. In fact, 90% of the information transmitted to the brain is visual.", icon: "zap" },
+      { title: "Color Psychology", content: "Color triggers emotion and memory association. Red means urgency and excitement. Blue creates trust and calmness. Yellow brings happiness and optimism. Black represents luxury and sophistication. Green evokes nature and growth.", icon: "lightbulb" },
+      { title: "Cognitive Load", content: "A visually overloaded design sends the brain into panic mode. It triggers confusion and anxiety. A clean, well-structured design increases time spent on page, improves conversion rates, and encourages trust.", icon: "target" },
+      { title: "Interactive Design", content: "Every time a user successfully interacts with your design—clicks a satisfying button, completes a task, or sees an engaging animation—dopamine is released. This feel-good chemical encourages repeat interaction. Want more user retention? Make your design rewarding.", icon: "trending" }
+    ],
+    keyPoints: ["60K Faster Processing", "Emotional Triggers", "Cognitive Ease", "Dopamine Design"],
+    conclusion: "Design is no longer just a visual discipline. It's a psychological one. The best designers are not only artists—they are also behavioral scientists, emotion architects, and neural storytellers.",
+    relatedSlugs: ["whisper-marketing", "psychology-almost-buying"]
   },
   'psychology-almost-buying': {
     id: 6,
-    title: "The Psychology of 'Almost Buying': Why Do People Abandon Carts and Forms?",
+    title: "The Psychology of 'Almost Buying'",
     category: "Marketing",
     author: "DamnArt",
+    authorInitials: "DA",
+    authorColor: "from-rose-500 to-pink-500",
     date: "5 April 2025",
     readTime: "3 Min",
     image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774432374/unnamed-2025-04-05T100557.309_z1zdzn.jpg",
-    excerpt: "Imagine this—you've done everything right. Your website looks clean, the product is in the cart, the user clicks 'Proceed to Checkout,' and then… crickets.",
-    content: `Introduction
-
-Imagine this—you've done everything right. Your website looks clean, the product is in the cart, the user clicks "Proceed to Checkout," and then… crickets. No purchase. No form submission. Just another abandoned cart or incomplete form added to the pile.
-
-You're not alone. This "almost buying" behavior haunts e-commerce sites and lead-gen forms alike. But why does it happen? And how can you fix it?
-
-Let's dive into the psychological triggers, UX missteps, and digital distractions that cause users to hesitate—and how your business can turn that hesitation into conversion.
-
-What Exactly Is 'Almost Buying'?
-
-"Almost buying" refers to the behavior of users who engage with your site—add products to carts, begin forms, or browse checkout pages—but leave before completing the desired action. This is a common issue in both e-commerce and service industries.
-
-According to Baymard Institute, the average cart abandonment rate is around 70%. And for forms, it's even worse—more than 80% of users don't complete multi-step forms.
-
-Why Users Abandon at the Last Minute
-
-Common Psychological Triggers Behind Abandonment include fear of making wrong decisions, unexpected costs appearing at checkout, lack of trust signals, and decision fatigue from too many choices.
-
-Cart vs Form Abandonment – A Quick Comparison shows that cart abandonment often stems from unexpected shipping costs, account creation requirements, and complex checkout processes. Form abandonment typically occurs due to too many fields, lack of progress indicators, and security concerns.
-
-Fixing the Drop-Off: Tactics That Work
-
-1. Reveal Total Costs Early
-
-No one likes surprise fees. Be transparent upfront about all costs including shipping, taxes, and any additional charges.
-
-2. Use Exit-Intent Popups
-
-Catch the user before they bounce with discounts or questions that address their concerns.
-
-3. Simplify Your Forms
-
-Use only essential fields. Implement autofill and progress indicators to reduce friction.
-
-4. Add Trust Badges and Reviews
-
-Boost your credibility instantly with security badges, customer reviews, and testimonials.
-
-5. Retarget Abandoners
-
-With tailored email sequences or ads, bring them back with incentive to complete their purchase.
-
-Test & Learn: A/B Testing Ideas
-
-Test long vs. short forms to see which performs better.
-
-Compare "Buy Now" vs. "Add to Cart" CTA buttons.
-
-Experiment with trust badge placements to optimize visibility.
-
-Trial 1-step vs. 3-step checkout flows to reduce friction.
-
-Real Questions for You to Reflect On
-
-Are your forms unnecessarily long?
-
-Do your cart pages display trust signals?
-
-Have you tested the user journey on mobile?
-
-If you're unsure about these answers, it might be time for a Digital Marketing Audit.
-
-The DamnArt Advantage
-
-At DamnArt, we specialize in understanding the customer journey from click to close. Using AI-driven behavior tracking, UX optimization, and smart retargeting strategies, we help you reduce abandonment rates and boost conversions.
-
-Whether you're struggling with cart drop-offs or form fatigue, our team crafts personalized solutions that turn browsers into buyers.
-
-Ready to fix the leak in your funnel?
-
-Let DamnArt audit your user journey today.`
+    accentColor: "rose",
+    excerpt: "You've done everything right. The product is in the cart, the user clicks 'Proceed to Checkout,' and then… crickets.",
+    sections: [
+      { title: "The Abandonment Mystery", content: "Imagine this—you've done everything right. Your website looks clean, the product is in the cart, the user clicks 'Proceed to Checkout,' and then… crickets. No purchase. No form submission. Just another abandoned cart or incomplete form.", icon: "question" },
+      { title: "The Statistics", content: "You're not alone. According to Baymard Institute, the average cart abandonment rate is around 70%. And for forms, it's even worse—more than 80% of users don't complete multi-step forms. This 'almost buying' behavior haunts e-commerce sites and lead-gen forms alike.", icon: "chart" },
+      { title: "Psychological Triggers", content: "Fear of making wrong decisions, unexpected costs appearing at checkout, lack of trust signals, and decision fatigue from too many choices all contribute to abandonment. Understanding these triggers is the first step to fixing them.", icon: "brain" },
+      { title: "Tactical Solutions", content: "Reveal total costs early—no one likes surprise fees. Use exit-intent popups to catch users before they bounce. Simplify forms with autofill and progress indicators. Add trust badges and reviews. Retarget abandoners with tailored email sequences.", icon: "target" },
+      { title: "Test & Learn", content: "A/B test long vs. short forms. Compare 'Buy Now' vs. 'Add to Cart' CTAs. Experiment with trust badge placements. Trial 1-step vs. 3-step checkout flows. The key is continuous optimization based on real user data.", icon: "trending" }
+    ],
+    keyPoints: ["70% Cart Abandonment", "Transparent Pricing", "Trust Signals", "Smart Retargeting"],
+    conclusion: "Whether you're struggling with cart drop-offs or form fatigue, crafting personalized solutions that turn browsers into buyers requires understanding the psychology behind every hesitation.",
+    relatedSlugs: ["funnel-stages", "design-brain-triggers"]
   },
+};
+
+const getAccentClasses = (color: string) => {
+  const colors: { [key: string]: { bg: string; text: string; bgLight: string; border: string } } = {
+    blue: { bg: 'from-blue-500 to-blue-600', text: 'text-blue-500', bgLight: 'bg-blue-50', border: 'border-blue-200' },
+    green: { bg: 'from-green-500 to-green-600', text: 'text-green-500', bgLight: 'bg-green-50', border: 'border-green-200' },
+    purple: { bg: 'from-purple-500 to-purple-600', text: 'text-purple-500', bgLight: 'bg-purple-50', border: 'border-purple-200' },
+    orange: { bg: 'from-orange-500 to-orange-600', text: 'text-orange-500', bgLight: 'bg-orange-50', border: 'border-orange-200' },
+    cyan: { bg: 'from-cyan-500 to-cyan-600', text: 'text-cyan-500', bgLight: 'bg-cyan-50', border: 'border-cyan-200' },
+    rose: { bg: 'from-rose-500 to-rose-600', text: 'text-rose-500', bgLight: 'bg-rose-50', border: 'border-rose-200' },
+  };
+  return colors[color] || colors.blue;
 };
 
 export const BlogDetail = () => {
@@ -551,20 +174,16 @@ export const BlogDetail = () => {
   }, [slug]);
 
   const toggleSpeech = () => {
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-      return;
-    }
-
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
     const synth = window.speechSynthesis;
-
     if (isSpeaking) {
       synth.cancel();
       setIsSpeaking(false);
     } else {
-      if (blog?.content) {
-        const utterance = new SpeechSynthesisUtterance(blog.content);
+      if (blog?.sections) {
+        const text = blog.sections.map((s: any) => `${s.title}. ${s.content}`).join(' ') + ' ' + blog.conclusion;
+        const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 0.9;
-        utterance.pitch = 1;
         utterance.onend = () => setIsSpeaking(false);
         utterance.onerror = () => setIsSpeaking(false);
         synth.speak(utterance);
@@ -575,10 +194,10 @@ export const BlogDetail = () => {
 
   if (!blog) {
     return (
-      <div className="min-h-screen flex items-center justify-center section-dark">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Blog Not Found</h1>
-          <button onClick={() => navigate('/blogs')} className="btn-primary">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="text-center p-8">
+          <h1 className="text-4xl font-bold text-slate-800 mb-4">Blog Not Found</h1>
+          <button onClick={() => navigate('/blogs')} className="px-6 py-3 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-colors">
             Back to Blogs
           </button>
         </div>
@@ -586,216 +205,276 @@ export const BlogDetail = () => {
     );
   }
 
+  const accent = getAccentClasses(blog.accentColor);
+  const relatedBlogs = blog.relatedSlugs?.map((s: string) => blogPosts[s]).filter(Boolean) || [];
+
   return (
-    <div>
+    <div className="bg-gradient-to-br from-slate-50 via-white to-slate-100 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden section-dark">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/95 to-slate-950" />
-          <div className="absolute inset-0 hero-gradient opacity-50" />
-        </div>
+      <section className="relative overflow-hidden">
+        <div className={`absolute inset-0 bg-gradient-to-br ${accent.bg} opacity-10`} />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+        
+        <div className="relative max-w-5xl mx-auto px-6 pt-12 pb-8">
+          <motion.button
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            onClick={() => navigate('/blogs')}
+            className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors mb-8 font-medium"
+          >
+            <ArrowLeft size={20} />
+            <span>Back to Blogs</span>
+          </motion.button>
 
-        <div className="blue-glow -top-20 -left-20 w-[600px] h-[600px] opacity-20" />
-        <div className="blue-glow -bottom-20 -right-20 w-[600px] h-[600px] opacity-20" />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          {/* Back Button */}
-          <FadeIn>
-            <motion.button
-              whileHover={{ x: -5 }}
-              onClick={() => navigate('/blogs')}
-              className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors mb-8"
-            >
-              <ArrowLeft size={20} />
-              <span className="font-medium">Back to Blogs</span>
-            </motion.button>
-          </FadeIn>
-
-          {/* Category Badge */}
-          <FadeIn delay={0.1}>
-            <span className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-500/30 text-blue-400 text-sm font-bold uppercase tracking-widest rounded-full mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-wrap items-center gap-3 mb-6"
+          >
+            <span className={`px-4 py-1.5 bg-gradient-to-r ${accent.bg} text-white text-sm font-bold rounded-full uppercase tracking-wide`}>
               {blog.category}
             </span>
-          </FadeIn>
+            <span className="flex items-center gap-1.5 text-slate-500 text-sm">
+              <Clock size={14} />
+              {blog.date}
+            </span>
+            <span className="flex items-center gap-1.5 text-slate-500 text-sm">
+              <BookOpen size={14} />
+              {blog.readTime} read
+            </span>
+          </motion.div>
 
-          {/* Title */}
-          <FadeIn delay={0.2}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-6">
-              {blog.title}
-            </h1>
-          </FadeIn>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-tight mb-8"
+          >
+            {blog.title}
+          </motion.h1>
 
-          {/* Meta Info */}
-          <FadeIn delay={0.3}>
-            <div className="flex flex-wrap items-center gap-6 text-slate-400 mb-8">
-              <span className="flex items-center gap-2">
-                <Clock size={16} />
-                {blog.date}
-              </span>
-              <span className="flex items-center gap-2">
-                <BookOpen size={16} />
-                {blog.readTime} Read
-              </span>
-              <span className="text-slate-500">By {blog.author}</span>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center gap-4 mb-8"
+          >
+            <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${blog.authorColor} flex items-center justify-center text-white font-black text-lg shadow-lg`}>
+              {blog.authorInitials}
             </div>
-          </FadeIn>
-
-          {/* Action Buttons */}
-          <FadeIn delay={0.4}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={toggleSpeech}
-              className={`flex items-center gap-3 px-6 py-4 rounded-full font-bold transition-all ${
-                isSpeaking 
-                  ? 'bg-green-600 text-white' 
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}
-            >
-              {isSpeaking ? (
-                <>
-                  <VolumeX size={20} />
-                  Stop Reading
-                </>
-              ) : (
-                <>
-                  <Volume2 size={20} />
-                  Listen to Article
-                </>
-              )}
-            </motion.button>
-          </FadeIn>
+            <div>
+              <p className="font-bold text-slate-900">{blog.author}</p>
+              <p className="text-slate-500 text-sm">{blog.category} Expert</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Featured Image */}
-      <section className="relative -mt-8 z-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <FadeIn>
-            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10">
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-            </div>
-          </FadeIn>
+      <section className="max-w-5xl mx-auto px-6 -mt-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.3 }}
+          className="relative rounded-3xl overflow-hidden shadow-2xl"
+        >
+          <img
+            src={blog.image}
+            alt={blog.title}
+            className="w-full aspect-[21/9] object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        </motion.div>
+      </section>
+
+      {/* Listen Button */}
+      <section className="max-w-5xl mx-auto px-6 py-8">
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={toggleSpeech}
+          className={`w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-white shadow-lg transition-all ${
+            isSpeaking 
+              ? 'bg-green-500 hover:bg-green-600 shadow-green-200' 
+              : `bg-gradient-to-r ${accent.bg} hover:shadow-xl`
+          }`}
+        >
+          {isSpeaking ? <VolumeX size={24} /> : <Volume2 size={24} />}
+          <span>{isSpeaking ? 'Stop Listening' : 'Listen to Article'}</span>
+        </motion.button>
+      </section>
+
+      {/* Key Points Banner */}
+      <section className="max-w-5xl mx-auto px-6 pb-12">
+        <div className={`rounded-3xl p-8 bg-gradient-to-r ${accent.bg} text-white shadow-xl`}>
+          <h3 className="text-lg font-bold mb-4 opacity-90">Key Takeaways</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {blog.keyPoints.map((point: string, idx: number) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                className="flex items-center gap-2"
+              >
+                <CheckCircle size={20} className="flex-shrink-0" />
+                <span className="font-medium text-sm">{point}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="py-20 section-dark relative overflow-hidden">
-        <div className="blue-glow bottom-0 right-0 w-[600px] h-[600px] opacity-10" />
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <FadeIn>
-            <div className="prose prose-lg prose-invert max-w-none">
-              {blog.content.split('\n\n').map((paragraph: string, index: number) => {
-                if (paragraph.startsWith('"') && paragraph.endsWith('"')) {
-                  return (
-                    <motion.blockquote
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.05 }}
-                      className="border-l-4 border-blue-500 pl-8 py-4 my-10 bg-white/5 rounded-r-2xl italic text-xl text-slate-300"
-                    >
-                      {paragraph}
-                    </motion.blockquote>
-                  );
-                }
-
-                if (paragraph.match(/^[A-Z][A-Za-z\s]+$/)) {
-                  return (
-                    <motion.h2
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.05 }}
-                      className="text-2xl md:text-3xl font-black text-white mt-12 mb-6 uppercase italic"
-                    >
-                      {paragraph}
-                    </motion.h2>
-                  );
-                }
-
-                return (
-                  <motion.p
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.03 }}
-                    className="text-lg md:text-xl text-slate-300 leading-relaxed mb-8"
-                  >
-                    {paragraph}
-                  </motion.p>
-                );
-              })}
-            </div>
-          </FadeIn>
-
-          {/* Author Box */}
-          <FadeIn delay={0.2}>
-            <div className="mt-16 p-8 bg-white/5 border border-white/10 rounded-3xl">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-black text-blue-500">{blog.author.split(' ').map((n: string) => n[0]).join('')}</span>
+      {/* Content Sections */}
+      <section className="max-w-5xl mx-auto px-6 pb-20">
+        <div className="space-y-8">
+          {blog.sections.map((section: any, idx: number) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="rounded-3xl p-8 bg-white border border-slate-100 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <div className="flex items-start gap-4 mb-6">
+                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${accent.bg} flex items-center justify-center text-white shadow-lg flex-shrink-0`}>
+                  <Lightbulb size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white">{blog.author}</h4>
-                  <p className="text-slate-400">{blog.category} Expert</p>
+                  <span className={`text-xs font-bold uppercase tracking-wider ${accent.text}`}>Section {idx + 1}</span>
+                  <h2 className="text-2xl md:text-3xl font-black text-slate-900 mt-1">{section.title}</h2>
                 </div>
               </div>
-              <p className="text-slate-400">
-                This article is part of our {blog.category} insights series, bringing you the latest trends and expert perspectives.
-              </p>
-            </div>
-          </FadeIn>
+              <p className="text-lg text-slate-600 leading-relaxed">{section.content}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-          {/* Related Posts Section */}
-          <FadeIn delay={0.4}>
-            <div className="mt-20 pt-12 border-t border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-8 uppercase italic">
-                Related <span className="text-blue-500">Articles</span>
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl hover:border-blue-500/30 transition-all cursor-pointer group">
-                  <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
-                    <Clock size={12} />
-                    <span>17 November 2025</span>
-                    <span>•</span>
-                    <BookOpen size={12} />
-                    <span>6 Min</span>
+      {/* Related Articles */}
+      {relatedBlogs.length > 0 && (
+        <section className="py-20 bg-white border-t border-slate-100">
+          <div className="max-w-5xl mx-auto px-6">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-black text-slate-900 mb-12 text-center"
+            >
+              Related <span className={`bg-gradient-to-r ${accent.bg} bg-clip-text text-transparent`}>Articles</span>
+            </motion.h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {relatedBlogs.map((relatedBlog: any, idx: number) => (
+                <motion.div
+                  key={relatedBlog.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  onClick={() => navigate(`/blog/${blog.relatedSlugs[idx]}`)}
+                  className="group cursor-pointer"
+                >
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                    <img
+                      src={relatedBlog.image}
+                      alt={relatedBlog.title}
+                      className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <span className={`inline-block px-3 py-1 bg-gradient-to-r ${getAccentClasses(relatedBlog.accentColor).bg} text-white text-xs font-bold rounded-full mb-2`}>
+                        {relatedBlog.category}
+                      </span>
+                      <h3 className="text-xl font-bold text-white group-hover:text-slate-200 transition-colors">
+                        {relatedBlog.title}
+                      </h3>
+                    </div>
                   </div>
-                  <h4 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
-                    Design Testing Innovations – November 17, 2025
-                  </h4>
-                  <p className="text-sm text-slate-400 line-clamp-2">
-                    Design Testing – Beyond Compliance. Friends, have you ever stopped to think about the invisible network that...
-                  </p>
-                </div>
-                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl hover:border-blue-500/30 transition-all cursor-pointer group">
-                  <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
-                    <Clock size={12} />
-                    <span>17 November 2025</span>
-                    <span>•</span>
-                    <BookOpen size={12} />
-                    <span>7 Min</span>
+                  <div className="flex items-center gap-4 mt-4">
+                    <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${relatedBlog.authorColor} flex items-center justify-center text-white font-bold text-sm`}>
+                      {relatedBlog.authorInitials}
+                    </div>
+                    <div>
+                      <p className="font-medium text-slate-900 text-sm">{relatedBlog.author}</p>
+                      <p className="text-slate-500 text-xs">{relatedBlog.date} · {relatedBlog.readTime}</p>
+                    </div>
+                    <div className="ml-auto">
+                      <ArrowRight size={20} className={`${getAccentClasses(relatedBlog.accentColor).text} group-hover:translate-x-1 transition-transform`} />
+                    </div>
                   </div>
-                  <h4 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
-                    Design Testing – Future Insights for Manufacturing & Services
-                  </h4>
-                  <p className="text-sm text-slate-400 line-clamp-2">
-                    Latest Industry Innovations & Challenges. Good morning, esteemed readers! Today, I want...
-                  </p>
-                </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Conclusion / CTA */}
+      <section className="relative py-20 overflow-hidden">
+        <div className={`absolute inset-0 bg-gradient-to-br ${accent.bg} opacity-5`} />
+        
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${accent.bg} text-white text-sm font-bold mb-8`}
+          >
+            <Lightbulb size={16} />
+            <span>Final Thoughts</span>
+          </motion.div>
+
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
+            {blog.conclusion.split('.')[0]}.
+          </h2>
+
+          <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">
+            {blog.conclusion.split('.').slice(1).join('.').trim()}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/contact')}
+              className={`inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r ${accent.bg} shadow-lg hover:shadow-xl transition-all`}
+            >
+              <span>Get in Touch</span>
+              <ArrowRight size={20} />
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/blogs')}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-slate-700 bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all"
+            >
+              <span>Read More Articles</span>
+              <ArrowRight size={20} />
+            </motion.button>
+          </div>
+        </div>
+      </section>
+
+      {/* Author Bio */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className={`rounded-3xl p-8 bg-gradient-to-br ${accent.bgLight} border ${accent.border}`}>
+            <div className="flex items-center gap-6">
+              <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${blog.authorColor} flex items-center justify-center text-white font-black text-2xl shadow-lg`}>
+                {blog.authorInitials}
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-slate-900 mb-1">Written by {blog.author}</h4>
+                <p className={`font-medium ${accent.text} mb-2`}>{blog.category} Expert</p>
+                <p className="text-slate-600">
+                  Expert in {blog.category.toLowerCase()} with years of experience helping businesses achieve their goals through strategic insights and practical solutions.
+                </p>
               </div>
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
     </div>
