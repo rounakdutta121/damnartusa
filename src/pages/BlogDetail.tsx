@@ -458,7 +458,7 @@ Because that's where the real magic happens.`
     author: "DamnArt",
     date: "5 April 2025",
     readTime: "3 Min",
-    image: ASSETS.servicesVideo,
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774432374/unnamed-2025-04-05T100557.309_z1zdzn.jpg",
     excerpt: "Imagine this—you've done everything right. Your website looks clean, the product is in the cart, the user clicks 'Proceed to Checkout,' and then… crickets.",
     content: `Introduction
 
