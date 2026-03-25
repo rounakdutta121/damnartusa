@@ -19,6 +19,7 @@ import { DataMining } from './pages/DataMining';
 import { LeadGeneration } from './pages/LeadGeneration';
 import { PayPerValidLead } from './pages/PayPerValidLead';
 import { InfluencerMarketing } from './pages/InfluencerMarketing';
+import { Blogs } from './pages/Blogs';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -82,6 +83,7 @@ export default function App() {
             <Route path="/lead-generation" element={<LeadGeneration />} />
             <Route path="/pay-per-valid-lead" element={<PayPerValidLead />} />
             <Route path="/influencer-marketing" element={<InfluencerMarketing />} />
+            <Route path="/blogs" element={<Blogs />} />
           </Routes>
         </main>
         <Footer />

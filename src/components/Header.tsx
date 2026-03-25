@@ -20,7 +20,7 @@ export const Header = () => {
     { name: 'Services', path: '/services' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Blogs', path: '/#blogs' },
+    { name: 'Blogs', path: '/blogs' },
   ];
 
   const scrollToContact = () => {
