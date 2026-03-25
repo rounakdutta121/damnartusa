@@ -22,7 +22,7 @@ const blogPosts = [
     slug: "healthy-living-nurturing-our-golden-years",
     title: "Healthy Living: Proactive Steps for Healthy Aging",
     category: "Healthy Living",
-    author: "Editorial Team",
+    author: "Dr. Clara Wren",
     date: "19 November 2025",
     readTime: "4 Min",
     image: "https://img.freepik.com/free-vector/pharmacy-store-interior-with-buyer-pharmacist_107791-30927.jpg?semt=ais_hybrid&w=740&q=80",

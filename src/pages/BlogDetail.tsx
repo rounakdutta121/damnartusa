@@ -58,7 +58,7 @@ It requires collaboration between scientists, engineers, policymakers, and a vig
     id: 2,
     title: "Healthy Living: Proactive Steps for Healthy Aging and Flu Protection",
     category: "Healthy Living",
-    author: "Editorial Team",
+    author: "Dr. Clara Wren",
     date: "19 November 2025",
     readTime: "4 Min",
     image: "https://img.freepik.com/free-vector/pharmacy-store-interior-with-buyer-pharmacist_107791-30927.jpg?semt=ais_hybrid&w=740&q=80",
@@ -301,16 +301,16 @@ export const BlogDetail = () => {
           <FadeIn delay={0.2}>
             <div className="mt-16 p-8 bg-white/5 border border-white/10 rounded-3xl">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-black text-blue-500">DV</span>
+                <div className="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-black text-green-500">CW</span>
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-white">{blog.author}</h4>
-                  <p className="text-slate-400">Design Testing Expert</p>
+                  <p className="text-slate-400">Digital Healthcare Correspondent</p>
                 </div>
               </div>
               <p className="text-slate-400">
-                Dr. Volt is an expert in industrial design and manufacturing, dedicated to exploring innovations that shape the future of testing services and robust energy infrastructure.
+                Dr. Clara Wren is a digital healthcare correspondent dedicated to bringing you the latest insights on healthy living, wellness tips, and proactive healthcare advice for all ages.
               </p>
             </div>
           </FadeIn>
