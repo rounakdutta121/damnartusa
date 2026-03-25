@@ -41,13 +41,14 @@ const blogPosts = [
   },
   {
     id: 31,
+    slug: "psychology-almost-buying",
     title: "The Psychology of 'Almost Buying': Why Do People Abandon Carts and Forms?",
     category: "Marketing",
-    author: "Marketing Team",
+    author: "DamnArt",
     date: "5 April 2025",
-    readTime: "2 Min",
+    readTime: "3 Min",
     image: ASSETS.servicesVideo,
-    excerpt: "When someone lands on your website, they don't see HTML code or marketing copy—they see a story."
+    excerpt: "You've done everything right. The product is in the cart, the user clicks 'Proceed to Checkout,' and then… crickets."
   },
   {
     id: 32,
