@@ -194,9 +194,9 @@ export const BlogDetail = () => {
 
   if (!blog) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
+      <div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-100">
         <div className="text-center p-8">
-          <h1 className="text-4xl font-bold text-slate-800 mb-4">Blog Not Found</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">Blog Not Found</h1>
           <button onClick={() => navigate('/blogs')} className="px-6 py-3 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-colors">
             Back to Blogs
           </button>
@@ -209,18 +209,31 @@ export const BlogDetail = () => {
   const relatedBlogs = blog.relatedSlugs?.map((s: string) => blogPosts[s]).filter(Boolean) || [];
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-white to-slate-100 min-h-screen">
+    <div className="min-h-screen font-sans bg-slate-950 text-slate-100 section-dark">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-br ${accent.bg} opacity-10`} />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+        <div className="absolute inset-0 z-0">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-cover opacity-20"
+          >
+            <source src={blog.image} type="image/jpg" />
+          </video>
+          <div className="absolute inset-0 bg-slate-950/70" />
+          <div className="absolute inset-0 hero-gradient" />
+        </div>
+        
+        <div className="blue-glow -top-20 -left-20 w-[600px] h-[600px] opacity-30" />
         
         <div className="relative max-w-5xl mx-auto px-6 pt-12 pb-8">
           <motion.button
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             onClick={() => navigate('/blogs')}
-            className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors mb-8 font-medium"
+            className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-8 font-medium"
           >
             <ArrowLeft size={20} />
             <span>Back to Blogs</span>
@@ -234,11 +247,11 @@ export const BlogDetail = () => {
             <span className={`px-4 py-1.5 bg-gradient-to-r ${accent.bg} text-white text-sm font-bold rounded-full uppercase tracking-wide`}>
               {blog.category}
             </span>
-            <span className="flex items-center gap-1.5 text-slate-500 text-sm">
+            <span className="flex items-center gap-1.5 text-slate-400 text-sm">
               <Clock size={14} />
               {blog.date}
             </span>
-            <span className="flex items-center gap-1.5 text-slate-500 text-sm">
+            <span className="flex items-center gap-1.5 text-slate-400 text-sm">
               <BookOpen size={14} />
               {blog.readTime} read
             </span>
@@ -248,7 +261,7 @@ export const BlogDetail = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-tight mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-8"
           >
             {blog.title}
           </motion.h1>
@@ -263,8 +276,8 @@ export const BlogDetail = () => {
               {blog.authorInitials}
             </div>
             <div>
-              <p className="font-bold text-slate-900">{blog.author}</p>
-              <p className="text-slate-500 text-sm">{blog.category} Expert</p>
+              <p className="font-bold text-white">{blog.author}</p>
+              <p className="text-slate-400 text-sm">{blog.category} Expert</p>
             </div>
           </motion.div>
         </div>
@@ -276,7 +289,7 @@ export const BlogDetail = () => {
           initial={{ opacity: 0, y: 40, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.3 }}
-          className="relative rounded-3xl overflow-hidden shadow-2xl"
+          className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10"
         >
           <img
             src={blog.image}
@@ -284,7 +297,7 @@ export const BlogDetail = () => {
             className="w-full aspect-[21/9] object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
         </motion.div>
       </section>
 
@@ -296,7 +309,7 @@ export const BlogDetail = () => {
           onClick={toggleSpeech}
           className={`w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-white shadow-lg transition-all ${
             isSpeaking 
-              ? 'bg-green-500 hover:bg-green-600 shadow-green-200' 
+              ? 'bg-green-500 hover:bg-green-600 shadow-green-500/20' 
               : `bg-gradient-to-r ${accent.bg} hover:shadow-xl`
           }`}
         >
@@ -336,7 +349,7 @@ export const BlogDetail = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="rounded-3xl p-8 bg-white border border-slate-100 shadow-lg hover:shadow-xl transition-shadow"
+              className="rounded-3xl p-8 bg-white/5 border border-white/10 hover:border-white/20 transition-all"
             >
               <div className="flex items-start gap-4 mb-6">
                 <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${accent.bg} flex items-center justify-center text-white shadow-lg flex-shrink-0`}>
@@ -344,10 +357,10 @@ export const BlogDetail = () => {
                 </div>
                 <div>
                   <span className={`text-xs font-bold uppercase tracking-wider ${accent.text}`}>Section {idx + 1}</span>
-                  <h2 className="text-2xl md:text-3xl font-black text-slate-900 mt-1">{section.title}</h2>
+                  <h2 className="text-2xl md:text-3xl font-black text-white mt-1">{section.title}</h2>
                 </div>
               </div>
-              <p className="text-lg text-slate-600 leading-relaxed">{section.content}</p>
+              <p className="text-lg text-slate-300 leading-relaxed">{section.content}</p>
             </motion.div>
           ))}
         </div>
@@ -355,13 +368,13 @@ export const BlogDetail = () => {
 
       {/* Related Articles */}
       {relatedBlogs.length > 0 && (
-        <section className="py-20 bg-white border-t border-slate-100">
+        <section className="py-20 border-t border-white/5">
           <div className="max-w-5xl mx-auto px-6">
             <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-black text-slate-900 mb-12 text-center"
+              className="text-3xl md:text-4xl font-black text-white mb-12 text-center"
             >
               Related <span className={`bg-gradient-to-r ${accent.bg} bg-clip-text text-transparent`}>Articles</span>
             </motion.h2>
@@ -376,14 +389,14 @@ export const BlogDetail = () => {
                   onClick={() => navigate(`/blog/${blog.relatedSlugs[idx]}`)}
                   className="group cursor-pointer"
                 >
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg border border-white/10">
                     <img
                       src={relatedBlog.image}
                       alt={relatedBlog.title}
                       className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <span className={`inline-block px-3 py-1 bg-gradient-to-r ${getAccentClasses(relatedBlog.accentColor).bg} text-white text-xs font-bold rounded-full mb-2`}>
                         {relatedBlog.category}
@@ -398,8 +411,8 @@ export const BlogDetail = () => {
                       {relatedBlog.authorInitials}
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900 text-sm">{relatedBlog.author}</p>
-                      <p className="text-slate-500 text-xs">{relatedBlog.date} · {relatedBlog.readTime}</p>
+                      <p className="font-medium text-white text-sm">{relatedBlog.author}</p>
+                      <p className="text-slate-400 text-xs">{relatedBlog.date} · {relatedBlog.readTime}</p>
                     </div>
                     <div className="ml-auto">
                       <ArrowRight size={20} className={`${getAccentClasses(relatedBlog.accentColor).text} group-hover:translate-x-1 transition-transform`} />
@@ -414,7 +427,8 @@ export const BlogDetail = () => {
 
       {/* Conclusion / CTA */}
       <section className="relative py-20 overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-br ${accent.bg} opacity-5`} />
+        <div className={`absolute inset-0 bg-gradient-to-br ${accent.bg} opacity-10`} />
+        <div className="blue-glow bottom-0 right-0 w-[600px] h-[600px] opacity-20" />
         
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <motion.div
@@ -427,11 +441,11 @@ export const BlogDetail = () => {
             <span>Final Thoughts</span>
           </motion.div>
 
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-tight">
             {blog.conclusion.split('.')[0]}.
           </h2>
 
-          <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
             {blog.conclusion.split('.').slice(1).join('.').trim()}
           </p>
 
@@ -449,7 +463,7 @@ export const BlogDetail = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate('/blogs')}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-slate-700 bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-white bg-white/10 border border-white/20 hover:bg-white/20 transition-all"
             >
               <span>Read More Articles</span>
               <ArrowRight size={20} />
@@ -459,17 +473,17 @@ export const BlogDetail = () => {
       </section>
 
       {/* Author Bio */}
-      <section className="py-16 bg-white border-t border-slate-100">
+      <section className="py-16 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6">
-          <div className={`rounded-3xl p-8 bg-gradient-to-br ${accent.bgLight} border ${accent.border}`}>
+          <div className={`rounded-3xl p-8 bg-white/5 border border-white/10`}>
             <div className="flex items-center gap-6">
               <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${blog.authorColor} flex items-center justify-center text-white font-black text-2xl shadow-lg`}>
                 {blog.authorInitials}
               </div>
               <div>
-                <h4 className="text-xl font-bold text-slate-900 mb-1">Written by {blog.author}</h4>
+                <h4 className="text-xl font-bold text-white mb-1">Written by {blog.author}</h4>
                 <p className={`font-medium ${accent.text} mb-2`}>{blog.category} Expert</p>
-                <p className="text-slate-600">
+                <p className="text-slate-400">
                   Expert in {blog.category.toLowerCase()} with years of experience helping businesses achieve their goals through strategic insights and practical solutions.
                 </p>
               </div>
