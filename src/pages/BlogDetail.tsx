@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, Clock, BookOpen, Volume2, VolumeX, Share2, Twitter, Linkedin, Facebook, Link as LinkIcon } from 'lucide-react';
+import { ArrowLeft, Clock, BookOpen, Volume2, VolumeX } from 'lucide-react';
 import { FadeIn } from '../components/Animations';
-import { ASSETS } from '../data';
 
 const blogPosts: { [key: string]: any } = {
   'innovations-in-energy-infrastructure': {
@@ -13,7 +12,7 @@ const blogPosts: { [key: string]: any } = {
     author: "Dr.Volt",
     date: "19 November 2025",
     readTime: "5 Min",
-    image: ASSETS.servicesVideo,
+    image: "https://cdni.iconscout.com/illustration/premium/thumb/group-architects-create-and-engineering-project-of-city-illustration-svg-download-png-1850571.png",
     excerpt: "The Urgency of Automating Our Substations: A Leap Towards a Resilient Future",
     content: `Welcome to an exploration of innovation and resilience in the world of industrial design and manufacturing. Join Dr. Volt as we delve into critical advancements shaping the future of testing services and robust energy infrastructure.
 
@@ -61,7 +60,6 @@ export const BlogDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [showShareMenu, setShowShareMenu] = useState(false);
 
   const blog = slug ? blogPosts[slug] : null;
 
@@ -95,23 +93,6 @@ export const BlogDetail = () => {
         setIsSpeaking(true);
       }
     }
-  };
-
-  const shareOnTwitter = () => {
-    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(blog?.title || '')}&url=${encodeURIComponent(window.location.href)}`, '_blank');
-  };
-
-  const shareOnLinkedIn = () => {
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
-  };
-
-  const shareOnFacebook = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
-  };
-
-  const copyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setShowShareMenu(false);
   };
 
   if (!blog) {
@@ -183,79 +164,28 @@ export const BlogDetail = () => {
 
           {/* Action Buttons */}
           <FadeIn delay={0.4}>
-            <div className="flex flex-wrap gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={toggleSpeech}
-                className={`flex items-center gap-3 px-6 py-4 rounded-full font-bold transition-all ${
-                  isSpeaking 
-                    ? 'bg-green-600 text-white' 
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                {isSpeaking ? (
-                  <>
-                    <VolumeX size={20} />
-                    Stop Reading
-                  </>
-                ) : (
-                  <>
-                    <Volume2 size={20} />
-                    Listen to Article
-                  </>
-                )}
-              </motion.button>
-
-              <div className="relative">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setShowShareMenu(!showShareMenu)}
-                  className="flex items-center gap-3 px-6 py-4 bg-white/10 border border-white/20 rounded-full font-bold text-white hover:bg-white/20 transition-all"
-                >
-                  <Share2 size={20} />
-                  Share
-                </motion.button>
-
-                {showShareMenu && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="absolute top-full left-0 mt-2 bg-slate-800 border border-white/10 rounded-2xl p-4 z-20 min-w-[200px]"
-                  >
-                    <button
-                      onClick={shareOnTwitter}
-                      className="flex items-center gap-3 w-full px-4 py-3 text-white hover:bg-white/10 rounded-xl transition-colors"
-                    >
-                      <Twitter size={18} />
-                      Share on Twitter
-                    </button>
-                    <button
-                      onClick={shareOnLinkedIn}
-                      className="flex items-center gap-3 w-full px-4 py-3 text-white hover:bg-white/10 rounded-xl transition-colors"
-                    >
-                      <Linkedin size={18} />
-                      Share on LinkedIn
-                    </button>
-                    <button
-                      onClick={shareOnFacebook}
-                      className="flex items-center gap-3 w-full px-4 py-3 text-white hover:bg-white/10 rounded-xl transition-colors"
-                    >
-                      <Facebook size={18} />
-                      Share on Facebook
-                    </button>
-                    <button
-                      onClick={copyLink}
-                      className="flex items-center gap-3 w-full px-4 py-3 text-white hover:bg-white/10 rounded-xl transition-colors"
-                    >
-                      <LinkIcon size={18} />
-                      Copy Link
-                    </button>
-                  </motion.div>
-                )}
-              </div>
-            </div>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={toggleSpeech}
+              className={`flex items-center gap-3 px-6 py-4 rounded-full font-bold transition-all ${
+                isSpeaking 
+                  ? 'bg-green-600 text-white' 
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
+              }`}
+            >
+              {isSpeaking ? (
+                <>
+                  <VolumeX size={20} />
+                  Stop Reading
+                </>
+              ) : (
+                <>
+                  <Volume2 size={20} />
+                  Listen to Article
+                </>
+              )}
+            </motion.button>
           </FadeIn>
         </div>
       </section>
@@ -345,20 +275,6 @@ export const BlogDetail = () => {
               <p className="text-slate-400">
                 Dr. Volt is an expert in industrial design and manufacturing, dedicated to exploring innovations that shape the future of testing services and robust energy infrastructure.
               </p>
-            </div>
-          </FadeIn>
-
-          {/* Tags */}
-          <FadeIn delay={0.3}>
-            <div className="mt-12 flex flex-wrap gap-3">
-              {['Corporate', 'Fashion', 'Latest', 'Recent', 'Tags', 'Theme', 'Trends', 'WordPress'].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-slate-400 hover:text-white hover:border-white/30 transition-all cursor-pointer"
-                >
-                  #{tag}
-                </span>
-              ))}
             </div>
           </FadeIn>
 
