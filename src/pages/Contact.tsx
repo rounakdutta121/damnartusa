@@ -73,25 +73,25 @@ export const Contact = () => {
       </section>
 
       {/* Booking Section */}
-      <section id="booking" className="py-32 section-dark relative overflow-hidden">
-        <div className="blue-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10" />
+      <section id="booking" className="py-24 section-dark relative overflow-hidden">
+        <div className="green-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <FadeIn>
-              <h2 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase italic">
-                Book Your <span className="text-gradient-blue">Schedule</span>
-              </h2>
-              <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">
-                Select a time that works for you. Let's align your business goals with effective Digital Marketing strategies.
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 uppercase italic">
+                  Book Your <span className="text-white">Schedule </span><span className="text-green-500">Now</span>
+                </h2>
+              <p className="text-lg text-slate-400 max-w-2xl mx-auto font-medium">
+                Select a time that works for you.
               </p>
             </FadeIn>
           </div>
 
           <FadeIn delay={0.2}>
-            <div className="bg-white rounded-[2rem] overflow-hidden shadow-2xl min-h-[700px]">
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-2xl min-h-[600px]">
               <InlineWidget 
                 url="https://calendly.com/damnart-contact/discovery-session-for-damnart" 
-                styles={{ height: '700px' }}
+                styles={{ height: '600px' }}
                 prefill={{
                   name: "",
                   email: "",
@@ -106,27 +106,28 @@ export const Contact = () => {
       </section>
 
       {/* Ready to Talk Section */}
-      <section id="contact" className="py-24 section-dark border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <section id="contact" className="pt-24 pb-0 section-dark border-y border-white/5 relative overflow-hidden">
+        <div className="green-glow top-0 left-0" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right">
               <div className="space-y-8">
                 <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase italic">
-                  Ready to <span className="text-gradient-blue">Talk?</span>
+                  Ready to <span className="text-green-500">Talk?</span>
                 </h2>
                 <p className="text-xl text-slate-400 leading-relaxed font-medium">
-                  Maximize your business growth with Damnart’s digital marketing expertise. 
+                  Maximize your business growth with Damnart's digital marketing expertise. 
                   Connect with our specialists to craft your success plan.
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-                    <Phone className="text-blue-500 mb-4" size={32} />
+                  <div className="p-6 bg-white/5 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all">
+                    <Phone className="text-green-500 mb-4" size={32} />
                     <h4 className="text-white font-bold mb-1">Call Us</h4>
                     <p className="text-slate-400">+91-90565-44487</p>
                   </div>
-                  <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-                    <Mail className="text-blue-500 mb-4" size={32} />
+                  <div className="p-6 bg-white/5 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all">
+                    <Mail className="text-green-500 mb-4" size={32} />
                     <h4 className="text-white font-bold mb-1">Email Us</h4>
                     <p className="text-slate-400">info@damnart.com</p>
                   </div>
@@ -136,7 +137,7 @@ export const Contact = () => {
                   <h4 className="text-white font-bold uppercase tracking-widest text-xs">Our Global Hubs</h4>
                   <div className="flex flex-wrap gap-3">
                     {['India', 'Canada', 'Dubai', 'UK', 'USA'].map((loc) => (
-                      <span key={loc} className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-bold">
+                      <span key={loc} className="px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-sm font-bold">
                         {loc}
                       </span>
                     ))}
@@ -146,31 +147,31 @@ export const Contact = () => {
             </FadeIn>
 
             <FadeIn direction="left">
-              <div className="bg-white/5 p-8 md:p-12 rounded-[3rem] border border-white/10 backdrop-blur-xl relative">
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl rotate-12">
+              <div className="bg-white/5 p-8 md:p-12 rounded-[3rem] border border-green-500/20 backdrop-blur-xl relative">
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-green-500 rounded-full flex items-center justify-center text-white shadow-2xl rotate-12">
                   <Mail size={32} />
                 </div>
-                <h3 className="text-2xl font-black text-white mb-8 uppercase tracking-widest">Send a Message</h3>
+                <h3 className="text-2xl font-black text-white mb-8 uppercase tracking-widest">Send a <span className="text-gradient-green">Message</span></h3>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
-                      <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Phone Number</label>
-                      <input type="tel" placeholder="+91..." className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="tel" placeholder="+91..." className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
                       <div className="relative">
-                        <select defaultValue="" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all appearance-none">
+                        <select defaultValue="" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all appearance-none">
                           <option value="" disabled>Select Service</option>
                           {services.map((s, i) => (
                             <option key={i} value={s.title} className="bg-slate-900 text-white">{s.title}</option>
@@ -182,12 +183,12 @@ export const Contact = () => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your Message</label>
-                    <textarea placeholder="Tell us about your project..." rows={4} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all resize-none"></textarea>
+                    <textarea placeholder="Tell us about your project..." rows={4} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all resize-none"></textarea>
                   </div>
                   <motion.button 
-                    whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(37, 99, 235, 0.3)" }}
+                    whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(34, 197, 94, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full py-6 bg-blue-600 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-blue-600/20 flex items-center justify-center gap-3 group"
+                    className="w-full py-6 bg-green-500 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-green-500/20 flex items-center justify-center gap-3 group"
                   >
                     Send Message <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                   </motion.button>
@@ -199,12 +200,13 @@ export const Contact = () => {
       </section>
 
       {/* Locations Section */}
-      <section className="py-32 section-dark border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+      <section className="-mt-88 pt-0 pb-24 section-dark  relative overflow-hidden">
+        <div className="green-glow bottom-0 right-0 w-[600px] h-[600px] opacity-5" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
             <FadeIn>
-              <h2 className="text-4xl md:text-6xl font-black text-white mb-8 uppercase italic">
-                Our Global <span className="text-gradient-blue">Presence</span>
+              <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase italic">
+                Our Global <span className="text-green-500">Presence</span>
               </h2>
             </FadeIn>
           </div>
@@ -216,8 +218,8 @@ export const Contact = () => {
               { city: "Dubai", address: "Suite No 2902 and 2903, The Prism Tower, Business Bay, Dubai, UAE" }
             ].map((loc, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="service-card group">
-                  <div className="w-12 h-12 bg-blue-600/10 rounded-xl flex items-center justify-center text-blue-500 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                <div className="service-card group border border-green-500/10 hover:border-green-500/30 transition-all">
+                  <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center text-green-500 mb-6 group-hover:bg-green-600 group-hover:text-white transition-all duration-500">
                     <Globe size={24} />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">{loc.city}</h3>

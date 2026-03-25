@@ -86,10 +86,11 @@ export const Home = () => {
       </section>
 
       {/* Technology Platforms & Clients */}
-      <section className="py-24 section-dark border-y border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-12">
+      <section className="py-24 section-dark border-y border-white/5 overflow-hidden relative">
+        <div className="cyan-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10" />
+        <div className="max-w-7xl mx-auto px-6 mb-12 relative z-10">
           <FadeIn>
-            <p className="text-center text-sm font-bold text-blue-500 uppercase tracking-[0.3em]">
+            <p className="text-center text-sm font-bold text-cyan-500 uppercase tracking-[0.3em]">
               <PulseText>TRUSTED BY GLOBAL BRANDS & TECHNOLOGY PLATFORMS</PulseText>
             </p>
           </FadeIn>
@@ -101,7 +102,7 @@ export const Home = () => {
                 {[...ASSETS.platforms, ...ASSETS.clients].map((item, idx) => (
                   <div 
                     key={`${item.name}-${idx}`} 
-                    className="flex-shrink-0 px-8 py-6 bg-white rounded-2xl flex items-center justify-center min-w-[180px] h-20"
+                    className="flex-shrink-0 px-8 py-6 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl flex items-center justify-center min-w-[180px] h-20 backdrop-blur-md"
                   >
                     <img 
                       src={item.url} 
@@ -235,16 +236,17 @@ export const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-6 text-center md:text-left">
+      <section className="py-24 section-dark border-y border-white/5 relative overflow-hidden">
+        <div className="purple-glow top-0 right-0" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8 text-center md:text-left">
             <div>
-              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-600 font-bold mb-2">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-purple-500 font-bold mb-2">
                 <PulseText><Award size={20} /></PulseText>
                 <PulseText><span>OUR TESTIMONIALS</span></PulseText>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-900">
-                What Our <FloatingText>Clients</FloatingText> Say
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white">
+                What Our <FloatingText>Clients</FloatingText> <span className="text-gradient-purple">Say</span>
               </h2>
             </div>
             <div className="flex flex-col items-center md:items-end gap-2">
@@ -261,17 +263,17 @@ export const Home = () => {
               <FadeIn key={idx} delay={idx * 0.1} distance={30}>
                 <motion.div 
                   whileHover={{ y: -5 }}
-                  className="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col h-full transition-shadow hover:shadow-lg"
+                  className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-purple-500/30 flex flex-col h-full transition-all hover:shadow-lg hover:shadow-purple-500/10"
                 >
                   <div className="flex items-center gap-1 mb-6">
                     {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />)}
                   </div>
-                  <p className="text-xl italic text-slate-700 mb-8 flex-grow">"{t.quote}"</p>
-                  <div className="pt-6 border-t border-slate-200">
-                    <h4 className="font-bold text-slate-900">{t.company}</h4>
-                    <p className="text-sm text-slate-500">{t.industry} • {t.location}</p>
-                    <div className="mt-4 p-4 bg-white rounded-xl text-sm text-slate-600 border border-slate-100">
-                      <span className="font-bold text-blue-600">SUMMARY: </span>
+                  <p className="text-xl italic text-slate-300 mb-8 flex-grow">"{t.quote}"</p>
+                  <div className="pt-6 border-t border-white/10">
+                    <h4 className="font-bold text-white">{t.company}</h4>
+                    <p className="text-sm text-slate-400">{t.industry} • {t.location}</p>
+                    <div className="mt-4 p-4 bg-white/5 rounded-xl text-sm text-slate-300 border border-white/10">
+                      <span className="font-bold text-purple-400">SUMMARY: </span>
                       {t.summary}
                     </div>
                   </div>
@@ -329,12 +331,12 @@ export const Home = () => {
 
       {/* FAQ Section */}
       <section className="py-32 section-dark relative overflow-hidden">
-        <div className="blue-glow bottom-0 right-1/4" />
+        <div className="rose-glow bottom-0 right-1/4" />
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <FadeIn>
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-8 leading-tight uppercase italic">
-                Need to <span className="text-gradient-blue">Know</span>
+                Need to <span className="text-gradient-rose">Know</span>
               </h2>
               <p className="text-slate-400 text-lg max-w-2xl mx-auto">Common questions about our methodologies and how we drive results for our partners.</p>
             </FadeIn>
@@ -343,13 +345,13 @@ export const Home = () => {
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <div className={`rounded-3xl overflow-hidden border transition-all duration-500 ${activeFaq === idx ? 'border-blue-500/50 bg-blue-500/5' : 'border-white/5 bg-white/5 hover:bg-white/10'}`}>
+                <div className={`rounded-3xl overflow-hidden border transition-all duration-500 ${activeFaq === idx ? 'border-rose-500/50 bg-rose-500/5' : 'border-white/5 bg-white/5 hover:bg-white/10'}`}>
                   <button 
                     onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                     className="w-full p-8 flex justify-between items-center text-left transition-colors"
                   >
-                    <span className={`font-bold text-xl md:text-2xl transition-colors ${activeFaq === idx ? 'text-blue-400' : 'text-white'}`}>{faq.q}</span>
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${activeFaq === idx ? 'bg-blue-600 text-white rotate-180' : 'bg-white/5 text-slate-400'}`}>
+                    <span className={`font-bold text-xl md:text-2xl transition-colors ${activeFaq === idx ? 'text-rose-400' : 'text-white'}`}>{faq.q}</span>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${activeFaq === idx ? 'bg-rose-600 text-white rotate-180' : 'bg-white/5 text-slate-400'}`}>
                       <ChevronDown size={24} />
                     </div>
                   </button>
@@ -376,13 +378,13 @@ export const Home = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-32 section-dark relative overflow-hidden">
-        <div className="blue-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30" />
+        <div className="green-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div>
               <FadeIn direction="right">
                 <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-8 leading-tight uppercase italic">
-                  Let's <span className="text-gradient-blue">Dominate</span>
+                  Let's <span className="text-gradient-green">Dominate</span>
                 </h2>
                 <p className="text-2xl text-slate-400 mb-12 max-w-lg">
                   Ready to take your brand to the next level? Our experts are standing by.
@@ -397,7 +399,7 @@ export const Home = () => {
                 ].map((item, i) => (
                   <FadeIn key={i} direction="right" delay={0.2 + i * 0.1}>
                     <div className="flex items-center gap-6 group">
-                      <div className="w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                      <div className="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-500 group-hover:bg-green-600 group-hover:text-white transition-all duration-500">
                         <item.icon size={24} />
                       </div>
                       <div>
@@ -411,30 +413,30 @@ export const Home = () => {
             </div>
             
             <FadeIn direction="left">
-              <div className="bg-white/5 p-8 md:p-12 rounded-[3rem] border border-white/10 backdrop-blur-xl relative">
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl rotate-12">
+              <div className="bg-white/5 p-8 md:p-12 rounded-[3rem] border border-green-500/20 backdrop-blur-xl relative">
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-green-500 rounded-full flex items-center justify-center text-white shadow-2xl rotate-12">
                   <Mail size={32} />
                 </div>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
-                      <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Phone Number</label>
-                      <input type="tel" placeholder="+91..." className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="tel" placeholder="+91..." className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
                       <div className="relative">
-                        <select defaultValue="" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all appearance-none">
+                        <select defaultValue="" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all appearance-none">
                           <option value="" disabled>Select Service</option>
                           {services.map((s, i) => (
                             <option key={i} value={s.title} className="bg-slate-900 text-white">{s.title}</option>
@@ -446,12 +448,12 @@ export const Home = () => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your Message</label>
-                    <textarea placeholder="Tell us about your project..." rows={4} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all resize-none"></textarea>
+                    <textarea placeholder="Tell us about your project..." rows={4} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all resize-none"></textarea>
                   </div>
                   <motion.button 
-                    whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(37, 99, 235, 0.3)" }}
+                    whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(34, 197, 94, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full py-6 bg-blue-600 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-blue-600/20 flex items-center justify-center gap-3 group"
+                    className="w-full py-6 bg-green-500 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-green-500/20 flex items-center justify-center gap-3 group"
                   >
                     Send Message <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                   </motion.button>

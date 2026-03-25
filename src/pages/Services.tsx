@@ -98,8 +98,9 @@ export const Services = () => {
       </section>
 
       {/* What We're Great At */}
-      <section id="services-list" className="py-32 section-dark border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="services-list" className="pt-24 pb-0 -mb-16 section-dark relative overflow-hidden">
+        <div className="orange-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <FadeIn>
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-8 leading-tight uppercase italic">
@@ -129,14 +130,14 @@ export const Services = () => {
                       whileHover={{ y: -10 }}
                       className="service-card group h-full cursor-pointer"
                     >
-                      <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 text-blue-500">
+                      <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-8 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 text-orange-500">
                         <service.icon size={32} />
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
                       <p className="text-slate-400 leading-relaxed">
                         {service.description}
                       </p>
-                      <div className="mt-8 flex items-center gap-2 text-blue-500 font-bold group-hover:gap-4 transition-all">
+                      <div className="mt-8 flex items-center gap-2 text-orange-500 font-bold group-hover:gap-4 transition-all">
                         Learn More <ArrowRight size={20} />
                       </div>
                     </motion.div>
@@ -148,7 +149,7 @@ export const Services = () => {
                     whileHover={{ y: -10 }}
                     className="service-card group h-full"
                   >
-                    <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-8 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500 text-blue-500">
+                    <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-8 group-hover:bg-orange-500 group-hover:text-white transition-all duration-500 text-orange-500">
                       <service.icon size={32} />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
@@ -164,21 +165,22 @@ export const Services = () => {
       </section>
 
       {/* Discover Section */}
-      <section className="py-32 section-dark relative overflow-hidden">
-        <div className="blue-glow bottom-0 right-0 w-[600px] h-[600px] opacity-10" />
+      <section className="-mt-96 py-4 md:py-6 section-dark relative overflow-hidden">
+        <div className="orange-glow bottom-0 right-0 w-[600px] h-[600px] opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="bg-blue-600 rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 md:p-24 text-center">
+          <div className="bg-gradient-to-r from-orange-600 to-amber-600 rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 md:p-16 text-center">
             <FadeIn>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
-                Discover What We Can <br /> <span className="text-blue-200">Achieve Together:</span>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
+                Discover What We Can <br /> <span className="text-orange-200">Achieve Together:</span>
               </h2>
-              <p className="text-xl text-blue-50 mb-12 max-w-3xl mx-auto font-medium">
-                Share Your Details and We’ll Do the Rest! Let’s have a conversation. We’d love to provide some honest guidance.
+              <p className="text-base sm:text-lg text-orange-50 mb-8 max-w-3xl mx-auto font-medium">
+                Share Your Details and We'll Do the Rest! Let's have a conversation. We'd love to provide some honest guidance.
               </p>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-6 sm:px-12 py-4 sm:py-5 bg-white text-blue-600 rounded-full font-black text-lg sm:text-xl uppercase tracking-widest shadow-2xl hover:bg-blue-50 transition-all"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full sm:w-auto px-6 sm:px-12 py-4 sm:py-5 bg-white text-orange-600 rounded-full font-black text-lg sm:text-xl uppercase tracking-widest shadow-2xl hover:bg-orange-50 transition-all"
               >
                 FREE CONSULTATION CALL
               </motion.button>
@@ -189,13 +191,13 @@ export const Services = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-32 section-dark relative overflow-hidden">
-        <div className="blue-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30" />
+        <div className="cyan-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div>
               <FadeIn direction="right">
                 <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-8 leading-tight uppercase italic">
-                  Contact <span className="text-gradient-blue">Us</span>
+                  Contact <span className="text-gradient-cyan">Us</span>
                 </h2>
                 <p className="text-2xl text-slate-400 mb-12 max-w-lg">
                   Ready to take your brand to the next level? Our experts are standing by.
@@ -210,7 +212,7 @@ export const Services = () => {
                 ].map((item, i) => (
                   <FadeIn key={i} direction="right" delay={0.2 + i * 0.1}>
                     <div className="flex items-center gap-6 group">
-                      <div className="w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                      <div className="w-16 h-16 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-cyan-500 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500">
                         <item.icon size={24} />
                       </div>
                       <div>
@@ -224,30 +226,30 @@ export const Services = () => {
             </div>
             
             <FadeIn direction="left">
-              <div className="bg-white/5 p-8 md:p-12 rounded-[3rem] border border-white/10 backdrop-blur-xl relative">
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl rotate-12">
+              <div className="bg-white/5 p-8 md:p-12 rounded-[3rem] border border-cyan-500/20 backdrop-blur-xl relative">
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-cyan-500 rounded-full flex items-center justify-center text-white shadow-2xl rotate-12">
                   <Mail size={32} />
                 </div>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-cyan-500 text-white transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
-                      <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-cyan-500 text-white transition-all" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Phone Number</label>
-                      <input type="tel" placeholder="+91..." className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="tel" placeholder="+91..." className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-cyan-500 text-white transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
                       <div className="relative">
-                        <select defaultValue="" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all appearance-none">
+                        <select defaultValue="" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-cyan-500 text-white transition-all appearance-none">
                           <option value="" disabled>Select Service</option>
                           {services.map((s, i) => (
                             <option key={i} value={s.title} className="bg-slate-900 text-white">{s.title}</option>
@@ -259,12 +261,12 @@ export const Services = () => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your Message</label>
-                    <textarea placeholder="Tell us about your project..." rows={4} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all resize-none"></textarea>
+                    <textarea placeholder="Tell us about your project..." rows={4} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-cyan-500 text-white transition-all resize-none"></textarea>
                   </div>
                   <motion.button 
-                    whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(37, 99, 235, 0.3)" }}
+                    whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(6, 182, 212, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full py-6 bg-blue-600 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-blue-600/20 flex items-center justify-center gap-3 group"
+                    className="w-full py-6 bg-cyan-500 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-cyan-500/20 flex items-center justify-center gap-3 group"
                   >
                     Send Message <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                   </motion.button>

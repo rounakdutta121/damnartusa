@@ -82,13 +82,14 @@ export const About = () => {
       </section>
 
       {/* Core Values / Who We Are Detailed */}
-      <section className="py-24 section-dark border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="pt-32 pb-0 -mb-[30rem] section-dark border-y border-white/5 relative overflow-hidden">
+        <div className="purple-glow top-0 right-0" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <FadeIn direction="right">
               <div className="space-y-8">
                 <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase italic">
-                  Powering <span className="text-gradient-blue">Growth</span>
+                  Powering <span className="text-gradient-purple">Growth</span>
                 </h2>
                 <div className="space-y-6 text-lg text-slate-400 leading-relaxed">
                   <p>
@@ -103,7 +104,7 @@ export const About = () => {
                       "Performance-Driven PPC & SEO"
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-3 text-white font-bold">
-                        <CheckCircle2 className="text-blue-500" size={20} />
+                        <CheckCircle2 className="text-purple-500" size={20} />
                         {item}
                       </li>
                     ))}
@@ -114,8 +115,8 @@ export const About = () => {
             
             <FadeIn direction="left">
               <div className="relative">
-                <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full" />
-                <div className="relative service-card backdrop-blur-xl">
+                <div className="absolute -inset-4 bg-purple-600/20 blur-3xl rounded-full" />
+                <div className="relative service-card backdrop-blur-xl border border-purple-500/20">
                   <h3 className="text-2xl font-black text-white mb-6 uppercase tracking-widest">Want to Know us Better?</h3>
                   <p className="text-slate-400 mb-8 text-lg">
                     Download DamnArt's Services' Portfolio to know what more we have to offer!
@@ -123,9 +124,9 @@ export const About = () => {
                   <motion.button 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="btn-primary w-full py-6 text-xl justify-center"
+                    className="w-full py-4 sm:py-6 bg-purple-600 text-white rounded-2xl font-black text-base sm:text-xl uppercase tracking-widest shadow-xl shadow-purple-600/20 flex items-center justify-center gap-2 sm:gap-3"
                   >
-                    <Download size={24} /> Download Brochure
+                    <Download size={20} className="sm:w-6" /> Download Brochure
                   </motion.button>
                 </div>
               </div>
@@ -135,28 +136,28 @@ export const About = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section id="vision" className="py-32 section-dark relative overflow-hidden">
-        <div className="blue-glow bottom-0 right-0 w-[600px] h-[600px] opacity-10" />
+      <section id="vision" className="-mt-[30rem] pb-8 section-dark relative overflow-hidden">
+        <div className="purple-glow bottom-0 right-0 w-[600px] h-[600px] opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Vision */}
             <FadeIn delay={0.2}>
-              <div className="service-card h-full group">
-                <div className="w-20 h-20 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+              <div className="service-card h-full group border border-purple-500/10 hover:border-purple-500/30">
+                <div className="w-20 h-20 bg-purple-600/10 rounded-2xl flex items-center justify-center text-purple-500 mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500">
                   <Target size={40} />
                 </div>
-                <h3 className="text-4xl font-black text-white mb-8 uppercase italic">Our <span className="text-gradient-blue">Vision</span></h3>
+                <h3 className="text-4xl font-black text-white mb-8 uppercase italic">Our <span className="text-gradient-purple">Vision</span></h3>
                 <ul className="space-y-6 text-slate-400 text-lg">
                   <li className="flex gap-4">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 mt-2.5 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-purple-500 mt-2.5 flex-shrink-0" />
                     <span>To be the leading digital marketing agency recognized for our expertise, creativity, and exceptional client service.</span>
                   </li>
                   <li className="flex gap-4">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 mt-2.5 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-purple-500 mt-2.5 flex-shrink-0" />
                     <span>Experts in Pay Per Click, Social Media Management, Graphic Designing, Search Engine Optimization, Content Creation, and more.</span>
                   </li>
                   <li className="flex gap-4">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 mt-2.5 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-purple-500 mt-2.5 flex-shrink-0" />
                     <span>To continuously evolve and set new standards in the digital marketing industry, driving positive change and innovation.</span>
                   </li>
                 </ul>
@@ -165,26 +166,26 @@ export const About = () => {
 
             {/* Mission */}
             <FadeIn delay={0.4}>
-              <div className="service-card h-full group">
-                <div className="w-20 h-20 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+              <div className="service-card h-full group border border-purple-500/10 hover:border-purple-500/30">
+                <div className="w-20 h-20 bg-purple-600/10 rounded-2xl flex items-center justify-center text-purple-500 mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500">
                   <Rocket size={40} />
                 </div>
-                <h3 className="text-4xl font-black text-white mb-8 uppercase italic">Our <span className="text-gradient-blue">Mission</span></h3>
+                <h3 className="text-4xl font-black text-white mb-8 uppercase italic">Our <span className="text-gradient-purple">Mission</span></h3>
                 <ul className="space-y-6 text-slate-400 text-lg">
                   <li className="flex gap-4">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 mt-2.5 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-purple-500 mt-2.5 flex-shrink-0" />
                     <span>Empower growth in businesses by addressing their simple to complex digital marketing issues like inconsistent lead generation and low ROAS.</span>
                   </li>
                   <li className="flex gap-4">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 mt-2.5 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-purple-500 mt-2.5 flex-shrink-0" />
                     <span>Deliver innovative solutions through data-driven strategies and creative advertisement campaigns tailored to fuel revenue growth.</span>
                   </li>
                   <li className="flex gap-4">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 mt-2.5 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-purple-500 mt-2.5 flex-shrink-0" />
                     <span>Focus on measurable results that help clients overcome challenges and reach their business objectives.</span>
                   </li>
                   <li className="flex gap-4">
-                    <div className="w-2 h-2 rounded-full bg-blue-500 mt-2.5 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-purple-500 mt-2.5 flex-shrink-0" />
                     <span>Build lasting relationships with clients based on Analytics & Reporting, Trust, Transparency, and Mutual Success.</span>
                   </li>
                 </ul>
@@ -195,14 +196,15 @@ export const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-32 section-dark border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="pt-16 pb-16 section-dark border-t border-white/5 relative overflow-hidden">
+        <div className="purple-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <FadeIn>
               <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-8 leading-tight uppercase italic">
-                Why Choose <span className="text-gradient-blue">DamnArt?</span>
+                Why Choose <span className="text-gradient-purple">DamnArt?</span>
               </h2>
-              <p className="text-2xl md:text-3xl font-black text-blue-500 mb-8 tracking-widest uppercase">
+              <p className="text-2xl md:text-3xl font-black text-purple-500 mb-8 tracking-widest uppercase">
                 DIGITAL ADVERTISEMENT MARKETING NETWORK
               </p>
             </FadeIn>
@@ -220,7 +222,7 @@ export const About = () => {
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="flex flex-col items-center text-center group">
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-400 to-blue-700 flex flex-col items-center justify-center p-4 mb-6 shadow-xl shadow-blue-600/20 group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-purple-400 to-purple-700 flex flex-col items-center justify-center p-4 mb-6 shadow-xl shadow-purple-600/20 group-hover:scale-110 transition-transform duration-500">
                     <item.icon className="text-white mb-2" size={32} />
                     <span className="text-white font-black text-xs uppercase leading-tight">{item.title}</span>
                   </div>
@@ -235,12 +237,13 @@ export const About = () => {
       </section>
 
       {/* Contact Info (Specific to About Page) */}
-      <section id="contact" className="py-32 section-dark border-t border-white/5 bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="contact" className="py-32 section-dark border-t border-white/5 relative overflow-hidden">
+        <div className="purple-glow bottom-0 left-1/2 -translate-x-1/2" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <FadeIn delay={0.1}>
-              <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-3xl border border-white/10">
-                <div className="w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 mb-6">
+              <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-3xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
+                <div className="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500 mb-6">
                   <Mail size={32} />
                 </div>
                 <h4 className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Email Us</h4>
@@ -248,8 +251,8 @@ export const About = () => {
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-3xl border border-white/10">
-                <div className="w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 mb-6">
+              <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-3xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
+                <div className="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500 mb-6">
                   <Phone size={32} />
                 </div>
                 <h4 className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Call Us</h4>
@@ -257,8 +260,8 @@ export const About = () => {
               </div>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-3xl border border-white/10">
-                <div className="w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 mb-6">
+              <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-3xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
+                <div className="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500 mb-6">
                   <Globe size={32} />
                 </div>
                 <h4 className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Global Presence</h4>
