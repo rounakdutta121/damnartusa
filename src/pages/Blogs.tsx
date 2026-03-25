@@ -14,17 +14,18 @@ const blogPosts = [
     author: "Dr.Volt",
     date: "19 November 2025",
     readTime: "5 Min",
-    image: ASSETS.servicesVideo,
+    image: "https://cdni.iconscout.com/illustration/premium/thumb/group-architects-create-and-engineering-project-of-city-illustration-svg-download-png-1850571.png",
     excerpt: "The Urgency of Automating Our Substations: A Leap Towards a Resilient Future"
   },
   {
     id: 2,
+    slug: "healthy-living-nurturing-our-golden-years",
     title: "Healthy Living: Proactive Steps for Healthy Aging",
     category: "Healthy Living",
     author: "Editorial Team",
     date: "19 November 2025",
     readTime: "4 Min",
-    image: ASSETS.heroVideo,
+    image: "https://cdni.iconscout.com/illustration/premium/thumb/group-architects-create-and-engineering-project-of-city-illustration-svg-download-png-1850571.png",
     excerpt: "Nurturing Our Golden Years: Proactive Steps for Healthy Aging and Flu Protection"
   },
   {
