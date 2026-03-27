@@ -122,6 +122,23 @@ export const DataMining = () => {
         <div className="blue-glow -top-20 -left-20 w-[600px] h-[600px] opacity-20" />
         <div className="blue-glow -bottom-20 -right-20 w-[600px] h-[600px] opacity-20" />
         
+        <div className="bubble bubble-cyan b1" />
+        <div className="bubble bubble-cyan b2" />
+        <div className="bubble bubble-cyan b3" />
+        <div className="bubble bubble-cyan b4" />
+        <div className="bubble bubble-blue b5" />
+        <div className="bubble bubble-blue b6" />
+        <div className="bubble bubble-blue b7" />
+        <div className="bubble bubble-blue b8" />
+        <div className="bubble bubble-green b9" />
+        <div className="bubble bubble-green b10" />
+        <div className="bubble bubble-green b11" />
+        <div className="bubble bubble-green b12" />
+        <div className="bubble bubble-orange b13" />
+        <div className="bubble bubble-orange b14" />
+        <div className="bubble bubble-orange b15" />
+        <div className="bubble bubble-orange b16" />
+        
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20 md:pt-0">
           <div className="max-w-5xl">
             <FadeIn delay={0.2}>
@@ -173,7 +190,19 @@ export const DataMining = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-24 section-dark border-y border-white/30">
+      <section className="py-24 section-dark border-y border-white/30 relative overflow-hidden">
+        <div className="bubble bubble-cyan b1" />
+        <div className="bubble bubble-cyan b2" />
+        <div className="bubble bubble-cyan b3" />
+        <div className="bubble bubble-cyan b4" />
+        <div className="bubble bubble-green b5" />
+        <div className="bubble bubble-green b6" />
+        <div className="bubble bubble-green b7" />
+        <div className="bubble bubble-green b8" />
+        <div className="bubble bubble-orange b9" />
+        <div className="bubble bubble-orange b10" />
+        <div className="bubble bubble-orange b11" />
+        <div className="bubble bubble-orange b12" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <FadeIn>
@@ -218,7 +247,15 @@ export const DataMining = () => {
 
       {/* Detailed Services */}
       {dataMiningServices.map((service, i) => (
-        <section key={service.id} id={service.id} className={`py-32 section-dark ${i % 2 === 0 ? 'bg-slate-900/30' : ''}`}>
+        <section key={service.id} id={service.id} className={`py-32 section-dark relative overflow-hidden ${i % 2 === 0 ? 'bg-slate-900/30' : ''}`}>
+          <div className="bubble bubble-cyan b1" />
+          <div className="bubble bubble-cyan b3" />
+          <div className="bubble bubble-cyan b5" />
+          <div className="bubble bubble-cyan b7" />
+          <div className="bubble bubble-green b9" />
+          <div className="bubble bubble-green b11" />
+          <div className="bubble bubble-green b13" />
+          <div className="bubble bubble-green b15" />
           <div className="max-w-7xl mx-auto px-6">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-20 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
@@ -276,7 +313,19 @@ export const DataMining = () => {
       ))}
 
       {/* Why Choose Us */}
-      <section className="py-32 section-dark border-y border-white/30">
+      <section className="py-32 section-dark border-y border-white/30 relative overflow-hidden">
+        <div className="bubble bubble-blue b1" />
+        <div className="bubble bubble-blue b3" />
+        <div className="bubble bubble-blue b5" />
+        <div className="bubble bubble-blue b7" />
+        <div className="bubble bubble-blue b9" />
+        <div className="bubble bubble-blue b11" />
+        <div className="bubble bubble-purple b2" />
+        <div className="bubble bubble-purple b4" />
+        <div className="bubble bubble-purple b6" />
+        <div className="bubble bubble-purple b8" />
+        <div className="bubble bubble-purple b10" />
+        <div className="bubble bubble-purple b12" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <FadeIn>
@@ -303,7 +352,19 @@ export const DataMining = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact-form" className="py-32 section-dark border-t border-white/30">
+      <section id="contact-form" className="py-32 section-dark border-t border-white/30 relative overflow-hidden">
+        <div className="bubble bubble-green b1" />
+        <div className="bubble bubble-green b2" />
+        <div className="bubble bubble-green b3" />
+        <div className="bubble bubble-green b4" />
+        <div className="bubble bubble-cyan b5" />
+        <div className="bubble bubble-cyan b6" />
+        <div className="bubble bubble-cyan b7" />
+        <div className="bubble bubble-cyan b8" />
+        <div className="bubble bubble-blue b9" />
+        <div className="bubble bubble-blue b10" />
+        <div className="bubble bubble-blue b11" />
+        <div className="bubble bubble-blue b12" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>

@@ -122,6 +122,23 @@ export const DigitalMarketingAudit = () => {
         <div className="blue-glow -top-20 -left-20 w-[600px] h-[600px] opacity-20" />
         <div className="blue-glow -bottom-20 -right-20 w-[600px] h-[600px] opacity-20" />
         
+        <div className="bubble bubble-blue b1" />
+        <div className="bubble bubble-blue b2" />
+        <div className="bubble bubble-blue b3" />
+        <div className="bubble bubble-blue b4" />
+        <div className="bubble bubble-cyan b5" />
+        <div className="bubble bubble-cyan b6" />
+        <div className="bubble bubble-cyan b7" />
+        <div className="bubble bubble-cyan b8" />
+        <div className="bubble bubble-orange b9" />
+        <div className="bubble bubble-orange b10" />
+        <div className="bubble bubble-orange b11" />
+        <div className="bubble bubble-orange b12" />
+        <div className="bubble bubble-green b13" />
+        <div className="bubble bubble-green b14" />
+        <div className="bubble bubble-green b15" />
+        <div className="bubble bubble-green b16" />
+        
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20 md:pt-0">
           <div className="max-w-5xl">
             <FadeIn delay={0.2}>
@@ -153,8 +170,8 @@ export const DigitalMarketingAudit = () => {
 
             <FadeIn delay={0.9}>
               <div className="mb-10">
-                <span className="text-slate-400 line-through text-2xl mr-4">₹4999</span>
-                <span className="text-5xl font-black text-white">₹999</span>
+                <span className="text-slate-400 line-through text-2xl mr-4">₹4,999</span>
+                <span className="text-5xl font-black text-white">₹2,999</span>
               </div>
             </FadeIn>
 
@@ -183,7 +200,19 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* Why Audit Section */}
-      <section className="py-24 section-dark border-y border-white/30">
+      <section className="py-24 section-dark border-y border-white/30 relative overflow-hidden">
+        <div className="bubble bubble-cyan b1" />
+        <div className="bubble bubble-cyan b3" />
+        <div className="bubble bubble-cyan b5" />
+        <div className="bubble bubble-cyan b7" />
+        <div className="bubble bubble-cyan b9" />
+        <div className="bubble bubble-cyan b11" />
+        <div className="bubble bubble-orange b2" />
+        <div className="bubble bubble-orange b4" />
+        <div className="bubble bubble-orange b6" />
+        <div className="bubble bubble-orange b8" />
+        <div className="bubble bubble-orange b10" />
+        <div className="bubble bubble-orange b12" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
@@ -228,7 +257,19 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-32 section-dark">
+      <section className="py-32 section-dark relative overflow-hidden">
+        <div className="bubble bubble-blue b1" />
+        <div className="bubble bubble-blue b3" />
+        <div className="bubble bubble-blue b5" />
+        <div className="bubble bubble-blue b7" />
+        <div className="bubble bubble-blue b9" />
+        <div className="bubble bubble-blue b11" />
+        <div className="bubble bubble-purple b2" />
+        <div className="bubble bubble-purple b4" />
+        <div className="bubble bubble-purple b6" />
+        <div className="bubble bubble-purple b8" />
+        <div className="bubble bubble-purple b10" />
+        <div className="bubble bubble-purple b12" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <FadeIn>
@@ -253,7 +294,19 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-24 section-dark border-y border-white/30">
+      <section className="py-24 section-dark border-y border-white/30 relative overflow-hidden">
+        <div className="bubble bubble-green b1" />
+        <div className="bubble bubble-green b2" />
+        <div className="bubble bubble-green b3" />
+        <div className="bubble bubble-green b4" />
+        <div className="bubble bubble-cyan b5" />
+        <div className="bubble bubble-cyan b6" />
+        <div className="bubble bubble-cyan b7" />
+        <div className="bubble bubble-cyan b8" />
+        <div className="bubble bubble-orange b9" />
+        <div className="bubble bubble-orange b10" />
+        <div className="bubble bubble-orange b11" />
+        <div className="bubble bubble-orange b12" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <FadeIn>
@@ -301,7 +354,15 @@ export const DigitalMarketingAudit = () => {
 
       {/* Detailed Services */}
       {auditServices.map((service, i) => (
-        <section key={service.id} id={service.id} className={`py-32 section-dark ${i % 2 === 0 ? 'bg-slate-900/30' : ''}`}>
+        <section key={service.id} id={service.id} className={`py-32 section-dark relative overflow-hidden ${i % 2 === 0 ? 'bg-slate-900/30' : ''}`}>
+          <div className="bubble bubble-blue b1" />
+          <div className="bubble bubble-blue b3" />
+          <div className="bubble bubble-blue b5" />
+          <div className="bubble bubble-blue b7" />
+          <div className="bubble bubble-purple b9" />
+          <div className="bubble bubble-purple b11" />
+          <div className="bubble bubble-purple b13" />
+          <div className="bubble bubble-purple b15" />
           <div className="max-w-7xl mx-auto px-6">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-20 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
               <FadeIn direction={i % 2 === 0 ? "right" : "left"}>
@@ -380,6 +441,18 @@ export const DigitalMarketingAudit = () => {
       {/* Complete Audit Package */}
       <section className="py-32 section-dark border-y border-white/30 relative overflow-hidden">
         <div className="blue-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" />
+        <div className="bubble bubble-green b1" />
+        <div className="bubble bubble-green b3" />
+        <div className="bubble bubble-green b5" />
+        <div className="bubble bubble-green b7" />
+        <div className="bubble bubble-green b9" />
+        <div className="bubble bubble-green b11" />
+        <div className="bubble bubble-cyan b2" />
+        <div className="bubble bubble-cyan b4" />
+        <div className="bubble bubble-cyan b6" />
+        <div className="bubble bubble-cyan b8" />
+        <div className="bubble bubble-cyan b10" />
+        <div className="bubble bubble-cyan b12" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-[3rem] p-12 md:p-16 text-center">
             <FadeIn>
@@ -435,7 +508,19 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-32 section-dark">
+      <section className="py-32 section-dark relative overflow-hidden">
+        <div className="bubble bubble-blue b1" />
+        <div className="bubble bubble-blue b3" />
+        <div className="bubble bubble-blue b5" />
+        <div className="bubble bubble-blue b7" />
+        <div className="bubble bubble-blue b9" />
+        <div className="bubble bubble-blue b11" />
+        <div className="bubble bubble-rose b2" />
+        <div className="bubble bubble-rose b4" />
+        <div className="bubble bubble-rose b6" />
+        <div className="bubble bubble-rose b8" />
+        <div className="bubble bubble-rose b10" />
+        <div className="bubble bubble-rose b12" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <FadeIn>
@@ -462,7 +547,19 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 section-dark border-t border-white/30">
+      <section className="py-32 section-dark border-t border-white/30 relative overflow-hidden">
+        <div className="bubble bubble-orange b1" />
+        <div className="bubble bubble-orange b3" />
+        <div className="bubble bubble-orange b5" />
+        <div className="bubble bubble-orange b7" />
+        <div className="bubble bubble-orange b9" />
+        <div className="bubble bubble-orange b11" />
+        <div className="bubble bubble-purple b2" />
+        <div className="bubble bubble-purple b4" />
+        <div className="bubble bubble-purple b6" />
+        <div className="bubble bubble-purple b8" />
+        <div className="bubble bubble-purple b10" />
+        <div className="bubble bubble-purple b12" />
         <div className="max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-tight uppercase italic">
@@ -484,7 +581,19 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact-form" className="py-32 section-dark border-t border-white/30">
+      <section id="contact-form" className="py-32 section-dark border-t border-white/30 relative overflow-hidden">
+        <div className="bubble bubble-green b1" />
+        <div className="bubble bubble-green b2" />
+        <div className="bubble bubble-green b3" />
+        <div className="bubble bubble-green b4" />
+        <div className="bubble bubble-cyan b5" />
+        <div className="bubble bubble-cyan b6" />
+        <div className="bubble bubble-cyan b7" />
+        <div className="bubble bubble-cyan b8" />
+        <div className="bubble bubble-blue b9" />
+        <div className="bubble bubble-blue b10" />
+        <div className="bubble bubble-blue b11" />
+        <div className="bubble bubble-blue b12" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
@@ -571,7 +680,10 @@ export const DigitalMarketingAudit = () => {
       </section>
 
       {/* Disclaimer */}
-      <section className="py-12 section-dark border-t border-white/30">
+      <section className="py-12 section-dark border-t border-white/30 relative overflow-hidden">
+        <div className="bubble bubble-rose b1" />
+        <div className="bubble bubble-rose b3" />
+        <div className="bubble bubble-rose b5" />
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-slate-500 text-sm text-center leading-relaxed">
             <span className="font-bold text-slate-400">Disclaimer:</span> The Digital Marketing Audit Services offered by Damnart is intended to evaluate various aspects of your digital marketing efforts as per your request. The insights provided in the audit report will be based on current performance data and best practices. While we strive to offer actionable recommendations, results may vary based on your specific marketing goals and business context. For further consultations or more comprehensive services, please contact our team directly.
