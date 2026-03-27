@@ -1,14 +1,25 @@
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   Users, Target, Rocket, Shield, Award, 
   ArrowRight, Download, Mail, Phone, MapPin,
-  CheckCircle2, Globe, MousePointerClick, DollarSign, Heart, BarChart3, Zap
+  CheckCircle2, Globe, MousePointerClick, DollarSign, Heart, BarChart3, Zap, X
 } from 'lucide-react';
 import { FadeIn, FloatingText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS } from '../data';
 
 export const About = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalForm, setModalForm] = useState({ name: '', email: '', phone: '' });
+
+  const handleModalSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Brochure request:', modalForm);
+    setIsModalOpen(false);
+    setModalForm({ name: '', email: '', phone: '' });
+  };
+
   return (
     <div className="min-h-screen font-sans bg-slate-950 text-slate-100">
       {/* Hero Section */}
@@ -132,6 +143,7 @@ export const About = () => {
                   <motion.button 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => setIsModalOpen(true)}
                     className="w-full py-4 sm:py-6 bg-purple-600 text-white rounded-2xl font-black text-base sm:text-xl uppercase tracking-widest shadow-xl shadow-purple-600/20 flex items-center justify-center gap-2 sm:gap-3"
                   >
                     <Download size={20} className="sm:w-6" /> Download Brochure
@@ -303,6 +315,88 @@ export const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Brochure Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          >
+            <div 
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+              onClick={() => setIsModalOpen(false)}
+            />
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative bg-slate-900 border border-white/10 rounded-[2rem] p-8 md:p-12 max-w-md w-full shadow-2xl"
+            >
+              <button 
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all"
+              >
+                <X size={20} />
+              </button>
+              
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Download size={32} className="text-purple-500" />
+                </div>
+                <h3 className="text-2xl font-black text-white mb-2">Download Our Brochure</h3>
+                <p className="text-slate-400">Enter your details and we'll send you the DamnArt Services Portfolio</p>
+              </div>
+
+              <form onSubmit={handleModalSubmit} className="space-y-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="John Doe" 
+                    required
+                    value={modalForm.name}
+                    onChange={(e) => setModalForm({ ...modalForm, name: e.target.value })}
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-purple-500 text-white transition-all" 
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
+                  <input 
+                    type="email" 
+                    placeholder="john@example.com" 
+                    required
+                    value={modalForm.email}
+                    onChange={(e) => setModalForm({ ...modalForm, email: e.target.value })}
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-purple-500 text-white transition-all" 
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Phone Number</label>
+                  <input 
+                    type="tel" 
+                    placeholder="+91..." 
+                    required
+                    value={modalForm.phone}
+                    onChange={(e) => setModalForm({ ...modalForm, phone: e.target.value })}
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-purple-500 text-white transition-all" 
+                  />
+                </div>
+                <motion.button 
+                  type="submit"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full py-5 bg-purple-600 text-white rounded-2xl font-black text-lg uppercase tracking-widest shadow-xl shadow-purple-600/20 flex items-center justify-center gap-3 group"
+                >
+                  Get Brochure <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                </motion.button>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
