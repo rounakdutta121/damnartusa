@@ -405,7 +405,7 @@ export const Home = () => {
                   </div>
                   <p className="text-xl italic text-slate-300 mb-8 flex-grow">"{t.quote}"</p>
                   <div className="pt-6 border-t border-white/10">
-                    <h4 className="font-bold text-white">{t.company}</h4>
+                    <h3 className="font-bold text-white">{t.company}</h3>
                     <p className="text-sm text-slate-400">{t.industry} • {t.location}</p>
                     <div className="mt-4 p-4 bg-white/5 rounded-xl text-sm text-slate-300 border border-white/10">
                       <span className="font-bold text-purple-400">SUMMARY: </span>
@@ -457,7 +457,7 @@ export const Home = () => {
                     <p className="text-slate-400 text-sm mb-6 flex-grow">{blog.excerpt}</p>
                     <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
                       <span className="text-slate-500 text-sm">{blog.readTime} read</span>
-                      <button className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-blue-600 transition-all">
+                      <button className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-blue-600 transition-all" aria-label="Read more">
                         <ArrowRight size={18} />
                       </button>
                     </div>
@@ -622,9 +622,10 @@ export const Home = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
+                      <label htmlFor="service-select" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
                       <div className="relative">
                         <select 
+                          id="service-select"
                           value={contactForm.service}
                           onChange={(e) => setContactForm({ ...contactForm, service: e.target.value })}
                           className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all appearance-none"
@@ -685,6 +686,7 @@ export const Home = () => {
             >
               <button 
                 onClick={() => setIsModalOpen(false)}
+                aria-label="Close modal"
                 className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all"
               >
                 <X size={20} />

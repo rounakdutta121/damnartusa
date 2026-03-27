@@ -46,6 +46,7 @@ const FloatingActions = () => (
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       href="https://wa.me/919056544487"
+      aria-label="Chat on WhatsApp"
       className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:bg-green-600 transition-colors"
     >
       <MessageCircle size={28} />
@@ -54,6 +55,7 @@ const FloatingActions = () => (
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       href="tel:+919056544487"
+      aria-label="Call us"
       className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:bg-blue-700 transition-colors"
     >
       <Phone size={28} />

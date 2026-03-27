@@ -507,9 +507,10 @@ export const SMM = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
+                      <label htmlFor="service-select" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
                       <div className="relative">
                         <select 
+                          id="service-select"
                           value={contactForm.service}
                           onChange={(e) => setContactForm({ ...contactForm, service: e.target.value })}
                           className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all appearance-none"

@@ -18,16 +18,17 @@ export const Footer = () => {
             </p>
             <div className="flex gap-4">
               {[
-                { Icon: Facebook, url: ASSETS.social.facebook },
-                { Icon: Instagram, url: ASSETS.social.instagram },
-                { Icon: Youtube, url: ASSETS.social.youtube },
-                { Icon: Linkedin, url: ASSETS.social.linkedin }
+                { Icon: Facebook, url: ASSETS.social.facebook, name: "Facebook" },
+                { Icon: Instagram, url: ASSETS.social.instagram, name: "Instagram" },
+                { Icon: Youtube, url: ASSETS.social.youtube, name: "YouTube" },
+                { Icon: Linkedin, url: ASSETS.social.linkedin, name: "LinkedIn" }
               ].map((social, i) => (
                 <motion.a 
                   key={i} 
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Follow us on ${social.name}`}
                   whileHover={{ scale: 1.1, color: "#3b82f6" }}
                   className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-slate-400 hover:bg-white/10 transition-all"
                 >

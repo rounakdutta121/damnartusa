@@ -67,7 +67,7 @@ export const Header = () => {
             <button onClick={scrollToContact} className="btn-primary">Work With Us!</button>
           </div>
 
-          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
