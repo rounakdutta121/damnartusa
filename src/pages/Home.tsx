@@ -154,7 +154,7 @@ export const Home = () => {
             
             <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-10">
               <FadeIn delay={0.4} distance={40}>
-                DAMNART:<br />
+                DAMNART DIGITAL:<br />
               </FadeIn>
               <FadeIn delay={0.6} distance={40}>
                 <span className="text-gradient-blue inline-block sm:whitespace-nowrap">
@@ -219,6 +219,9 @@ export const Home = () => {
                       alt={item.name} 
                       className="h-14 w-auto object-contain" 
                       referrerPolicy="no-referrer" 
+                      loading="lazy"
+                      width="180"
+                      height="56"
                     />
                   </div>
                 ))}
@@ -318,7 +321,7 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="relative rounded-[3rem] overflow-hidden bg-blue-600">
             <div className="absolute inset-0 opacity-20">
-              <img src={ASSETS.brochureCover} alt="Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <img src={ASSETS.brochureCover} alt="Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="eager" width="1920" height="1080" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-600 to-transparent" />
             
@@ -345,15 +348,15 @@ export const Home = () => {
                   </button>
                 </div>
               </FadeIn>
-              <FadeIn direction="left">
-                <div className="hidden lg:block relative">
-                  <img src={ASSETS.brochureCover} alt="Brochure" className="rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700" referrerPolicy="no-referrer" />
-                  <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-2xl">
-                    <div className="text-4xl font-black text-blue-600 mb-1">500%</div>
-                    <div className="text-slate-900 font-bold text-sm uppercase tracking-widest">Avg. ROI Increase</div>
+                  <FadeIn direction="left">
+                  <div className="hidden lg:block relative">
+                    <img src={ASSETS.brochureCover} alt="Brochure" className="rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700" referrerPolicy="no-referrer" loading="eager" width="600" height="800" />
+                    <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-2xl">
+                      <div className="text-4xl font-black text-blue-600 mb-1">500%</div>
+                      <div className="text-slate-900 font-bold text-sm uppercase tracking-widest">Avg. ROI Increase</div>
+                    </div>
                   </div>
-                </div>
-              </FadeIn>
+                </FadeIn>
             </div>
           </div>
         </div>
@@ -382,9 +385,9 @@ export const Home = () => {
               </h2>
             </div>
             <div className="flex flex-col items-center md:items-end gap-2">
-              <img src={ASSETS.clutchBadge} alt="Clutch Award" className="h-20 w-auto" referrerPolicy="no-referrer" />
+              <img src={ASSETS.clutchBadge} alt="Clutch Award" className="h-20 w-auto" referrerPolicy="no-referrer" loading="lazy" width="80" height="80" />
               <div className="flex items-center gap-2 text-slate-400 text-xs font-bold tracking-widest uppercase">
-                <img src="https://clutch.co/favicon.ico" alt="Clutch" className="w-4 h-4 grayscale opacity-50" />
+                <img src="https://clutch.co/favicon.ico" alt="Clutch" className="w-4 h-4 grayscale opacity-50" loading="lazy" width="16" height="16" />
                 <span>Verified Reviews</span>
               </div>
             </div>
@@ -443,7 +446,7 @@ export const Home = () => {
                   className="group bg-white/5 rounded-[2rem] overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all h-full flex flex-col cursor-pointer"
                 >
                   <div className="h-64 overflow-hidden relative">
-                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" width="768" height="432" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
                     <div className="absolute top-6 left-6 px-4 py-2 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
                       {blog.category}

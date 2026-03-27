@@ -328,6 +328,9 @@ export const SMM = () => {
                         alt={platform.name} 
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
+                        loading="lazy"
+                        width={800}
+                        height={450}
                       />
                     ) : (
                       <Users className="w-32 h-32" style={{ color: `${platform.color.glow}33` }} />

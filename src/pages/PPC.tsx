@@ -347,6 +347,9 @@ export const PPC = () => {
                         src={platform.image} 
                         alt={platform.name} 
                         className="w-full h-full object-cover"
+                        loading="lazy"
+                        width="800"
+                        height="450"
                         referrerPolicy="no-referrer"
                       />
                     ) : (

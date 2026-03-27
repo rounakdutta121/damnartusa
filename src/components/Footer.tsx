@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="space-y-8">
             <div className="flex items-center gap-3">
-              <img src={ASSETS.logo} alt="DamnArt Logo" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
+              <img src={ASSETS.logo} alt="DamnArt Logo" width="100" height="100" loading="lazy" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
               <span className="text-2xl font-black text-white tracking-tighter italic uppercase">DamnArt</span>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-xs">
@@ -38,7 +38,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Quick Links</h4>
+            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Quick Links</h3>
             <ul className="space-y-4 text-slate-400">
               <li><Link to="/" className="hover:text-blue-500 transition-colors">Home</Link></li>
               <li><Link to="/services" className="hover:text-blue-500 transition-colors">Our Services</Link></li>
@@ -49,7 +49,7 @@ export const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Global Presence</h4>
+            <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Global Presence</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 { title: "India HQ", address: "SCO No. 09-Ground Floor, Aero View Plaza, Airport Road, Dyalpura, Punjab - 140603" },

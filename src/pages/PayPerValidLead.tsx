@@ -320,6 +320,9 @@ export const PayPerValidLead = () => {
                       src={service.image} 
                       alt={service.name} 
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      width={600}
+                      height={600}
                       referrerPolicy="no-referrer"
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />

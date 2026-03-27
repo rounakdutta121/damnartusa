@@ -330,6 +330,9 @@ export const SEO = () => {
                       alt={service.name} 
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
+                      loading="lazy"
+                      width="512"
+                      height="512"
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8 hidden md:block">

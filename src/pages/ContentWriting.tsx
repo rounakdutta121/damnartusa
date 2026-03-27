@@ -324,6 +324,9 @@ export const ContentWriting = () => {
                     <img 
                       src={service.image} 
                       alt={service.name} 
+                      width={600}
+                      height={600}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />

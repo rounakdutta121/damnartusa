@@ -318,6 +318,9 @@ export const DataMining = () => {
                       alt={service.name} 
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
+                      loading="lazy"
+                      width={600}
+                      height={600}
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t ${service.color.gradient} opacity-60`} />
                     <div className="absolute bottom-8 left-8 hidden md:block">
