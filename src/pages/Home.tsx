@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, Phone, MessageCircle, Download, 
   ChevronDown, Zap, Award, Star, Mail, MapPin
@@ -59,6 +59,7 @@ const blogPosts = [
 export const Home = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const [displayedBlogs, setDisplayedBlogs] = useState<typeof blogPosts>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const shuffled = [...blogPosts].sort(() => Math.random() - 0.5);
@@ -394,7 +395,8 @@ export const Home = () => {
               <FadeIn key={blog.id} delay={idx * 0.1}>
                 <motion.div 
                   whileHover={{ y: -10 }}
-                  className="group bg-white/5 rounded-[2rem] overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all h-full flex flex-col"
+                  onClick={() => navigate(`/blog/${blog.slug}`)}
+                  className="group bg-white/5 rounded-[2rem] overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all h-full flex flex-col cursor-pointer"
                 >
                   <div className="h-64 overflow-hidden relative">
                     <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
