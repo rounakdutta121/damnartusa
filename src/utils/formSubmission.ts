@@ -8,8 +8,9 @@ export const submitLeadForm = async (data: {
   message: string;
 }) => {
   try {
-    const response = await fetch(APPS_SCRIPT_URL, {
+    await fetch(APPS_SCRIPT_URL, {
       method: "POST",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -18,7 +19,7 @@ export const submitLeadForm = async (data: {
         ...data,
       }),
     });
-    return await response.json();
+    return { status: "success" };
   } catch (error) {
     console.error("Lead form submission error:", error);
     throw error;
@@ -31,8 +32,9 @@ export const submitBrochureForm = async (data: {
   email: string;
 }) => {
   try {
-    const response = await fetch(APPS_SCRIPT_URL, {
+    await fetch(APPS_SCRIPT_URL, {
       method: "POST",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -41,7 +43,7 @@ export const submitBrochureForm = async (data: {
         ...data,
       }),
     });
-    return await response.json();
+    return { status: "success" };
   } catch (error) {
     console.error("Brochure form submission error:", error);
     throw error;
