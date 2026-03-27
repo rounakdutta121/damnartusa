@@ -7,10 +7,63 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { FadeIn, FloatingText, PulseText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
-import { ASSETS, services, testimonials, blogs, faqs } from '../data';
+import { ASSETS, services, testimonials, faqs } from '../data';
+
+const blogPosts = [
+  {
+    id: 28,
+    slug: "funnel-stages",
+    title: "If Your Funnel Still Has Stages, You're Already Behind",
+    category: "Marketing",
+    author: "DamnArt",
+    date: "11 April 2025",
+    readTime: "3 Min",
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774414178/Idhar-Udhar-ke-use-2025-04-11T101138.735-768x432_f7c6im.jpg",
+    excerpt: "The Traditional Funnel Is Dead. Here's What Replaced It."
+  },
+  {
+    id: 29,
+    slug: "whisper-marketing",
+    title: "How Brands Are Secretly 'Whispering' to You on Social Media",
+    category: "Marketing",
+    author: "DamnArt",
+    date: "9 April 2025",
+    readTime: "3 Min",
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774415128/unnamed-2025-04-09T143637.417-768x768_slsvrm.jpg",
+    excerpt: "Ever scrolled through your Instagram feed and felt like a post was speaking directly to you?"
+  },
+  {
+    id: 30,
+    slug: "design-brain-triggers",
+    title: "Design Isn't What It Looks Like. It's What It Triggers in the Brain",
+    category: "Design",
+    author: "DamnArt",
+    date: "8 April 2025",
+    readTime: "3 Min",
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774415549/Idhar-Udhar-ke-use-2025-04-08T101140.386_ud2lwi.jpg",
+    excerpt: "When we hear the word 'design', most of us think about what we see—fonts, colors, images, and layout."
+  },
+  {
+    id: 31,
+    slug: "psychology-almost-buying",
+    title: "The Psychology of 'Almost Buying': Why Do People Abandon Carts and Forms?",
+    category: "Marketing",
+    author: "DamnArt",
+    date: "5 April 2025",
+    readTime: "3 Min",
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774432374/unnamed-2025-04-05T100557.309_z1zdzn.jpg",
+    excerpt: "You've done everything right. The product is in the cart, the user clicks 'Proceed to Checkout,' and then… crickets."
+  },
+];
 
 export const Home = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
+  const [displayedBlogs, setDisplayedBlogs] = useState<typeof blogPosts>([]);
+
+  useEffect(() => {
+    const shuffled = [...blogPosts].sort(() => Math.random() - 0.5);
+    setDisplayedBlogs(shuffled.slice(0, 2));
+  }, []);
 
   return (
     <div className="min-h-screen font-sans bg-slate-950 text-slate-100">
@@ -329,28 +382,32 @@ export const Home = () => {
               </h2>
               <p className="text-slate-400 text-lg">Stay ahead of the curve with our latest marketing strategies and AI breakthroughs.</p>
             </div>
-            <button className="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-bold flex items-center gap-2 hover:bg-blue-600 hover:border-blue-500 transition-all group mx-auto md:mx-0">
-              View All Articles <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-            </button>
+            <Link to="/blogs">
+              <button className="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-bold flex items-center gap-2 hover:bg-blue-600 hover:border-blue-500 transition-all group mx-auto md:mx-0">
+                View All Articles <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+              </button>
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogs.map((blog, idx) => (
-              <FadeIn key={idx} delay={idx * 0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {displayedBlogs.map((blog, idx) => (
+              <FadeIn key={blog.id} delay={idx * 0.1}>
                 <motion.div 
                   whileHover={{ y: -10 }}
                   className="group bg-white/5 rounded-[2rem] overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all h-full flex flex-col"
                 >
                   <div className="h-64 overflow-hidden relative">
                     <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
                     <div className="absolute top-6 left-6 px-4 py-2 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
-                      Marketing
+                      {blog.category}
                     </div>
                   </div>
                   <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-2xl font-bold text-white mb-6 line-clamp-2 leading-tight group-hover:text-blue-400 transition-colors">{blog.title}</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4 line-clamp-2 leading-tight group-hover:text-blue-400 transition-colors">{blog.title}</h3>
+                    <p className="text-slate-400 text-sm mb-6 flex-grow">{blog.excerpt}</p>
                     <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                      <span className="text-slate-500 text-sm">5 min read</span>
+                      <span className="text-slate-500 text-sm">{blog.readTime} read</span>
                       <button className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-blue-600 transition-all">
                         <ArrowRight size={18} />
                       </button>
