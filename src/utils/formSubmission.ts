@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyRBE1wEhTMJ7sQswte30B04WespNN0ZknFoQonhzDRdVns7c54Z3sToGdHk1dy0hYe/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyXi269euWvgvlhHZFS6tY2ievtZz8XbEvLu8OFw_9br_uBseJd6rL5yGBcV7CRYDb7/exec";
 
 export const submitLeadForm = async (data: {
   name: string;
