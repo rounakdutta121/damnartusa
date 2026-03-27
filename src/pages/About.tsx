@@ -3,21 +3,29 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   Users, Target, Rocket, Shield, Award, 
   ArrowRight, Download, Mail, Phone, MapPin,
-  CheckCircle2, Globe, MousePointerClick, DollarSign, Heart, BarChart3, Zap, X
+  CheckCircle2, Globe, MousePointerClick, DollarSign, Heart, BarChart3, Zap, X, Check
 } from 'lucide-react';
 import { FadeIn, FloatingText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS } from '../data';
+import { submitBrochureForm } from '../utils/formSubmission';
 
 export const About = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [modalForm, setModalForm] = useState({ name: '', email: '', phone: '' });
 
-  const handleModalSubmit = (e: React.FormEvent) => {
+  const handleModalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Brochure request:', modalForm);
-    setIsModalOpen(false);
-    setModalForm({ name: '', email: '', phone: '' });
+    setIsSubmitting(true);
+    try {
+      await submitBrochureForm(modalForm);
+      setIsModalOpen(false);
+      setModalForm({ name: '', email: '', phone: '' });
+    } catch (error) {
+      console.error('Failed to submit brochure form:', error);
+    }
+    setIsSubmitting(false);
   };
 
   return (
@@ -386,11 +394,12 @@ export const About = () => {
                 </div>
                 <motion.button 
                   type="submit"
+                  disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-5 bg-purple-600 text-white rounded-2xl font-black text-lg uppercase tracking-widest shadow-xl shadow-purple-600/20 flex items-center justify-center gap-3 group"
+                  className="w-full py-5 bg-purple-600 text-white rounded-2xl font-black text-lg uppercase tracking-widest shadow-xl shadow-purple-600/20 flex items-center justify-center gap-3 group disabled:opacity-50"
                 >
-                  Get Brochure <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                  {isSubmitting ? "Submitting..." : "Get Brochure"} <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </motion.button>
               </form>
             </motion.div>

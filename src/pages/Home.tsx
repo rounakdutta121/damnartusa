@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, Phone, MessageCircle, Download, 
-  ChevronDown, Zap, Award, Star, Mail, MapPin, X
+  ChevronDown, Zap, Award, Star, Mail, MapPin, X, Check
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FadeIn, FloatingText, PulseText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services, testimonials, faqs } from '../data';
+import { submitLeadForm, submitBrochureForm } from '../utils/formSubmission';
 
 const blogPosts = [
   {
@@ -60,7 +61,11 @@ export const Home = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const [displayedBlogs, setDisplayedBlogs] = useState<typeof blogPosts>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [modalForm, setModalForm] = useState({ name: '', email: '', phone: '' });
+  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+  const [contactSuccess, setContactSuccess] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -72,11 +77,31 @@ export const Home = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleModalSubmit = (e: React.FormEvent) => {
+  const handleModalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Playbook request:', modalForm);
-    setIsModalOpen(false);
-    setModalForm({ name: '', email: '', phone: '' });
+    setIsSubmitting(true);
+    try {
+      await submitBrochureForm(modalForm);
+      setIsModalOpen(false);
+      setModalForm({ name: '', email: '', phone: '' });
+    } catch (error) {
+      console.error('Failed to submit brochure form:', error);
+    }
+    setIsSubmitting(false);
+  };
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setContactSubmitting(true);
+    try {
+      await submitLeadForm(contactForm);
+      setContactSuccess(true);
+      setContactForm({ name: '', email: '', phone: '', service: '', message: '' });
+      setTimeout(() => setContactSuccess(false), 3000);
+    } catch (error) {
+      console.error('Failed to submit contact form:', error);
+    }
+    setContactSubmitting(false);
   };
 
   return (
@@ -545,27 +570,63 @@ export const Home = () => {
                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-green-500 rounded-full flex items-center justify-center text-white shadow-2xl rotate-12">
                   <Mail size={32} />
                 </div>
-                <form className="space-y-6">
+                {contactSuccess && (
+                  <div className="absolute inset-0 bg-green-500/10 rounded-[3rem] flex items-center justify-center z-10">
+                    <div className="text-center">
+                      <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Check size={40} className="text-white" />
+                      </div>
+                      <h3 className="text-2xl font-black text-white mb-2">Message Sent!</h3>
+                      <p className="text-green-300">We'll get back to you soon.</p>
+                    </div>
+                  </div>
+                )}
+                <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" />
+                      <input 
+                        type="text" 
+                        placeholder="John Doe" 
+                        required
+                        value={contactForm.name}
+                        onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" 
+                      />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
-                      <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" />
+                      <input 
+                        type="email" 
+                        placeholder="john@example.com" 
+                        required
+                        value={contactForm.email}
+                        onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" 
+                      />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Phone Number</label>
-                      <input type="tel" placeholder="+91..." className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" />
+                      <input 
+                        type="tel" 
+                        placeholder="+91..." 
+                        required
+                        value={contactForm.phone}
+                        onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
+                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all" 
+                      />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
                       <div className="relative">
-                        <select defaultValue="" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all appearance-none">
-                          <option value="" disabled>Select Service</option>
+                        <select 
+                          value={contactForm.service}
+                          onChange={(e) => setContactForm({ ...contactForm, service: e.target.value })}
+                          className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all appearance-none"
+                        >
+                          <option value="">Select Service</option>
                           {services.map((s, i) => (
                             <option key={i} value={s.title} className="bg-slate-900 text-white">{s.title}</option>
                           ))}
@@ -576,14 +637,22 @@ export const Home = () => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your Message</label>
-                    <textarea placeholder="Tell us about your project..." rows={4} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all resize-none"></textarea>
+                    <textarea 
+                      placeholder="Tell us about your project..." 
+                      rows={4} 
+                      value={contactForm.message}
+                      onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                      className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-green-500 text-white transition-all resize-none"
+                    ></textarea>
                   </div>
                   <motion.button 
+                    type="submit"
+                    disabled={contactSubmitting}
                     whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(34, 197, 94, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full py-6 bg-green-500 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-green-500/20 flex items-center justify-center gap-3 group"
+                    className="w-full py-6 bg-green-500 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-green-500/20 flex items-center justify-center gap-3 group disabled:opacity-50"
                   >
-                    Send Message <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                    {contactSubmitting ? "Sending..." : "Send Message"} <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                   </motion.button>
                 </form>
               </div>
@@ -662,11 +731,12 @@ export const Home = () => {
                 </div>
                 <motion.button 
                   type="submit"
+                  disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-lg uppercase tracking-widest shadow-xl shadow-blue-600/20 flex items-center justify-center gap-3 group"
+                  className="w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-lg uppercase tracking-widest shadow-xl shadow-blue-600/20 flex items-center justify-center gap-3 group disabled:opacity-50"
                 >
-                  Get Playbook <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                  {isSubmitting ? "Submitting..." : "Get Playbook"} <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </motion.button>
               </form>
             </motion.div>

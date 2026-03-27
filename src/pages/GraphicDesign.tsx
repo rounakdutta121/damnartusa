@@ -1,12 +1,14 @@
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { 
   PenTool, ArrowRight, CheckCircle2, Mail, Phone, MapPin, 
   ChevronDown, Palette, FileText, Monitor, Image, Presentation,
-  Layers
+  Layers, Check
 } from 'lucide-react';
 import { FadeIn, FloatingText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
+import { submitLeadForm } from '../utils/formSubmission';
 
 export const GraphicDesign = () => {
   const designServices = [
@@ -92,6 +94,24 @@ export const GraphicDesign = () => {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', service: 'Graphic Designing', message: '' });
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+  const [contactSuccess, setContactSuccess] = useState(false);
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setContactSubmitting(true);
+    try {
+      await submitLeadForm(contactForm);
+      setContactSuccess(true);
+      setContactForm({ name: '', email: '', phone: '', service: 'Graphic Designing', message: '' });
+      setTimeout(() => setContactSuccess(false), 3000);
+    } catch (error) {
+      console.error('Failed to submit contact form:', error);
+    }
+    setContactSubmitting(false);
   };
 
   return (
@@ -357,26 +377,36 @@ export const GraphicDesign = () => {
                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl rotate-12">
                   <Mail size={32} />
                 </div>
-                <form className="space-y-6">
+                {contactSuccess && (
+                  <div className="absolute inset-0 bg-green-500/20 backdrop-blur-xl rounded-[3rem] flex items-center justify-center z-10">
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center">
+                        <Check size={40} className="text-white" />
+                      </div>
+                      <p className="text-xl font-bold text-white">Message Sent Successfully!</p>
+                    </div>
+                  </div>
+                )}
+                <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="text" placeholder="John Doe" value={contactForm.name} onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
-                      <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="email" placeholder="john@example.com" value={contactForm.email} onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Phone Number</label>
-                      <input type="tel" placeholder="+91..." className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
+                      <input type="tel" placeholder="+91..." value={contactForm.phone} onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
                       <div className="relative">
-                        <select defaultValue="Graphic Design" className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all appearance-none">
+                        <select value={contactForm.service} onChange={(e) => setContactForm({ ...contactForm, service: e.target.value })} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all appearance-none">
                           <option value="" disabled>Select Service</option>
                           {services.map((s, i) => (
                             <option key={i} value={s.title} className="bg-slate-900 text-white">{s.title}</option>
@@ -388,14 +418,15 @@ export const GraphicDesign = () => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your Message</label>
-                    <textarea placeholder="Tell us about your project..." rows={4} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all resize-none"></textarea>
+                    <textarea placeholder="Tell us about your project..." rows={4} value={contactForm.message} onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })} className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500 text-white transition-all resize-none"></textarea>
                   </div>
                   <motion.button 
-                    whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(37, 99, 235, 0.3)" }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full py-6 bg-blue-600 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-blue-600/20 flex items-center justify-center gap-3 group"
+                    whileHover={{ scale: contactSubmitting ? 1 : 1.02, boxShadow: contactSubmitting ? "none" : "0 20px 40px rgba(37, 99, 235, 0.3)" }}
+                    whileTap={{ scale: contactSubmitting ? 1 : 0.98 }}
+                    disabled={contactSubmitting}
+                    className="w-full py-6 bg-blue-600 text-white rounded-2xl font-black text-xl uppercase tracking-widest shadow-xl shadow-blue-600/20 flex items-center justify-center gap-3 group disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    Send Message <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                    {contactSubmitting ? 'Sending...' : 'Send Message'} <ArrowRight className={contactSubmitting ? 'hidden' : 'group-hover:translate-x-2 transition-transform'} />
                   </motion.button>
                 </form>
               </div>
