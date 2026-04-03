@@ -101,7 +101,7 @@ export const About = () => {
       </section>
 
       {/* Core Values / Who We Are Detailed */}
-      <section className="pt-32 pb-0 -mb-[30rem] section-dark border-y border-white/5 relative overflow-hidden">
+      <section className="pt-32 pb-32 section-dark border-y border-white/5 relative overflow-hidden">
         <div className="purple-glow top-0 right-0" />
         <div className="bubble bubble-purple b1" />
         <div className="bubble bubble-purple b3" />
@@ -164,7 +164,7 @@ export const About = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section id="vision" className="-mt-[30rem] pb-8 section-dark relative overflow-hidden">
+      <section id="vision" className="pt-16 pb-8 section-dark relative overflow-hidden">
         <div className="purple-glow bottom-0 right-0 w-[600px] h-[600px] opacity-10" />
         <div className="bubble bubble-purple b2" />
         <div className="bubble bubble-purple b4" />
@@ -298,7 +298,7 @@ export const About = () => {
                 <div className="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500 mb-6">
                   <Mail size={32} />
                 </div>
-                <h4 className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Email Us</h4>
+                <p className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Email Us</p>
                 <p className="text-xl font-bold text-white">info@damnart.com</p>
               </div>
             </FadeIn>
@@ -307,7 +307,7 @@ export const About = () => {
                 <div className="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500 mb-6">
                   <Phone size={32} />
                 </div>
-                <h4 className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Call Us</h4>
+                <p className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Call Us</p>
                 <p className="text-xl font-bold text-white">+91-90565-44487</p>
               </div>
             </FadeIn>
@@ -316,7 +316,7 @@ export const About = () => {
                 <div className="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500 mb-6">
                   <Globe size={32} />
                 </div>
-                <h4 className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Global Presence</h4>
+                <p className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Global Presence</p>
                 <p className="text-xl font-bold text-white">India | UK | USA | Canada | Dubai</p>
               </div>
             </FadeIn>

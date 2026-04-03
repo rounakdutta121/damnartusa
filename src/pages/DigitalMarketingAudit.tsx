@@ -396,7 +396,7 @@ export const DigitalMarketingAudit = () => {
                   
                   <div className="space-y-6">
                     <div>
-                      <h4 className="text-lg font-bold text-white mb-4 uppercase tracking-wider">What We Check:</h4>
+                      <p className="text-lg font-bold text-white mb-4 uppercase tracking-wider">What We Check:</p>
                       <ul className="space-y-3">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex gap-4 text-slate-300">
@@ -408,7 +408,7 @@ export const DigitalMarketingAudit = () => {
                     </div>
                     
                     <div>
-                      <h4 className="text-lg font-bold text-white mb-4 uppercase tracking-wider">What You Get:</h4>
+                      <p className="text-lg font-bold text-white mb-4 uppercase tracking-wider">What You Get:</p>
                       <ul className="space-y-3">
                         {service.deliverables.map((item, idx) => (
                           <li key={idx} className="flex gap-4 text-slate-300">

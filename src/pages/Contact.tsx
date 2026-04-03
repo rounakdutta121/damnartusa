@@ -139,18 +139,18 @@ export const Contact = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="p-6 bg-white/5 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all">
                     <Phone className="text-green-500 mb-4" size={32} />
-                    <h4 className="text-white font-bold mb-1">Call Us</h4>
+                    <p className="text-white font-bold mb-1">Call Us</p>
                     <p className="text-slate-400">+91-90565-44487</p>
                   </div>
                   <div className="p-6 bg-white/5 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all">
                     <Mail className="text-green-500 mb-4" size={32} />
-                    <h4 className="text-white font-bold mb-1">Email Us</h4>
+                    <p className="text-white font-bold mb-1">Email Us</p>
                     <p className="text-slate-400">info@damnart.com</p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <h4 className="text-white font-bold uppercase tracking-widest text-xs">Our Global Hubs</h4>
+                  <p className="text-white font-bold uppercase tracking-widest text-xs">Our Global Hubs</p>
                   <div className="flex flex-wrap gap-3">
                     {['India', 'Canada', 'Dubai', 'UK', 'USA'].map((loc) => (
                       <span key={loc} className="px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-sm font-bold">
@@ -216,7 +216,7 @@ export const Contact = () => {
       </section>
 
       {/* Locations Section */}
-      <section className="-mt-88 pt-0 pb-24 section-dark  relative overflow-hidden">
+      <section className="pt-16 pb-24 section-dark relative overflow-hidden">
         <div className="green-glow bottom-0 right-0 w-[600px] h-[600px] opacity-5" />
         <div className="bubble bubble-green b1" />
         <div className="bubble bubble-green b3" />

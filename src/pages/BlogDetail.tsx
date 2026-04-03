@@ -481,7 +481,7 @@ export const BlogDetail = () => {
                 {blog.authorInitials}
               </div>
               <div>
-                <h4 className="text-xl font-bold text-white mb-1">Written by {blog.author}</h4>
+                <p className="text-xl font-bold text-white mb-1">Written by {blog.author}</p>
                 <p className={`font-medium ${accent.text} mb-2`}>{blog.category} Expert</p>
                 <p className="text-slate-400">
                   Expert in {blog.category.toLowerCase()} with years of experience helping businesses achieve their goals through strategic insights and practical solutions.

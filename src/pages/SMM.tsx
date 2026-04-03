@@ -389,7 +389,7 @@ export const SMM = () => {
                     <div className="space-y-6">
                       {week.phases.map((phase, idx) => (
                         <div key={idx} className="service-card p-6 border-blue-500/20 hover:border-blue-500 transition-all">
-                          <h4 className="text-lg font-black text-white mb-4 uppercase tracking-wider">{phase.title}</h4>
+                          <p className="text-lg font-black text-white mb-4 uppercase tracking-wider">{phase.title}</p>
                           <ul className="space-y-2">
                             {phase.items.map((item, itemIdx) => (
                               <li key={itemIdx} className="text-slate-400 text-sm flex items-center gap-2">

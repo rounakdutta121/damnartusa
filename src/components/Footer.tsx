@@ -61,7 +61,7 @@ export const Footer = () => {
                 { title: "Dubai Office", address: "Suite No 2902 and 2903, The Prism Tower, Business Bay, Dubai, UAE" }
               ].map((office, idx) => (
                 <div key={idx} className="space-y-2">
-                  <h5 className="text-blue-500 font-bold text-xs uppercase">{office.title}</h5>
+                  <p className="text-blue-500 font-bold text-xs uppercase">{office.title}</p>
                   <p className="text-slate-400 text-sm leading-relaxed">{office.address}</p>
                 </div>
               ))}
