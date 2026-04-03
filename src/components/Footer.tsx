@@ -77,8 +77,6 @@ export const Footer = () => {
           <p>© 2026 DamnArt. All Rights Reserved.</p>
           <div className="flex gap-8">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link to="/cookies" className="hover:text-white transition-colors">Cookies</Link>
           </div>
         </div>
       </div>

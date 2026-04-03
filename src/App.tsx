@@ -23,8 +23,6 @@ const InfluencerMarketing = lazy(() => import('./pages/InfluencerMarketing'));
 const Blogs = lazy(() => import('./pages/Blogs'));
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const Privacy = lazy(() => import('./pages/Privacy'));
-const Terms = lazy(() => import('./pages/Terms'));
-const Cookies = lazy(() => import('./pages/Cookies'));
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -100,8 +98,6 @@ export default function App() {
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blog/:slug" element={<BlogDetail />} />
               <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/cookies" element={<Cookies />} />
             </Routes>
           </Suspense>
         </main>
