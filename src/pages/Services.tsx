@@ -24,7 +24,7 @@ const allServices = [
   { title: "Influencer Marketing", description: "Extract Actionable Insights with Advanced Data Mining Solutions", icon: Globe },
 ];
 
-export const Services = () => {
+export default function Services() {
   return (
     <div>
       {/* Hero Section */}

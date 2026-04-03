@@ -10,7 +10,7 @@ import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 import { submitLeadForm } from '../utils/formSubmission';
 
-export const PPC = () => {
+export default function PPC() {
   const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', service: 'PPC', message: '' });
   const [contactSubmitting, setContactSubmitting] = useState(false);
   const [contactSuccess, setContactSuccess] = useState(false);

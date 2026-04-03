@@ -9,7 +9,7 @@ import { FadeIn, FloatingText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 
-export const LeadGeneration = () => {
+export default function LeadGeneration() {
   const leadGenServices = [
     {
       id: "google-ppc",

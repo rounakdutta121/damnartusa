@@ -10,7 +10,7 @@ import { FadeIn, FloatingText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 
-export const DataMining = () => {
+export default function DataMining() {
   const dataMiningServices = [
     {
       id: "business-data",

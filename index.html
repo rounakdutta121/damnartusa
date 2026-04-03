@@ -10,10 +10,15 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://damnart.vercel.app" />
     <meta name="theme-color" content="#0f172a" />
-    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dadofd9d2/image/upload/v1772011438/Damn-Art-Logo-Final-Only-Logo-r6dasn0nfh4nzs4a4fd97txlvs2437uw1zu2i0825k_qe24gm.png" />
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011438/Damn-Art-Logo-Final-Only-Logo-r6dasn0nfh4nzs4a4fd97txlvs2437uw1zu2i0825k_qe24gm.png" />
     
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript>
@@ -24,15 +29,30 @@
     <meta property="og:url" content="https://damnart.vercel.app" />
     <meta property="og:title" content="DamnArt - Digital Marketing Agency | PPC, SMM, SEO & Web Development" />
     <meta property="og:description" content="DamnArt is a performance-driven digital marketing agency specializing in PPC, SMM, SEO, Web Development, Content Writing, Graphic Design, and AI-driven growth strategies." />
-    <meta property="og:image" content="https://res.cloudinary.com/dadofd9d2/image/upload/v1772011438/Damn-Art-Logo-Final-Only-Logo-r6dasn0nfh4nzs4a4fd97txlvs2437uw1zu2i0825k_qe24gm.png" />
+    <meta property="og:image" content="https://res.cloudinary.com/dadofd9d2/image/upload/w_1200,h_630,c_fill,f_auto,q_auto/v1772011438/Damn-Art-Logo-Final-Only-Logo-r6dasn0nfh4nzs4a4fd97txlvs2437uw1zu2i0825k_qe24gm.png" />
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://damnart.vercel.app" />
     <meta name="twitter:title" content="DamnArt - Digital Marketing Agency | PPC, SMM, SEO & Web Development" />
-    <meta name="twitter:description" content="DamnArt is a performance-driven digital marketing agency specializing in PPC, SMM, SEO, Web Development, and more." />
+    <meta name="twitter:description" content="DamnArt - Digital Marketing Agency and more." />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <nav style="position:fixed;top:0;width:100%;z-index:40;padding:24px;display:flex;justify-content:space-between;align-items:center;background:transparent">
+        <div style="display:flex;align-items:center;gap:12px">
+          <img src="https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011438/Damn-Art-Logo-Final-Only-Logo-r6dasn0nfh4nzs4a4fd97txlvs2437uw1zu2i0825k_qe24gm.png" alt="DamnArt Logo" style="height:40px;width:auto" width="100" height="100" loading="eager" />
+          <span style="font-size:24px;font-weight:900;tracking-tighter;color:#fff">DAMN<span style="color:#3b82f6">ART</span></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:32px">
+          <a href="/" style="font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);text-decoration:none">Home</a>
+          <a href="/services" style="font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);text-decoration:none">Services</a>
+          <a href="/about" style="font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);text-decoration:none">About</a>
+          <a href="/contact" style="font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);text-decoration:none">Contact</a>
+          <a href="/blogs" style="font-size:14px;font-weight:700;color:rgba(255,255,255,0.7);text-decoration:none">Blogs</a>
+          <button style="padding:12px 24px;background:#2563eb;color:#fff;border-radius:9999px;font-weight:700;font-size:14px;border:none;cursor:pointer">Work With Us!</button>
+        </div>
+      </nav>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

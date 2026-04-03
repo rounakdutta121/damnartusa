@@ -10,7 +10,7 @@ import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 import { submitLeadForm } from '../utils/formSubmission';
 
-export const GraphicDesign = () => {
+export default function GraphicDesign() {
   const designServices = [
     {
       id: "logo-design",

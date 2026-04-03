@@ -9,7 +9,7 @@ import { FadeIn, FloatingText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 
-export const PayPerValidLead = () => {
+export default function PayPerValidLead() {
   const payPerLeadServices = [
     {
       id: "google-ppc",

@@ -57,7 +57,7 @@ const blogPosts = [
   },
 ];
 
-export const Home = () => {
+export default function Home() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const [displayedBlogs, setDisplayedBlogs] = useState<typeof blogPosts>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);

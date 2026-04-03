@@ -10,7 +10,7 @@ import { FadeIn, FloatingText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 
-export const DigitalMarketingAudit = () => {
+export default function DigitalMarketingAudit() {
   const auditServices = [
     {
       id: "google-fb-ads-audit",

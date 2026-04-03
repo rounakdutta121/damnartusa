@@ -10,7 +10,7 @@ import { Typewriter } from '../components/Typewriter';
 import { ASSETS } from '../data';
 import { submitBrochureForm } from '../utils/formSubmission';
 
-export const About = () => {
+export default function About() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [modalForm, setModalForm] = useState({ name: '', email: '', phone: '' });

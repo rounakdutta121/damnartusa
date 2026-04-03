@@ -10,7 +10,7 @@ import { FadeIn, FloatingText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 
-export const SMM = () => {
+export default function SMM() {
   const platforms = [
     {
       id: "facebook",

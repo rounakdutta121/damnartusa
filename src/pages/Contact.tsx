@@ -9,7 +9,7 @@ import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 import { InlineWidget } from 'react-calendly';
 
-export const Contact = () => {
+export default function Contact() {
   return (
     <div className="min-h-screen font-sans bg-slate-950 text-slate-100">
       {/* Hero Section */}

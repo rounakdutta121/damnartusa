@@ -10,7 +10,7 @@ import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 import { submitLeadForm } from '../utils/formSubmission';
 
-export const ContentWriting = () => {
+export default function ContentWriting() {
   const writingServices = [
     {
       id: "blog-writing",

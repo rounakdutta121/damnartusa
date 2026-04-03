@@ -10,7 +10,7 @@ import { FadeIn, FloatingText } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 
-export const SEO = () => {
+export default function SEO() {
   const seoServices = [
     {
       id: "keyword-research",

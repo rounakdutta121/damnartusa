@@ -52,7 +52,7 @@ const blogPosts = [
   },
 ];
 
-export const Blogs = () => {
+export default function Blogs() {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('date-desc');
   const [selectedCategory, setSelectedCategory] = useState('All');

@@ -157,7 +157,7 @@ const getAccentClasses = (color: string) => {
   return colors[color] || colors.blue;
 };
 
-export const BlogDetail = () => {
+export default function BlogDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [isSpeaking, setIsSpeaking] = useState(false);
