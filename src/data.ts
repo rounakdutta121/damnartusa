@@ -4,7 +4,7 @@ import {
 } from 'lucide-react';
 
 export const ASSETS = {
-  logo: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772011438/Damn-Art-Logo-Final-Only-Logo-r6dasn0nfh4nzs4a4fd97txlvs2437uw1zu2i0825k_qe24gm.png",
+  logo: "https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011438/Damn-Art-Logo-Final-Only-Logo-r6dasn0nfh4nzs4a4fd97txlvs2437uw1zu2i0825k_qe24gm.png",
   heroVideo: "https://res.cloudinary.com/dadofd9d2/video/upload/v1772253161/grok-video-c2d455ef-9ee0-420a-8d87-a69c258a4cde_istqnb.mp4",
   servicesVideo: "https://res.cloudinary.com/dadofd9d2/video/upload/v1772086250/grok-video-a1b193e4-f078-451d-ab44-90803bd60335_m8lt1p.mp4",
   aboutVideo: "https://res.cloudinary.com/dadofd9d2/video/upload/v1772090766/grok-video-5e165ea8-7dba-46ea-8229-820090e8900b_ofdtqw.mp4",
@@ -66,16 +66,16 @@ export const ASSETS = {
     { name: "Pabbly Connect", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1771836169/88_awco23.png" },
   ],
   clients: [
-    { name: "Granata", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772011847/download-r8u9244d5sey0vsilnhsk9yc99lsbfacjuwj2kdi8k_ge3qxe.png" },
-    { name: "Himalayan", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772011860/Himalayan-Infinite-Possibility-Final-Logo-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_sljqey.png" },
-    { name: "ITC", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772011873/itc-logo-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_e7eq5a.png" },
-    { name: "RR", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772011895/RR-logo-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_gvpizu.png" },
-    { name: "SF Training", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772011936/SF-Training-Final-Logo-1080-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_u19o47.png" },
-    { name: "Med", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772011955/med.logol_-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_kgw1m1.png" },
-    { name: "Euro", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772011979/euro.1-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_qqciz2.png" },
-    { name: "EuroTech Canada", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772012214/eurotech-canda.1-r6daspu6d4vgg0gazmuhk4vhz4xpbu4stx62s991n8_ugsvud.png" },
+    { name: "Granata", url: "https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011847/download-r8u9244d5sey0vsilnhsk9yc99lsbfacjuwj2kdi8k_ge3qxe.png" },
+    { name: "Himalayan", url: "https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011860/Himalayan-Infinite-Possibility-Final-Logo-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_sljqey.png" },
+    { name: "ITC", url: "https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011873/itc-logo-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_e7eq5a.png" },
+    { name: "RR", url: "https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011895/RR-logo-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_gvpizu.png" },
+    { name: "SF Training", url: "https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011936/SF-Training-Final-Logo-1080-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_u19o47.png" },
+    { name: "Med", url: "https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011955/med.logol_-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_kgw1m1.png" },
+    { name: "Euro", url: "https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772011979/euro.1-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_qqciz2.png" },
+    { name: "EuroTech Canada", url: "https://res.cloudinary.com/dadofd9d2/image/upload/w_100,h_100,c_fill,f_auto,q_auto/v1772012214/eurotech-canda.1-r6daspu6d4vgg0gazmuhk4vhz4xpbu4stx62s991n8_ugsvud.png" },
   ],
-  brochureCover: "https://res.cloudinary.com/dadofd9d2/image/upload/w_800,f_auto,q_auto/v1774244095/generate-an-image-for-a-digital-marketing-agency_tstznd.jpg",
+  brochureCover: "https://res.cloudinary.com/dadofd9d2/image/upload/w_1200,h_800,c_fill,f_auto,q_auto/v1774244095/generate-an-image-for-a-digital-marketing-agency_tstznd.jpg",
   ppcPlatforms: {
     google: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774324686/77_fqrvin.jpg",
     meta: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774324732/2-1_zqn9ol.jpg",

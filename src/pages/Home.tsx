@@ -145,52 +145,46 @@ export const Home = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20 md:pt-0">
           <div className="max-w-5xl">
-            <FadeIn delay={0.2}>
+            <div className="animate-fadeIn">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-bold mb-8 backdrop-blur-md">
                 <Zap size={16} />
                 <span>STRATEGIZE | OPTIMIZE | GROW</span>
               </div>
-            </FadeIn>
+            </div>
             
             <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-10">
-              <FadeIn delay={0.4} distance={40}>
+              <span className="animate-fadeIn animation-delay-200">
                 DAMNART DIGITAL:<br />
-              </FadeIn>
-              <FadeIn delay={0.6} distance={40}>
-                <span className="text-gradient-blue inline-block sm:whitespace-nowrap">
-                  <Typewriter words={["GROWTH PARTNER!", "SUCCESS STORY!", "CREATIVE ALLY!", "FUTURE SCALE!"]} />
-                </span>
-              </FadeIn>
+              </span>
+              <span className="text-gradient-blue inline-block sm:whitespace-nowrap animate-fadeIn animation-delay-300">
+                <Typewriter words={["GROWTH PARTNER!", "SUCCESS STORY!", "CREATIVE ALLY!", "FUTURE SCALE!"]} />
+              </span>
             </h1>
 
-            <FadeIn delay={0.8}>
-              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-3xl font-medium">
-                Elevate your Brand with Tailored Strategies in PPC, SMM, and Web Design. 
-                Partner with us for measurable results and impactful growth in the digital world.
-              </p>
-            </FadeIn>
+            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-3xl font-medium animate-fadeIn animation-delay-400">
+              Elevate your Brand with Tailored Strategies in PPC, SMM, and Web Design. 
+              Partner with us for measurable results and impactful growth in the digital world.
+            </p>
 
-            <FadeIn delay={1}>
-              <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:flex-row gap-6 animate-fadeIn animation-delay-500">
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="btn-primary px-12 py-5 text-xl justify-center"
+              >
+                Work With Us! <ArrowRight size={24} />
+              </motion.button>
+              <Link to="/services">
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="btn-primary px-12 py-5 text-xl justify-center"
+                  className="btn-secondary px-12 py-5 text-xl justify-center w-full"
                 >
-                  Work With Us! <ArrowRight size={24} />
+                  View Services
                 </motion.button>
-                <Link to="/services">
-                  <motion.button 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-secondary px-12 py-5 text-xl justify-center w-full"
-                  >
-                    View Services
-                  </motion.button>
-                </Link>
-              </div>
-            </FadeIn>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -322,7 +316,7 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="relative rounded-[3rem] overflow-hidden bg-blue-600">
             <div className="absolute inset-0 opacity-20">
-              <img src={ASSETS.brochureCover} alt="Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="eager" decoding="async" width="1920" height="1080" />
+              <img src={ASSETS.brochureCover} alt="Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="eager" decoding="async" width="1200" height="800" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-600 to-transparent" />
             
