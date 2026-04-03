@@ -19,13 +19,14 @@ export default defineConfig(({mode}) => {
       hmr: process.env.DISABLE_HMR !== 'true',
     },
     build: {
-      sourcemap: true,
+      sourcemap: false,
+      minify: 'esbuild',
       rollupOptions: {
         output: {
           manualChunks: {
-            vendor: ['react', 'react-dom', 'react-router-dom'],
-            motion: ['motion/react'],
-            icons: ['lucide-react'],
+            'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+            'motion': ['motion/react'],
+            'icons': ['lucide-react'],
           },
         },
       },

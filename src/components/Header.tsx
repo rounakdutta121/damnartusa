@@ -40,7 +40,7 @@ export const Header = () => {
       <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled ? 'glass-nav py-4' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
-            <img src={ASSETS.logo} alt="DamnArt Logo" width="100" height="100" loading="eager" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
+            <img src={ASSETS.logo} alt="DamnArt Logo" width="100" height="100" loading="eager" decoding="async" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
             <span className="text-2xl font-black tracking-tighter text-white">DAMN<span className="text-blue-500">ART</span></span>
           </Link>
 

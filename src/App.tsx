@@ -4,23 +4,31 @@ import { motion } from 'motion/react';
 import { MessageCircle, Phone } from 'lucide-react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { Home } from './pages/Home';
-import { Services } from './pages/Services';
-import { About } from './pages/About';
-import { Contact } from './pages/Contact';
-import { PPC } from './pages/PPC';
-import { SMM } from './pages/SMM';
-import { WebDevelopment } from './pages/WebDevelopment';
-import { ContentWriting } from './pages/ContentWriting';
-import { GraphicDesign } from './pages/GraphicDesign';
-import { SEO } from './pages/SEO';
-import { DigitalMarketingAudit } from './pages/DigitalMarketingAudit';
-import { DataMining } from './pages/DataMining';
-import { LeadGeneration } from './pages/LeadGeneration';
-import { PayPerValidLead } from './pages/PayPerValidLead';
-import { InfluencerMarketing } from './pages/InfluencerMarketing';
-import { Blogs } from './pages/Blogs';
-import { BlogDetail } from './pages/BlogDetail';
+import { lazyNamed } from './utils/lazyImport';
+
+const Home = lazyNamed(() => import('./pages/Home'), 'Home');
+const Services = lazyNamed(() => import('./pages/Services'), 'Services');
+const About = lazyNamed(() => import('./pages/About'), 'About');
+const Contact = lazyNamed(() => import('./pages/Contact'), 'Contact');
+const PPC = lazyNamed(() => import('./pages/PPC'), 'PPC');
+const SMM = lazyNamed(() => import('./pages/SMM'), 'SMM');
+const WebDevelopment = lazyNamed(() => import('./pages/WebDevelopment'), 'WebDevelopment');
+const ContentWriting = lazyNamed(() => import('./pages/ContentWriting'), 'ContentWriting');
+const GraphicDesign = lazyNamed(() => import('./pages/GraphicDesign'), 'GraphicDesign');
+const SEO = lazyNamed(() => import('./pages/SEO'), 'SEO');
+const DigitalMarketingAudit = lazyNamed(() => import('./pages/DigitalMarketingAudit'), 'DigitalMarketingAudit');
+const DataMining = lazyNamed(() => import('./pages/DataMining'), 'DataMining');
+const LeadGeneration = lazyNamed(() => import('./pages/LeadGeneration'), 'LeadGeneration');
+const PayPerValidLead = lazyNamed(() => import('./pages/PayPerValidLead'), 'PayPerValidLead');
+const InfluencerMarketing = lazyNamed(() => import('./pages/InfluencerMarketing'), 'InfluencerMarketing');
+const Blogs = lazyNamed(() => import('./pages/Blogs'), 'Blogs');
+const BlogDetail = lazyNamed(() => import('./pages/BlogDetail'), 'BlogDetail');
+
+const Loading = () => (
+  <div className="min-h-screen flex items-center justify-center bg-slate-950">
+    <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();

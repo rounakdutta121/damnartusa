@@ -19,7 +19,7 @@ const blogPosts = [
     author: "DamnArt",
     date: "11 April 2025",
     readTime: "3 Min",
-    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774414178/Idhar-Udhar-ke-use-2025-04-11T101138.735-768x432_f7c6im.jpg",
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/w_600,f_auto,q_auto/v1774414178/Idhar-Udhar-ke-use-2025-04-11T101138.735-768x432_f7c6im.jpg",
     excerpt: "The Traditional Funnel Is Dead. Here's What Replaced It."
   },
   {
@@ -30,7 +30,7 @@ const blogPosts = [
     author: "DamnArt",
     date: "9 April 2025",
     readTime: "3 Min",
-    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774415128/unnamed-2025-04-09T143637.417-768x768_slsvrm.jpg",
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/w_600,f_auto,q_auto/v1774415128/unnamed-2025-04-09T143637.417-768x768_slsvrm.jpg",
     excerpt: "Ever scrolled through your Instagram feed and felt like a post was speaking directly to you?"
   },
   {
@@ -41,7 +41,7 @@ const blogPosts = [
     author: "DamnArt",
     date: "8 April 2025",
     readTime: "3 Min",
-    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774415549/Idhar-Udhar-ke-use-2025-04-08T101140.386_ud2lwi.jpg",
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/w_600,f_auto,q_auto/v1774415549/Idhar-Udhar-ke-use-2025-04-08T101140.386_ud2lwi.jpg",
     excerpt: "When we hear the word 'design', most of us think about what we see—fonts, colors, images, and layout."
   },
   {
@@ -52,7 +52,7 @@ const blogPosts = [
     author: "DamnArt",
     date: "5 April 2025",
     readTime: "3 Min",
-    image: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774432374/unnamed-2025-04-05T100557.309_z1zdzn.jpg",
+    image: "https://res.cloudinary.com/dadofd9d2/image/upload/w_600,f_auto,q_auto/v1774432374/unnamed-2025-04-05T100557.309_z1zdzn.jpg",
     excerpt: "You've done everything right. The product is in the cart, the user clicks 'Proceed to Checkout,' and then… crickets."
   },
 ];
@@ -220,6 +220,7 @@ export const Home = () => {
                       className="h-14 w-auto object-contain" 
                       referrerPolicy="no-referrer" 
                       loading="lazy"
+                      decoding="async"
                       width="180"
                       height="56"
                     />
@@ -321,7 +322,7 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="relative rounded-[3rem] overflow-hidden bg-blue-600">
             <div className="absolute inset-0 opacity-20">
-              <img src={ASSETS.brochureCover} alt="Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="eager" width="1920" height="1080" />
+              <img src={ASSETS.brochureCover} alt="Background" className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="eager" decoding="async" width="1920" height="1080" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-600 to-transparent" />
             
@@ -350,7 +351,7 @@ export const Home = () => {
               </FadeIn>
                   <FadeIn direction="left">
                   <div className="hidden lg:block relative">
-                    <img src={ASSETS.brochureCover} alt="Brochure" className="rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700" referrerPolicy="no-referrer" loading="eager" width="600" height="800" />
+                    <img src={ASSETS.brochureCover} alt="Brochure" className="rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700" referrerPolicy="no-referrer" loading="eager" decoding="async" width="600" height="800" />
                     <div className="absolute -bottom-8 -left-8 p-8 bg-white rounded-3xl shadow-2xl">
                       <div className="text-4xl font-black text-blue-600 mb-1">500%</div>
                       <div className="text-slate-900 font-bold text-sm uppercase tracking-widest">Avg. ROI Increase</div>
@@ -446,7 +447,7 @@ export const Home = () => {
                   className="group bg-white/5 rounded-[2rem] overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all h-full flex flex-col cursor-pointer"
                 >
                   <div className="h-64 overflow-hidden relative">
-                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" width="768" height="432" />
+                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" decoding="async" width="768" height="432" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
                     <div className="absolute top-6 left-6 px-4 py-2 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
                       {blog.category}

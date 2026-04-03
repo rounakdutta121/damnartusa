@@ -4,7 +4,7 @@ import {
   Calendar, ArrowRight, Globe, ChevronDown,
   Clock, Video, Heart, BarChart3, Zap, MousePointerClick, DollarSign
 } from 'lucide-react';
-import { FadeIn, FloatingText } from '../components/Animations';
+import { FadeIn } from '../components/Animations';
 import { Typewriter } from '../components/Typewriter';
 import { ASSETS, services } from '../data';
 import { InlineWidget } from 'react-calendly';

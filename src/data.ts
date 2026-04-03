@@ -75,7 +75,7 @@ export const ASSETS = {
     { name: "Euro", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772011979/euro.1-r6dasn0nsmrlh6keg3mlunl46zbloqtltj7mcfd85w_qqciz2.png" },
     { name: "EuroTech Canada", url: "https://res.cloudinary.com/dadofd9d2/image/upload/v1772012214/eurotech-canda.1-r6daspu6d4vgg0gazmuhk4vhz4xpbu4stx62s991n8_ugsvud.png" },
   ],
-  brochureCover: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774244095/generate-an-image-for-a-digital-marketing-agency_tstznd.jpg",
+  brochureCover: "https://res.cloudinary.com/dadofd9d2/image/upload/w_800,f_auto,q_auto/v1774244095/generate-an-image-for-a-digital-marketing-agency_tstznd.jpg",
   ppcPlatforms: {
     google: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774324686/77_fqrvin.jpg",
     meta: "https://res.cloudinary.com/dadofd9d2/image/upload/v1774324732/2-1_zqn9ol.jpg",
@@ -168,9 +168,9 @@ export const testimonials = [
 ];
 
 export const blogs = [
-  { title: "The Most Dangerous Marketing Hack That Actually Works", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" },
-  { title: "What If You Had Only 10 Words to Sell Your Product?", image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop" },
-  { title: "The Role of Blockchain in Digital Marketing", image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2064&auto=format&fit=crop" }
+  { title: "The Most Dangerous Marketing Hack That Actually Works", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" },
+  { title: "What If You Had Only 10 Words to Sell Your Product?", image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=600&auto=format&fit=crop" },
+  { title: "The Role of Blockchain in Digital Marketing", image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=600&auto=format&fit=crop" }
 ];
 
 export const faqs = [
